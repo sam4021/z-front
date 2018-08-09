@@ -2582,16 +2582,16 @@ var ProductComponent = /** @class */ (function () {
         this.imageUrl = IMG_URL;
     };
     ProductComponent.prototype.onSubmit = function (id) {
-        var _this = this;
         var name = this.form.value.name;
         var phone = this.form.value.phone;
         var email = this.form.value.email;
         var product_id = this.productId;
         var message = this.form.value.message;
-        this.http.post(env_config_1.ENV.BASE_API + "contact-seller", { name: name, phone: phone, email: email, product_id: product_id, message: message })
-            .subscribe(function (data) {
-            _this.router.navigate(['/product/' + _this.id]);
-        });
+        // this.http.post(`${ENV.BASE_API}contact-seller`,
+        //    {name: name, phone: phone, email: email,product_id:product_id,message:message})
+        //    .subscribe((data) => {
+        //       this.router.navigate(['/product/'+this.id]);
+        //    });
         document.getElementById("exampleModalLong").classList.remove('show');
         document.getElementById(".icon-rollover-color").style.display = "none";
     };
