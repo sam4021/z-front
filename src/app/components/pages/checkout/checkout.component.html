@@ -1,0 +1,118 @@
+<div id="checkout-page" class="">
+  <div class="container">
+    <div class="checkout-header">
+      <h4>Checkout</h4>
+    </div>
+    <form [formGroup]="rForm" (ngSubmit)="addPost()" #myForm="ngForm" autocomplete="off">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input type="text" class="form-control" formControlName="first_name" id="first_name" aria-describedby="first_name_Help" placeholder="First Name" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name</label>
+          <input type="text" class="form-control" formControlName="last_name" id="last_name" aria-describedby="last_name_Help" placeholder="Last Name" ngModel>
+          <small id="last_name_Help" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" class="form-control" formControlName="phone" id="phone" aria-describedby="phone_Help" placeholder="Phone Number" ngModel>
+          <small id="phone_Help" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" formControlName="email" aria-describedby="email_Help" placeholder="Enter email" ngModel>
+          <small id="email_Help" class="form-text text-muted"></small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="delivery_location">Delivery Address</label>
+          <textarea class="form-control" id="delivery_location" formControlName="delivery_location" aria-describedby="shipping_Help" (change)="_getShippingCost($event)" ngModel></textarea>
+          <small id="shipping_Help" class="form-text text-muted"></small>
+        </div>
+      </div>
+      <div class="col-md-4 check-amount">
+        <div class="order-summary">
+          <div class="row">
+            <div class="col-md-6">
+              Order Summary
+            </div>
+            <div class="col-md-6 cart">
+              <a routerLink="/cart">
+                edit Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row cart-cont" *ngFor="let item of cartV">
+          <div class="col-md-4">
+            <div class="prod-image">
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="prod-title">
+
+            </div>
+            <div class="prod-qty">
+              <strong>Qty: </strong>{{ item.quantity }}
+            </div>
+            <div class="prod-price">
+              Ksh.{{ item.price }}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="prod-subtotal">
+              Ksh. {{ item.price * item.quantity}}
+            </div>
+          </div>
+        </div> -->
+        <div class="sub-total">
+          <div class="title">
+            SubTotal:
+          </div>
+          <div class="amount">
+            Ksh. {{ itemTotal}}
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <!-- <div class="shipping-total">
+          <div class="title">
+            Shipping:
+          </div>
+          <div class="amount">
+            <ng-container *ngIf="courierFee">Yes {{ courierFee }}</ng-container>
+          Ksh. <span id="ship-amount">
+            <div *ngIf="courierFee;then content else otherContent">here is ignored</div>
+            <ng-template #content>{{ courierFee }}</ng-template>
+            <ng-template #otherContent>0</ng-template>
+          </span>
+          </div>
+          <div class="clearfix"></div>
+        </div> -->
+        <div class="gross-total">
+          <div class="title">
+            Total:
+          </div>
+          <!-- <div class="amount">
+          Ksh. <span id="gross-amount">
+
+            <div *ngIf="courierFee;then plus_ship else minus_ship">here is ignored</div>
+            <ng-template #plus_ship>{{ itemTotal + courierFee.amount}}</ng-template>
+            <ng-template #minus_ship>{{ itemTotal }}</ng-template>
+          </span>
+          </div> -->
+          <div class="amount">
+          Ksh. <span id="gross-amount">{{ itemTotal }}</span>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+<!-- <pre>{{myForm.value | json}}</pre> -->
+        <button type="submit" class="btn btn-primary checkout-btn" [disabled]="!rForm.valid">Submit Order</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>

@@ -1,0 +1,311 @@
+<div class="mobile_view" *ngIf="mobile_view">
+  <app-top-search></app-top-search>
+  <div class="slider">
+    <app-main-slider></app-main-slider>
+  </div>
+  <div class="category">
+    <ul>
+      <ng-container  *ngFor="let c of mainMenu">
+        <ng-container *ngIf=" c._id == '5a1fa8dd5d54cc0004e77464' || c._id == '5a1faae25d54cc0004e7746c'||c._id == '5a1fab895d54cc0004e77471'||c._id == '5a1fa9735d54cc0004e77468' || c._id == '5a819ab0b5e6a90004a1be90'">
+        <li>
+        <a routerLink="/products/{{ c.url }}">
+          <div class="cat-container">
+            <div class="icon">
+              <ng-container *ngIf=" c._id == '5a1fa8dd5d54cc0004e77464' ">
+                <img src="{{imageUrl}}/icons/mobile_Mobile.png" alt="{{c.title}}">
+              </ng-container>
+              <ng-container *ngIf=" c._id == '5a1faae25d54cc0004e7746c' ">
+                <img src="{{imageUrl}}/icons/mobile_Tablets.png" alt="{{c.title}}">
+              </ng-container>
+              <ng-container *ngIf=" c._id == '5a1fab895d54cc0004e77471' ">
+                <img src="{{imageUrl}}/icons/mobile_Electronics.png" alt="{{c.title}}">
+              </ng-container>
+              <ng-container *ngIf=" c._id == '5a1fa9735d54cc0004e77468' ">
+                <img src="{{imageUrl}}/icons/mobile_computer.png" alt="{{c.title}}">
+              </ng-container>
+              <ng-container *ngIf=" c._id == '5a819ab0b5e6a90004a1be90' ">
+                <img src="{{imageUrl}}/icons/mobile_accessories.png" alt="{{c.title}}">
+              </ng-container>
+            </div>
+            <div class="text">
+              {{ c.title }}
+            </div>
+          </div>
+        </a>
+        </li>
+        </ng-container>
+      </ng-container>
+      <div class="clearfix"></div>
+    </ul>
+  </div>
+  <div class="featured">
+    <app-loading *ngIf="loading"></app-loading>
+    <ng-template [ngIf]="utils.isLoaded(loading)">
+      <ng-template [ngIf]="featuredProducts">
+        <ng-template [ngIf]="featuredProducts.length">
+          <div class="fProds-container">
+            <div class="fProds-item" *ngFor="let fearured of featuredProducts">
+              <div class="product-container">
+                <a [routerLink]="['/product', fearured.product.url]" class="">
+                  <div class="product-inner">
+                    <div class="product-img">
+                      <img src="{{imageUrl}}/products/{{ fearured.product.images[0][0] }}" alt="{{ fearured.product.title }}">
+                    </div>
+                    <div class="product-info">
+                      <div class="prod-title" [innerHtml]="fearured.product.title"></div>
+                      <div class="prod-price">
+                        <ng-container *ngIf="fearured.product.special_price ==0">
+                          Ksh. {{ fearured.product.price | number:0 }}
+                        </ng-container>
+                        <ng-container *ngIf="fearured.product.special_price !=0">
+                          Ksh. {{ fearured.product.special_price | number:0 }}
+                          <div class="discount">
+                            Ksh. {{ fearured.product.price | number:0 }}
+                          </div>
+                        </ng-container>
+                      </div>
+                      <div class="prod-rate">
+
+                      </div>
+                    </div>
+                    <ng-container *ngIf="fearured.product.special_price !=0">
+                      <div class="ribbon"><span>Offer</span></div>
+                    </ng-container>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </ng-template>
+      </ng-template>
+    </ng-template>
+  </div>
+  <section class="category-strip">
+    <div class="strip">
+      <ng-container *ngFor="let cat of category">
+      <a href="{{cat.bottom_image.link}}">
+        <img src="{{imageUrl}}{{cat.bottom_image.img}}" alt="{{cat.bottom_image.alt}}">
+      </a>
+      </ng-container>
+    </div>
+  </section>
+  <section class="blog-section">
+    <div class="">
+      <div class="header">
+        <span class="title">Blogs</span>
+        <div class="view-link">
+          <a routerLink="/blogs">View All</a>
+        </div>
+      </div>
+      <div class="body">
+        <div class="row">
+          <div class="col-6" *ngFor="let blog of blogs">
+            <div class="blog-container">
+              <div class="card">
+                  <ng-container *ngIf="blog.thumb_image != ''">
+                      <img class="card-img-top" src="{{imageUrl}}/blogs/{{blog.thumb_image}}" alt="{{blog.title}}">
+                  </ng-container>
+                  <ng-container *ngIf="blog.thumb_image == ''">
+                      <img class="card-img-top" src="https://placeimg.com/286/180/tech" alt="{{blog.title}}">
+                  </ng-container>
+                <div class="card-body">
+                  <a routerLink="/blog/{{blog.url}}" class="txt-link">
+                    <h5 class="card-title" [innerHtml]="blog.title"></h5>
+                    <p class="card-text" [innerHtml]="blog.short_content"></p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<div id="home-page" class="container" *ngIf="desktop_view">
+  <div id="home-top" class="row">
+    <div class="col-md-2 hmenu">
+      <app-home-menu></app-home-menu>
+    </div>
+    <div class="col-md-10 hslider">
+      <app-main-slider></app-main-slider>
+    </div>
+  </div>
+  <!-- <section id="all-brands" class="clearfix">
+    <div class="brands-container">
+      <div class="brands-strip">
+        <ng-container *ngFor="let b of brands">
+          <div class="brand-cont">
+            <a [routerLink]="['/brand', b.url]" title="{{b.title}}">
+              <img src="{{imageUrl}}/brands-logo/{{b.logo}}" alt="{{b.title}}">
+            </a>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section> -->
+  <section class="top-prod">
+    <div class="header">
+      Daily Deals
+    </div>
+      <app-loading *ngIf="loading"></app-loading>
+      <ng-template [ngIf]="utils.isLoaded(loading)">
+        <ng-template [ngIf]="featuredProducts">
+          <ng-template [ngIf]="featuredProducts.length">
+            <div class="fProds-container">
+              <div class="fProds-item" *ngFor="let fearured of featuredProducts">
+                <div class="product-container">
+                  <a [routerLink]="['/product', fearured.product.url]" class="">
+                    <div class="product-inner">
+                      <div class="product-img">
+                        <img src="{{imageUrl}}/products/{{ fearured.product.images[0][0] }}" alt="{{ fearured.product.title }}">
+                      </div>
+                      <div class="product-info">
+                        <div class="prod-title" [innerHtml]="fearured.product.title"></div>
+                        <div class="prod-price">
+                          <ng-container *ngIf="fearured.product.special_price ==0">
+                            Ksh. {{ fearured.product.price | number:0 }}
+                          </ng-container>
+                          <ng-container *ngIf="fearured.product.special_price !=0">
+                            Ksh. {{ fearured.product.special_price | number:0 }}
+                            <div class="discount">
+                              Ksh. {{ fearured.product.price | number:0 }}
+                            </div>
+                          </ng-container>
+                        </div>
+                        <div class="prod-rate">
+
+                        </div>
+                      </div>
+                      <ng-container *ngIf="fearured.product.special_price !=0">
+                        <div class="ribbon"><span>Offer</span></div>
+                      </ng-container>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </ng-template>
+        </ng-template>
+      </ng-template>
+  </section>
+  <section id="hm-sec-5">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="pt-ad-img">
+            <a routerLink="/product/macbook-pro-mpxt2b-a-price-in-kenya">
+              <img src="{{imageUrl}}/home-page/Small-1.jpg" alt="3d curved fit ">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="pt-ad-img">
+            <a routerLink="/product/samsung-galaxy-s9-plus-64gb-price-in-kenya">
+              <img src="{{imageUrl}}/home-page/Small-2.jpg" alt="sony dav dz350 home-theater">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="pt-ad-img">
+            <a routerLink="/product/tesla-31-price-specs-in-kenya">
+              <img src="{{imageUrl}}/home-page/Small-3.jpg" alt="infinix hot 6 pro">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  <section class="top-prod">
+      <div class="header">
+        Popular Products
+      </div>
+      <ng-template [ngIf]="utils.isLoaded(loading)">
+          <ng-template [ngIf]="latestProducts">
+            <ng-template [ngIf]="latestProducts.length">
+              <div class="fProds-container">
+                <div class="fProds-item" *ngFor="let product of latestProducts">
+                  <div class="product-container">
+                    <a [routerLink]="['/product', product.url]" class="">
+                      <div class="product-inner">
+                        <div class="product-img">
+                          <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                        </div>
+                        <div class="product-info">
+                          <div class="prod-title" [innerHtml]="product.title"></div>
+                          <div class="prod-price">
+                              <ng-container *ngIf="product.special_price == 0">
+                                Ksh. {{ product.price | number:0 }}
+                              </ng-container>
+                              <ng-container *ngIf="product.special_price !=0">
+                                Ksh. {{ product.special_price | number:0 }}
+                                <div class="discount">
+                                  Ksh. {{ product.price | number:0 }}
+                                </div>
+                              </ng-container>
+                          </div>
+                          <div class="prod-rate">
+  
+                          </div>
+                        </div>
+                        <ng-container *ngIf="product.special_price !=0">
+                          <div class="ribbon"><span>Offer</span></div>
+                        </ng-container>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </ng-template>
+          </ng-template>
+        </ng-template>
+  </section>
+  <app-home-category></app-home-category>
+  <div class="delivery">
+    <img src="{{imageUrl}}/home-page/Delivery -strip.jpg" alt="delivery">
+  </div>
+  <section class="blog-section">
+    <div class="">
+      <div class="header">
+        <span class="title">Blogs</span>
+        <div class="view-link">
+          <a routerLink="/blogs">View All</a>
+        </div>
+      </div>
+      <div class="body">
+        <div class="row">
+          <div class="col-md-3" *ngFor="let blog of blogs">
+            <div class="blog-container">
+              <div class="card">
+                  <a routerLink="/blog/{{blog.url}}">
+                  <ng-container *ngIf="blog.thumb_image != ''">
+                      <img class="card-img-top" src="{{imageUrl}}/blogs/{{blog.thumb_image}}" alt="{{blog.title}}">
+                  </ng-container>
+                  <ng-container *ngIf="blog.thumb_image == ''">
+                      <img class="card-img-top" src="https://placeimg.com/286/180/tech" alt="{{blog.title}}">
+                  </ng-container>
+                <div class="card-body">
+                    <h5 class="card-title" [innerHtml]="blog.title"></h5>
+                    <p class="card-text" [innerHtml]="blog.short_content"></p>
+                </div>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<ng-container *ngIf="showAlert">
+<div id="open-modal" class="modal-window">
+  <div>
+    <h1>Thank You!</h1>
+    <div>
+      Your order Has been Placed
+      You'll receive a call From The Customer Care
+    </div>
+    </div>
+</div>
+</ng-container>

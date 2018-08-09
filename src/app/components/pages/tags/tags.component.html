@@ -1,0 +1,102 @@
+<div class="tag-page">
+  <div class="container">
+    <div class="header">
+      Tag: <span class="tag-id">{{ id }}</span>
+      <span class="tag-count">( {{count}} Items)</span>
+    </div>
+    <div class="search">
+      <input placeholder="search text goes here" (keyup)="searchList($event)">
+    </div>
+    <div class="clearfix"></div>
+    <div class="body">
+      <app-loading *ngIf="loading"></app-loading>
+      <ng-template [ngIf]="utils.isLoaded(loading)">
+        <ng-template [ngIf]="products">
+          <ng-template [ngIf]="products.length">
+            <!-- <section class="search input-group mb-3">
+               <label class="input-group-addon" for="search">Search</label>
+               <input
+                 id="search"
+                 type="text"
+                 class="form-control"
+                 [(ngModel)]="query"
+                 (keyup)="searchEvents()" />
+               <span class="input-group-btn">
+                 <button
+                   class="btn btn-danger"
+                   (click)="resetQuery()"
+                   [disabled]="!query">&times;</button>
+               </span>
+             </section> -->
+            <div class="row">
+              <div class="col-md-3 col-xs-6" *ngFor="let product of pagedItems">
+                <!-- <a [routerLink]="['/product', product.url]">
+                    <h5 class="mb-1" [innerHTML]="product.title"></h5>
+                </a> -->
+                <div class="product-container">
+                  <a routerLink="/product/{{product.url}}">
+                    <div class="product-inner">
+                      <div class="product-img">
+                        <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                      </div>
+                      <div class="product-info">
+                        <div class="prod-title">
+                          {{ product.title }}
+                        </div>
+                        <div class="prod-price">
+                          <ng-container *ngIf="product.special_price ==0">
+                            Ksh. {{ product.price | number:0 }}
+                          </ng-container>
+                          <ng-container *ngIf="product.special_price !=0">
+                            Ksh. {{ product.special_price | number:0 }}
+                            <div class="discount">
+                              Ksh. {{ product.price | number:0 }}
+                            </div>
+                          </ng-container>
+                        </div>
+                        <div class="prod-rate">
+
+                        </div>
+                      </div>
+                      <ng-container *ngIf="product.special_price !=0">
+                        <!-- <div class="offer">
+                          <span class="offer-inner">
+                            offer
+                          </span>
+                        </div> -->
+                        <div class="ribbon"><span>Offer</span></div>
+                      </ng-container>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <!-- pager -->
+                <nav aria-label="Page navigation example">
+                  <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                    <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+                        <a (click)="setPage(1)" class="page-link">First</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+                        <a (click)="setPage(pager.currentPage - 1)" class="page-link">Previous</a>
+                    </li>
+                    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" class="page-item">
+                        <a (click)="setPage(page)" class="page-link">{{page}}</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+                        <a (click)="setPage(pager.currentPage + 1)" class="page-link">Next</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+                        <a (click)="setPage(pager.totalPages)" class="page-link">Last</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </ng-template>
+        </ng-template>
+      </ng-template>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,140 @@
+.category-section {
+    margin: 20px 0;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.category-section .category-header {
+    background-color: #FFF;
+}
+
+.bg-blue .category-body {
+    border: 1px solid #158cf2;
+}
+
+.category-name {
+    float: left;
+    font-size: 1.2rem;
+    color: #424d83;
+    margin: 5px 10px
+}
+
+.category-link {
+    float: right;
+    margin-right: 10px;
+    margin-top: 6px
+}
+
+.category-link a {
+    color: #FFF;
+    font-size: 14px;
+    text-transform: lowercase;
+    text-decoration: underline
+}
+
+.category-body {
+    background-color: #FFF
+}
+
+.category-body .category-img {
+    padding-right: 0
+}
+
+.category-body .category-prods {
+    padding-left: 0
+}
+
+.main-image {
+    width: 100%;
+    background-color: #ddd
+}
+
+.main-image img {
+    width: 100%
+}
+
+.main-links ul {
+    margin: 0;
+    padding: 0
+}
+
+.main-links ul li {
+    padding: 0 10px;
+    list-style: none
+}
+
+.main-links ul li a {
+    text-decoration: none
+}
+
+.product-container .product-inner {
+    border: 1px solid #FFF
+}
+
+.product-container .product-inner .product-img {
+    width: 50%;
+    float: left
+}
+
+.product-container .product-inner .product-img img {
+    width: 90%
+}
+
+.product-container .product-inner .product-info {
+    width: 50%;
+    float: left;
+    padding: 0
+}
+
+.product-container:hover .product-info {
+    background-color: #FFF;
+    color: #666
+}
+
+.product-container:hover .product-inner .product-info .prod-title {
+    color: #666
+}
+
+.product-container .product-inner .product-info .prod-title {
+    height: 50px
+}
+
+.product-container .product-inner .product-info .prod-price {
+    font-size: 13px
+}
+
+.category-strip .strip a img {
+    width: 100%
+}
+
+.hm-category-brands {
+    margin: 10px auto;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    max-width: 98%
+}
+
+.hm-category-brands .hm-cat {
+    margin: 5px 0
+}
+
+.hm-category-brands .hm-cat ul {
+    margin: 0;
+    padding: 0
+}
+
+.hm-category-brands .hm-cat ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px
+}
+
+.hm-category-brands .hm-cat ul li a {
+    color: #706e6f;
+    text-decoration: none
+}
+
+.hm-category-brands .hm-cat ul li a:hover {
+    color: #2fa09b
+}

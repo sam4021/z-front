@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="onSearch(id)" class="search-mobile clearfix" autocomplete="off"  *ngIf="mobile_view">
+  <div class="form-group search-input">
+    <input type="text" formControlName="search" class="form-control" placeholder="Search for Products, brands and more" ngModel>
+  </div>
+</form>
+
+<div itemscope itemtype="http://schema.org/WebSite">
+  <meta itemprop="url" content="https://www.phonestablets.co.ke/"/>
+  <form [formGroup]="form" (ngSubmit)="onSearch(id)" class="search-form clearfix" autocomplete="off"  *ngIf="desktop_view" itemscope itemtype="http://schema.org/SearchAction">
+    <meta itemprop="target" content="https://www.phonestablets.co.ke/search/{search_term_string}"/>
+    <div class="form-group search-input">
+      <input type="text" formControlName="search" class="form-control" placeholder="Search" ngModel name="search_term_string">
+    </div>
+    <div class="search-btn">
+      <button type="submit" class="btn btn-link">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </form>
+</div>

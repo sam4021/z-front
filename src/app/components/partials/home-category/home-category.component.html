@@ -1,0 +1,56 @@
+<ng-container *ngFor="let cat of category">
+  <section class="category-section {{cat.category.url}}">
+    <div class="category-header clearfix">
+          <h3 class="category-name">{{cat.category.title}}</h3>
+          <div class="category-link">
+            <a routerLink="products/{{cat.category.url}}">View All</a>
+          </div>
+    </div>
+    <div class="category-body">
+      <div class="row">
+        <div class="col-md-3 category-img">
+          <div class="main-image">
+            <a routerLink="{{ cat.image.link }}">
+              <img src="{{imageUrl}}{{ cat.image.img }}" alt="{{ cat.image.alt }}">
+            </a>
+          </div>
+          <div class="main-links">
+
+          </div>
+        </div>
+        <div class="col-md-9 category-prods">
+          <div class="row">
+            <div class="col-md-3" *ngFor="let prod of cat.products">
+              <div class="product-container">
+                <a routerLink="/product/{{prod.url}}">
+                  <div class="product-inner">
+                    <div class="product-img">
+                      <img src="{{imageUrl}}/products/{{ prod.images[0][0] }}" alt="{{ prod.title }}">
+                    </div>
+                    <div class="product-info">
+                      <div class="prod-title">
+                        {{ prod.title }}
+                      </div>
+                      <div class="prod-price">
+                          <ng-container *ngIf="prod.special_price == 0">
+                              Ksh. {{ prod.price | number:0 }}
+                          </ng-container>
+                          <ng-container *ngIf="prod.special_price !=0">
+                            Ksh. {{ prod.special_price | number:0 }}
+                          </ng-container>
+                      </div>
+                      <div class="prod-rate">
+
+                      </div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>

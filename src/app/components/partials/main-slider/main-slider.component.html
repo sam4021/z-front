@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-8">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+      </ol>
+      <div class="carousel-inner">
+          <div class="carousel-item"  *ngFor="let s of slider; let i=index"  [class.active]="i == 0">
+            <a routerLink="{{s.link}}">
+              <img class="d-block w-100" src="{{imageUrl}}/sliders/main/{{s.image}}" alt="{{s.alt}}">
+            </a>
+          </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="top-ad">
+      <div class="ad">
+        <img src="https://www.static.phonestablets.co.ke/img/home-page/Small-1.jpg" alt="topad">
+      </div>
+      <div class="ad">
+        <img src="https://www.static.phonestablets.co.ke/img/home-page/Small-2.jpg">
+      </div>
+    </div>
+  </div>
+</div>
+

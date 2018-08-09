@@ -1,0 +1,145 @@
+<div class="faq-page">
+  <div class="container">
+    <div class="header">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Faq</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="body"> 
+      <ul class="nav nav-tabs" id="faqTab" role="tablist">
+        <li class="nav-item">
+          <a ng-click="tabZ = 2" class="nav-link active" id="orders-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="true">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a ng-click="tabZ = 1" class="nav-link" id="products-tab" data-toggle="tab" href="#products" role="tab" aria-controls="products" aria-selected="false">Products</a>
+        </li>
+        
+      </ul>
+      <div class="tab-content" id="faqTabContent">
+        <div ng-show="tabZ === 1" class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
+          <h4>Products</h4>
+          <div class="tabBody">
+            <div class="accordion" id="accordionProducts">
+              <div class="card">
+                <div class="card-header" id="headingSevenProd">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSevenProd" aria-expanded="false" aria-controls="collapseSevenProd">
+                      Are your products under warranty?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseSevenProd" class="collapse" aria-labelledby="headingSevenProd" data-parent="#accordionProducts">
+                  <div class="card-body">
+                    Our products brag warranty ranging from 1 year to 2 years. The warranty may either be shop
+                    provided or provided by the manufacturer which covers you within the East African region.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-show="tabZ === 2" class="tab-pane fade show active" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+          <h4>Orders</h4>
+          <div class="tabBody">
+            <div class="accordion" id="accordionOrder">
+              <div class="card">
+                <div class="card-header" id="headingTwoOrder">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwoOrder" aria-expanded="false" aria-controls="collapseTwoOrder">
+                      How can I check the status of my order?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwoOrder" class="collapse" aria-labelledby="headingTwoOrder" data-parent="#accordionOrder">
+                  <div class="card-body">
+                    To inquire about the current status of your order, simply log in to your account on
+                    phonestablets.co.ke for complete details of the purchase made or call us on 0716690990 to check.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThreeOrder">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThreeOrder" aria-expanded="false" aria-controls="collapseThreeOrder">
+                      What if I want to cancel my order?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThreeOrder" class="collapse" aria-labelledby="headingThreeOrder" data-parent="#accordionOrder">
+                  <div class="card-body">
+                    You can cancel your order by logging into your account or by intimating us over mail or call with your
+                    order number.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFourOrder">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFourOrder" aria-expanded="false" aria-controls="collapseFourOrder">
+                      How reliable is your shipping method?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseFourOrder" class="collapse" aria-labelledby="headingFourOrder" data-parent="#accordionOrder">
+                  <div class="card-body">
+                    We rely on trusted logistic partners to deliver your orders at your doorstep. Rare events when your
+                    orders are lost or damaged in transit, you are entitled to receive a full refund.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFiveOrder">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFiveOrder" aria-expanded="false" aria-controls="collapseFiveOrder">
+                      What are the payment methods?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseFiveOrder" class="collapse" aria-labelledby="headingFiveOrder" data-parent="#accordionOrder">
+                  <div class="card-body">
+                    We accept both before delivery and on delivery payment methods. Our means of payment
+                    include: M-PESA methods, Cash or Bank to Bank transfer methods.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingSixOrder">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSixOrder" aria-expanded="false" aria-controls="collapseSixOrder">
+                      How long does it take for your product to be delivered?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseSixOrder" class="collapse" aria-labelledby="headingSixOrder" data-parent="#accordionOrder">
+                  <div class="card-body">
+                    We do the same day delivery within Nairobi and its outskirts, overnight deliveries to other areas
+                    of Kenya far from Nairobi.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingSevenOrder">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSevenOrder" aria-expanded="false" aria-controls="collapseSevenOrder">
+                      Are your products under warranty?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseSevenOrder" class="collapse" aria-labelledby="headingSevenOrder" data-parent="#accordionOrder">
+                  <div class="card-body">
+                    Our products brag warranty ranging from 1 year to 2 years. The warranty may either be shop
+                    provided or provided by the manufacturer which covers you within the East African region.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

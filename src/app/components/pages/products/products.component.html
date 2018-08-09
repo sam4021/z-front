@@ -1,0 +1,188 @@
+<div id="catgory-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 category-filter">
+        <div class="filter-container">
+          <div class="filter-inner">
+            <div class="item-container">
+              <div class="item-header clearfix">
+                <div class="txt">
+                  Brands
+                </div>
+              </div>
+              <div class="item-body">
+                <div class="item-strip clearfix" *ngFor="let brand of brands">
+                  <div class="item-checkbox  {{brand._id}}">
+                    <label for="{{ brand._id }}">
+                        <input type="checkbox" name="brand[]" id="{{ brand._id }}" (click)="filterBrands(brand._id)"/>
+                      </label>
+                  </div>
+                  <div class="item-text">
+                    {{ brand.title }}
+                  </div>
+                  <div class="item-count">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 category-products">
+        <div class="row">
+          <div class="col-md-12 category-name-wrapper">
+            <h1 class="category-name" itemprop="name" category="">
+          		{{ topAdTitle }}<span class="category-count">( {{count}} Items)</span>
+      			</h1>
+            <div class="search">
+              <input placeholder="search text goes here" (keyup)="searchList($event)">
+            </div>
+          </div>
+          <div class="col-md-12 category-sort">{{filterArr | json}}
+            <ng-template [ngIf]="brandsresult.length">
+              <div class="sort-btn" *ngFor="let btn of brandsresult">
+                <button type="button" name="button" (click)="removeFilterBrands(btn._id)">
+                  {{ btn.title }} X
+                </button>
+              </div>
+            </ng-template>
+          </div>
+          <app-loading *ngIf="loading"></app-loading>
+          <ng-template [ngIf]="utils.isLoaded(loading)">
+            <ng-template [ngIf]="products">
+                <!-- <section class="search input-group mb-3">
+                   <label class="input-group-addon" for="search">Search</label>
+                   <input
+                     id="search"
+                     type="text"
+                     class="form-control"
+                     [(ngModel)]="query"
+                     (keyup)="searchEvents()" />
+                   <span class="input-group-btn">
+                     <button
+                       class="btn btn-danger"
+                       (click)="resetQuery()"
+                       [disabled]="!query">&times;</button>
+                   </span>
+                 </section> -->
+                <div class="row">
+                    <ng-template [ngIf]="pagedItems==''">
+                        <div class="col-md-3 col-xs-6" *ngFor="let product of products">
+                            <!-- <a [routerLink]="['/product', product.url]">
+                                <h5 class="mb-1" [innerHTML]="product.title"></h5>
+                            </a> -->
+                            <div class="product-container">
+                              <a routerLink="/product/{{product.url}}">
+                                <div class="product-inner">
+                                  <div class="product-img">
+                                    <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                                  </div>
+                                  <div class="product-info">
+                                    <div class="prod-title">
+                                      {{ product.title }}
+                                    </div>
+                                    <div class="prod-price">
+                                      <ng-container *ngIf="product.special_price ==0">
+                                        Ksh. {{ product.price | number:0 }}
+                                      </ng-container>
+                                      <ng-container *ngIf="product.special_price !=0">
+                                        Ksh. {{ product.special_price | number:0 }}
+                                        <div class="discount">
+                                          Ksh. {{ product.price | number:0 }}
+                                        </div>
+                                      </ng-container>
+                                    </div>
+                                    <div class="prod-rate">
+        
+                                    </div>
+                                  </div>
+                                  <ng-container *ngIf="product.special_price !=0">
+                                    <!-- <div class="offer">
+                                      <span class="offer-inner">
+                                        offer
+                                      </span>
+                                    </div> -->
+                                    <div class="ribbon"><span>Offer</span></div>
+                                  </ng-container>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                    </ng-template>
+                    <ng-template [ngIf]="pagedItems!=''">
+                        <div class="col-md-3 col-xs-6" *ngFor="let product of pagedItems">
+                            <!-- <a [routerLink]="['/product', product.url]">
+                                <h5 class="mb-1" [innerHTML]="product.title"></h5>
+                            </a> -->
+                            <div class="product-container">
+                              <a routerLink="/product/{{product.url}}">
+                                <div class="product-inner">
+                                  <div class="product-img">
+                                    <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                                  </div>
+                                  <div class="product-info">
+                                    <div class="prod-title">
+                                      {{ product.title }}
+                                    </div>
+                                    <div class="prod-price">
+                                      <ng-container *ngIf="product.special_price ==0">
+                                        Ksh. {{ product.price | number:0 }}
+                                      </ng-container>
+                                      <ng-container *ngIf="product.special_price !=0">
+                                        Ksh. {{ product.special_price | number:0 }}
+                                        <div class="discount">
+                                          Ksh. {{ product.price | number:0 }}
+                                        </div>
+                                      </ng-container>
+                                    </div>
+                                    <div class="prod-rate">
+        
+                                    </div>
+                                  </div>
+                                  <ng-container *ngIf="product.special_price !=0">
+                                    <!-- <div class="offer">
+                                      <span class="offer-inner">
+                                        offer
+                                      </span>
+                                    </div> -->
+                                    <div class="ribbon"><span>Offer</span></div>
+                                  </ng-container>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <!-- pager -->
+                            <nav aria-label="Page navigation example">
+                              <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                                <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+                                    <a (click)="setPage(1)" class="page-link">First</a>
+                                </li>
+                                <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+                                    <a (click)="setPage(pager.currentPage - 1)" class="page-link">Previous</a>
+                                </li>
+                                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" class="page-item">
+                                    <a (click)="setPage(page)" class="page-link">{{page}}</a>
+                                </li>
+                                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+                                    <a (click)="setPage(pager.currentPage + 1)" class="page-link">Next</a>
+                                </li>
+                                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+                                    <a (click)="setPage(pager.totalPages)" class="page-link">Last</a>
+                                </li>
+                              </ul>
+                            </nav>
+                          </div>
+                    </ng-template>
+                  
+                </div>
+            </ng-template>
+          </ng-template>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

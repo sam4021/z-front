@@ -1,0 +1,214 @@
+<footer *ngIf="mobile_view" class="mobile_view">
+  <div class="info row">
+    <div class="col-6">
+      <div class="links">
+        <ul>
+          <li>
+            <a href="#">How To Order</a>
+          </li>
+          <li>
+            <a href="#">Return Policy</a>
+          </li>
+          <li>
+            <a routerLink="/blogs">Blogs</a>
+          </li>
+          <li>
+            <a href="#">Help</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="contacts">
+        <div class="info">
+          <p>Phones Tablets Kenya</p>
+          <p>Kimathi House,</p>
+          <p>Room 106, 1st Floor</p>
+          <p>0716690990 / 0721234545</p>
+          <p>Nairobi, Kenya</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="social clearfix">
+      <div class="head">
+        Connect
+      </div>
+      <div class="body">
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/PhonesTabletsKenya/" target="_blank">
+              <i class="fab fa-facebook-f fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/phonestabletske" target="_blank">
+              <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/phonestabletskenya/" target="_blank">
+              <i class="fab fa-instagram fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://plus.google.com/110191111064152770795" target="_blank">
+              <i class="fab fa-google-plus fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://api.whatsapp.com/send?phone=254716690990">
+              <i class="fab fa-whatsapp-square"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  <div class="copyright">
+    <div class="container">
+      Copyright (c) {{date| date:'yyyy'}} Phones &amp; Tablets Kenya.
+    </div>
+  </div>
+</footer> 
+<footer *ngIf="desktop_view">
+  <div class="top-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="footer-container">
+            <div class="foot-head">
+              Help
+            </div>
+            <div class="foot-body">
+              <ul>
+                <li>
+                  <a href="#">How to Order</a>
+                </li>
+                <li>
+                  <a href="#">Cancellations &amp; returns</a>
+                </li>
+                <li>
+                  <a routerLink="/blogs">Blogs</a>
+                </li>
+                <li>
+                  <a routerLink="/page/sitemap">Sitemap</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="footer-container">
+            <div class="foot-head">
+              Privacy Info
+            </div>
+            <div class="foot-body">
+              <ul>
+                <li>
+                  <a href="#">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                  <a routerLink="faq">FAQ</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="footer-container">
+            <div class="foot-head">
+              Company
+            </div>
+            <div class="foot-body">
+              <ul>
+                <li>
+                  <a href="#">About Us</a>
+                </li>
+                <li>
+                  <a href="#">Cancellations &amp; returns</a>
+                </li>
+                <li>
+                  <a href="#">Help</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="footer-container">
+            <div class="foot-head">
+              Contacts
+            </div>
+            <div class="foot-body">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="foot-pay">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="head">
+              Payment
+            </div>
+            <div class="body">
+              <ul>
+                <li>
+                  <i class="fas fa-credit-card fa-lg"></i>
+                </li>
+                <li>
+                  <i class="fab fa-cc-paypal fa-lg"></i>
+                </li>
+                <li>
+                  <i class="fab fa-cc-visa fa-lg"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="head">
+              Connect
+            </div>
+            <div class="body">
+              <ul>
+                <li>
+                  <a href="https://www.facebook.com/PhonesTabletsKenya/" target="_blank">
+                    <i class="fab fa-facebook-f fa-lg" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/phonestabletske" target="_blank">
+                    <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/phonestabletskenya/" target="_blank">
+                    <i class="fab fa-instagram fa-lg" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://plus.google.com/110191111064152770795" target="_blank">
+                    <i class="fab fa-google-plus fa-lg" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+  <div class="copyright">
+    <div class="container">
+      Copyright (c) {{date| date:'yyyy'}} Phones &amp; Tablets Kenya. All Rights Reserved.
+    </div>
+  </div>
+</footer>

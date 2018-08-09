@@ -1,0 +1,113 @@
+<header class="mobile_view_header" *ngIf="mobile_view" role="banner">
+  <div class="mobile_view">
+    <ul class="nav-mobile">
+      <li class="logo">
+        <a routerLink="/">
+          <img src="{{imageUrl}}/logo.png" alt="logo ">
+        </a>
+      </li>
+      <li class="cart">
+        <app-top-cart></app-top-cart>
+      </li>
+      <li class="account">
+        <a href="#">
+          <i class="fas fa-user"></i>
+        </a>
+      </li>
+      <li class="menu-container">
+        <input id="menu-toggle" type="checkbox">
+        <label for="menu-toggle" class="menu-button">
+          <svg (click)="setTrue()" class="icon-open" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+
+        </label>
+        <ul class="menu-sidebar" *ngIf="mMenu">
+          <li *ngFor="let c of mainMenu">
+            <input type="checkbox" id="{{ c.url }}" class="submenu-toggle">
+            <label class="submenu-label" for="{{ c.url }}">{{ c.title }}</label>
+            <div class="arrow right">&#8250;</div>
+            <ul class="menu-sub">
+              <li class="menu-sub-title">
+                <label class="submenu-label" for="{{ c.url }}">Back</label>
+                <div class="arrow left">&#8249;</div>
+              </li>
+              <ng-container *ngFor="let cat of inMenu">
+                <li *ngIf="cat.parent === c._id">
+                  <a (click)="setFalse()" routerLink="/products/{{ cat.url }}">{{ cat.title }}</a>
+                </li>
+              </ng-container>
+            </ul>
+          </li>
+          <span></span>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</header>
+<header class="desktop_view_header" *ngIf="desktop_view">
+  <div class="header-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-xs-12 logo-container">
+          <a routerLink="/">
+            <div class="logo-inner">
+              <img src="assets/images/logo-placeholder.png" alt="logo ">
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 search-container">
+          <div class="search-inner clearfix">
+            <app-top-search></app-top-search>
+          </div>
+        </div>
+
+        <div class="col-md-3 accart-container">
+          <div class="account">
+            <div class="acc-inner">
+              <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-user" aria-hidden="true"></i></button>
+                <div class="dropdown-content">
+                  <ng-template *ngIf="user; then user1 else user2"></ng-template>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-container">
+            <div class="cart-inner">
+              <app-top-cart></app-top-cart>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-bottom">
+    <div class="container">
+    <div class="row">
+      <div class="col-md-2 top-menu">
+        <div class="pnt-menu">
+          <app-menu></app-menu>
+          
+        </div>
+      </div>
+      <div class="col-md-10 extras">
+        <ul>
+          <!-- <li>
+            <a href="#">
+              help
+            </a>
+          </li> -->
+          <li>
+              0716690990 / 0721234545
+          </li>
+          <li>
+            <a routerLink="/offers">
+              Offers
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+</header>

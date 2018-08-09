@@ -1,0 +1,369 @@
+<div id="product-page" class="">
+  <div class="container" itemscope itemtype="http://schema.org/Product">
+    <div class="mobile_view" *ngIf="mobile_view">
+      <div class="product-title" itemprop="name" [innerHtml]="productTle"></div>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item"  *ngFor="let image of productImages; let i=index"  [class.active]="i == 0">
+                <img class="d-block w-100" src="{{imageUrl}}/products/{{ image[0]}}" alt="">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div class="product-amount clearfix">
+        <ng-container *ngIf="productStock != 2">
+          <div class="product-price">
+            <ng-container *ngIf="productSp ==0">
+              <span itemprop="priceCurrency" content="KES">Ksh. {{ productPr | number:0 }}</span>
+            </ng-container>
+            <ng-container *ngIf="productSp !=0">
+              <span itemprop="priceCurrency" content="KES">Ksh. {{ productSp | number:0 }}</span>
+              <div class="discount">
+                Ksh. {{ productPr | number:0 }}
+              </div>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+      <ng-container *ngIf="showAlert">
+        <div class="alert-container">
+          <div class="alert-inner">
+            <div class="alert-box">
+              Product Added To Cart!
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="product-action clearfix">
+          <ng-container *ngIf="productSp ==0">
+              <ng-container *ngIf="productStock ==1">
+              <button type="button"
+                class="btn btn-primary success large js-btn-add add-btn"
+                (click)="addProductToCart(productInfo._id,productPr)">
+              <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                Buy Now</button>
+              </ng-container>
+            </ng-container>
+            <ng-container *ngIf="productSp !=0">
+              <button type="button"
+                class="btn btn-primary success large js-btn-add add-btn"
+                (click)="addProductToCart(productInfo._id,productSp)">
+              <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                Buy Now</button>
+            </ng-container>
+            <button type="button" class="btn btn-primary success large js-btn-add call-btn"
+                  data-toggle="modal" data-target="#exampleModalLong">
+            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                Contact Shop</button>
+      </div>
+      <div class="box">
+        <h5>Key Features</h5>
+        <div class="inner-box"[innerHtml]="productDs"></div>
+      </div>
+      <div class="box">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                  <a ng-click="tabZ = 1" class="nav-link active" id="box-tab" data-toggle="tab" href="#box" role="tab" aria-controls="box" aria-selected="true">Box Content</a>
+                </li>
+              <li class="nav-item">
+                <a ng-click="tabZ = 2" class="nav-link" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="false">Description</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div ng-show="tabZ === 1" class="tab-pane fade show active" id="box" role="tabpanel" aria-labelledby="box-tab" [innerHtml]="productBxC"></div>
+              <div ng-show="tabZ === 2" class="tab-pane fade" id="description" role="tabpanel" aria-labelledby="description-tab">
+              <div class="main-desc" [innerHtml]="productDf"></div>
+              </div>
+            </div>
+      </div>
+      <div class="ent-desc">
+        <table class="table">
+          <tr *ngFor="let prodE of productAE">
+            <th>{{prodE.entities.title}}</th>
+            <td>
+              <ng-container *ngFor="let prodV of productE">
+                <ng-container *ngIf="prodV.entities._id == prodE.entities._id">
+                {{ prodV.value}}
+                </ng-container>
+              </ng-container>
+            </td>
+          </tr>
+        </table>
+      </div>
+        <div class="related">
+          <ng-template [ngIf]="productRelated">
+            <ng-template [ngIf]="productRelated.length">
+              <div class="related-header">
+                Related Products
+              </div>
+              <div class="related-container">
+                <div class="related-inner">
+                <div class="related-item" *ngFor="let product of productRelated">
+                  <div class="product-container">
+                      <a routerLink="/product/{{product.url}}" class="">
+                      <div class="product-inner">
+                        <div class="product-img">
+                          <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                        </div>
+                        <div class="product-info">
+                          <div class="prod-title" [innerHtml]="product.title"></div>
+                          <div class="prod-price">
+                            Ksh. {{ product.price | number:0}}
+                          </div>
+                          <div class="prod-rate">
+
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              </div>
+            </ng-template>
+          </ng-template>
+          <div class="clearfix"></div>
+        </div>
+    <div class="clearfix"></div>
+    </div>
+    <div class="row" *ngIf="desktop_view">
+      <ng-container *ngIf="showAlert">
+        <div class="alert-container">
+          <div class="alert-inner">
+            <div class="alert-box">
+              Product Added To Cart!
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="col-md-5 product-img">
+        <div class="image-main">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item"  *ngFor="let image of productImages; let i=index"  [class.active]="i == 0">
+                    <img class="d-block w-100" src="{{imageUrl}}/products/{{ image[0]}}" alt="">
+                </div>
+            </div>
+            <ol class="carousel-indicators">
+              <ng-container  *ngFor="let image of productImages; let i=index">
+                <ng-container *ngIf="i==0">
+                  <li data-target="#carouselExampleIndicators"  class="active"  data-slide-to="0">
+                    <img src="{{imageUrl}}/products/{{ image[0]}}">
+                  </li>
+                </ng-container>
+                <ng-container *ngIf="i==1">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                    <img src="{{imageUrl}}/products/{{ image[0]}}">
+                  </li>
+                </ng-container>
+                <ng-container *ngIf="i==2">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2">
+                    <img src="{{imageUrl}}/products/{{ image[0]}}">
+                  </li>
+                </ng-container>
+                <ng-container *ngIf="i==3">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="3">
+                    <img src="{{imageUrl}}/products/{{ image[0]}}">
+                  </li>
+                </ng-container>
+              </ng-container>
+            </ol>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7 product-info">
+        <div class="product-title" itemprop="name" [innerHtml]="productTle"></div>
+        <div class="product-review clearfix"></div>
+        <div class="product-amount clearfix">
+          <ng-container *ngIf="productStock != 2">
+          <div class="product-price">
+            <ng-container *ngIf="productSp ==0">
+                <span itemprop="priceCurrency" content="KES">Ksh. {{ productPr | number:0 }}</span>
+            </ng-container>
+            <ng-container *ngIf="productSp !=0">
+                <span itemprop="priceCurrency" content="KES">Ksh. {{ productSp | number:0 }}</span>
+              <div class="discount">
+                Ksh. {{ productPr | number:0 }}
+              </div>
+            </ng-container>
+          </div>
+          <div class="product-avail">
+            <span class="title">Availability: </span>
+            <span class="avail">
+              <ng-container *ngIf="productStock ==1">
+                  <div class="instock">
+                      In Stock
+                  </div>
+              </ng-container>
+              <ng-container *ngIf="productStock ==0">
+                <div class="outstock">
+                    Out of Stock
+                </div>
+              </ng-container> 
+            </span>
+          </div>
+          </ng-container>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="product-short">
+              <div class="head">
+                Key Features
+              </div>
+              <div class="body" [innerHtml]="productDs"></div>
+            </div>
+            <div class="product-entity clearfix">
+
+            </div>
+            <div class="product-qty clearfix">
+
+            </div>
+            <div class="product-action clearfix">
+                <ng-container *ngIf="productSp ==0">
+                  <ng-container *ngIf="productStock ==1">
+                    <button type="button"
+                          class="btn btn-primary success large js-btn-add add-btn"
+                        (click)="addProductToCart(productInfo._id,productPr)">
+                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                      Buy Now</button>
+                  </ng-container>
+                </ng-container>
+                <ng-container *ngIf="productSp !=0">
+                    <button type="button"
+                    class="btn btn-primary success large js-btn-add add-btn"
+                    (click)="addProductToCart(productInfo._id,productSp)">
+              <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    Buy Now</button>
+                </ng-container>
+                      <button type="button"
+                              class="btn btn-primary success large js-btn-add call-btn"
+
+                              data-toggle="modal" data-target="#exampleModalLong">
+                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            Contact Shop</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="related">
+          <ng-template [ngIf]="productRelated">
+            <ng-template [ngIf]="productRelated.length">
+              <div class="related-header">
+                Related Products
+              </div>
+              <div class="related-container">
+                <div class="related-item" *ngFor="let product of productRelated">
+                  <div class="product-container">
+                      <a routerLink="/product/{{product.url}}" class="">
+                      <div class="product-inner">
+                        <div class="product-img">
+                          <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                        </div>
+                        <div class="product-info">
+                          <div class="prod-title" [innerHtml]="product.title"></div>
+                          <div class="prod-price">
+                            Ksh. {{ product.price | number:0}}
+                          </div>
+                          <div class="prod-rate">
+
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </ng-template>
+          </ng-template>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+              <a ng-click="tabZ = 2" class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="false">Description</a>
+          </li>          
+          <li class="nav-item">
+            <a ng-click="tabZ = 1" class="nav-link " id="box-tab" data-toggle="tab" href="#box" role="tab" aria-controls="box" aria-selected="false">Box Content</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div ng-show="tabZ === 1" class="tab-pane fade" id="box" role="tabpanel" aria-labelledby="box-tab" [innerHtml]="productBxC"></div>
+              <div ng-show="tabZ === 2" class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                <div class="main-desc" [innerHtml]="productDf"></div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Contact Shop</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit(id)">
+        <div class="row">
+          <div class="col-md-12"><b [innerHtml]="productTle"></b></div>
+          <div class="col-md-12">
+            <hr>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="first_name">Name</label>
+              <input type="text" class="form-control" formControlName="name" id="first_name" aria-describedby="first_name_Help" placeholder="First Name" ngModel>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="text" class="form-control" formControlName="phone" id="phone" aria-describedby="phone_Help" placeholder="Phone Number" ngModel>
+              <small id="phone_Help" class="form-text text-muted"></small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" formControlName="email" aria-describedby="email_Help" placeholder="Enter email" ngModel>
+              <small id="email_Help" class="form-text text-muted"></small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" formControlName="message" placeholder="Enter Message" ngModel></textarea>
+            </div>
+          </div>
+          <div class="col-md-6  action-btn">
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary calls-btn" [disabled]="!form.valid">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

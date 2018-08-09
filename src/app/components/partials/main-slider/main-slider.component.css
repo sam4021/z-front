@@ -1,0 +1,19 @@
+.carousel-indicators{
+bottom: 3px;
+margin-bottom: 0px;
+}
+.top-ad{
+
+}
+.top-ad .ad{
+
+}
+.top-ad .ad img{
+
+}
+@media (min-width: 320px) and (max-width: 480px) {
+.carousel-indicators{
+bottom: 3px;
+margin-bottom: 0px;
+}
+}

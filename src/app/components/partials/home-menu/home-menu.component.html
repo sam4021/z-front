@@ -1,0 +1,22 @@
+<ul id="main_menu">
+  <li class="main_list" *ngFor="let c of mainMenu">
+    <a routerLink="/products/{{ c.url }}">
+      <div class="hmenu-icon">
+
+      </div>
+      <div class="hmenu-text">
+        {{ c.title }}
+      </div>
+    </a>
+    <div class="list-content">
+      <ng-container *ngFor="let cat of inMenu">
+        <div class="dk-col" *ngIf="cat.parent === c._id">
+          <p><a routerLink="/products/{{ cat.url }}" class="headingText">{{ cat.title }}</a></p>
+            <ng-container *ngFor="let cat1 of inMenu">
+              <p *ngIf="cat1.parent === cat._id"><a routerLink="/products/{{ cat1.url }}" class="link">{{ cat1.title }}</a></p>
+            </ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </li>
+</ul>

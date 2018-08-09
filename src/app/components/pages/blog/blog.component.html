@@ -1,0 +1,84 @@
+<div class="mobile_view" *ngIf="mobile_view">
+  <div class="main-cont">
+    <div class="main-img">
+        <ng-container *ngIf="blog.main_image != ''">
+            <img src="{{imageUrl}}/blogs/{{blog.main_image}}" alt="{{blog.title}}">
+          </ng-container>
+    </div>
+    <div class="info">
+      <div class="title" [innerHtml]="blog.title"></div>
+    </div>
+    <div class="main-info">
+      <div class="inner" [innerHtml]="blog.full_content"></div>
+    </div>
+    <div class="recent-container">
+        <h4>Recent Posts</h4>
+          <div class="recent-inner">
+            <div class="blog-cont" *ngFor="let blog of blogs">
+              <a routerLink="/blog/{{blog.url}}">
+                <div class="blog-img">
+                    <ng-container *ngIf="blog.thumb_image != ''">
+                        <img src="{{imageUrl}}/blogs/{{blog.thumb_image}}" alt="{{blog.title}}">
+                      </ng-container>
+                      <ng-container *ngIf="blog.thumb_image == ''">
+                        <img src="https://placeimg.com/286/180/tech" alt="{{blog.title}}">
+                      </ng-container>   
+                </div>
+                <div class="blog-title" [innerHtml]="blog.title"></div>
+              </a>
+            </div>
+            <div class="view-all">
+                <a routerLink="/blogs">view all</a>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+<div class="blog-page" *ngIf="desktop_view">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="main-cont">
+            <div class="info">
+                <div class="title" [innerHtml]="blog.title"></div>
+              </div>
+          <div class="main-img">
+              <ng-container *ngIf="blog.main_image != ''">
+                  <img src="{{imageUrl}}/blogs/{{blog.main_image}}" alt="{{blog.title}}">
+                </ng-container>
+          </div>
+          <div class="main-info">
+            <div class="inner" [innerHtml]="blog.full_content"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="sub-cont">
+          <h4>Recent Posts</h4>
+          <div class="inner">
+            <div class="blog-cont" *ngFor="let blog of blogs">
+              <a routerLink="/blog/{{blog.url}}"><div class="blog-title" [innerHtml]="blog.title"></div></a>
+              <div class="blog-img">
+                  <ng-container *ngIf="blog.thumb_image != ''">
+                      <img src="{{imageUrl}}/blogs/{{blog.thumb_image}}" alt="{{blog.title}}">
+                    </ng-container>
+                    <ng-container *ngIf="blog.thumb_image == ''">
+                      <img src="https://placeimg.com/286/180/tech" alt="{{blog.title}}">
+                    </ng-container>
+              </div>
+              <div class="blog-txt" [innerHtml]="blog.short_content"></div>
+              <div class="blog-action">
+                <a routerLink="/blog/{{blog.url}}" class="btn btn-primary">Read More</a>
+                <!-- <a href="/blog/{{blog.url}}" class="btn btn-primary">Read More</a> -->
+              </div>
+            </div>
+            <div class="view-all">
+                <a routerLink="/blogs">view all</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
