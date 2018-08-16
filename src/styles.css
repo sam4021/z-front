@@ -5,11 +5,14 @@ nav .breadcrumb {
 
 body {
     color: #706e6f;
-    background: #FFF;
+    background: #f5f3f3;
     font-size: 12px;
-    min-height: 200px
+    min-height: 200px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
-
+.desktop_view{
+    padding-top: 97px;
+}
 p {
     margin-bottom: 0
 }

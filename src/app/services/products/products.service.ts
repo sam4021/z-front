@@ -120,24 +120,6 @@ export class ProductsService {
       );
   }
 
-  // GET Product Tags
-  getProductTags$(): Observable<Tag[]> {
-    return this.http
-      .get(`${ENV.BASE_API}products-tags`)
-      .pipe(
-        catchError((error) => this._handleError(error))
-      );
-  }
-
-  // GET Product Tags
-  getProductsTags$(id: string): Observable<Product[]> {
-    return this.http
-      .get(`${ENV.BASE_API}all-products-tags/${id}`)
-      .pipe(
-        catchError((error) => this._handleError(error))
-      );
-  }
-
   // GET Product Offer
   getProductOffers$(): Observable<Product[]> {
     return this.http

@@ -63,7 +63,7 @@ export class CartService {
     cart.itemsTotal= Newtotals;
 
     this.save(cart);
-    this.calculateCart(cart);
+    //this.calculateCart(cart);
     this.dispatch(cart);
   }
 

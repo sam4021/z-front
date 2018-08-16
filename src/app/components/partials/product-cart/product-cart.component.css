@@ -1,0 +1,137 @@
+#cart-page {
+   
+}
+
+.cart-container .cart-header {
+    background-color: #706e6f;
+    color: #FFF;
+    padding: 10px;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin: 0 0 20px;
+    border-bottom: 1px solid;
+    text-align: center;
+}
+
+.cart-container .cart-cont {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.prod-image img {
+    width: 100%
+}
+
+.prod-qty {
+    border-top: 1px solid #ddd
+}
+
+.prod-qty .qty {
+    border: 1px solid #ddd;
+    float: right;
+    width: 50px;
+    margin-top: 5px
+}
+
+.prod-qty .qty button {
+    width: 50%;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #706e6f;
+    border: none
+}
+
+.checkout-btn,{
+    border-radius: 0
+}
+
+.prod-qty .qty button:hover {
+    background-color: #4aadaa
+}
+
+.prod-qty .qty .down {
+    border-right: 1px solid
+}
+
+.prod-price {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #009d8f;
+    font-weight: 700;
+    width: 50%;
+float: left;
+}
+.prod-subtotal{
+    width: 50%;
+    float: left;
+}
+.delete-cart{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.cart-totals {
+    background-color: #ffffff;
+    color: #706e6f;
+    padding: 10px;
+}
+.cart-totals .total .text {
+    float: left;
+    width: 35%;
+    font-weight: 700;
+    text-align: left
+}
+
+.cart-totals .total .amount {
+    float: left;
+    width: 65%;
+    text-align: right;
+    text-decoration: underline
+}
+
+.continue-btn {
+    background-color: #4aadaa;
+    border-color: #4aadaa
+}
+
+.checkout-btn {
+    background-color: #f0a933;
+    border-color: #f0a933;
+    width: 80%;
+    margin: 20px 10% auto;
+    font-weight: 700
+}
+
+.delete-cart button {
+    border: 1px solid #dc3545;
+    background-color: #dc3545;
+    color: #FFF
+}
+
+@media (min-width:320px) and (max-width:480px) {
+    #cart-page .container {
+        padding: 0!important
+    }
+    #cart-page .container .row {
+        margin: 0!important
+    }
+    #cart-page .container .row .col-md-4,
+    #cart-page .container .row .col-md-8 {
+        width: 100%;
+        padding: 0
+    }
+    .cart-container .cart-cont {
+        margin-bottom: 10px
+    }
+    .prod-subtotal {
+        float: left
+    }
+    .delete-cart {
+        float: right
+    }
+}

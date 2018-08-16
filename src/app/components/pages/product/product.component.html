@@ -1,7 +1,6 @@
 <div id="product-page" class="">
   <div class="container" itemscope itemtype="http://schema.org/Product">
     <div class="mobile_view" *ngIf="mobile_view">
-      <div class="product-title" itemprop="name" [innerHtml]="productTle"></div>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item"  *ngFor="let image of productImages; let i=index"  [class.active]="i == 0">
@@ -17,6 +16,7 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <div class="product-title" itemprop="name" [innerHtml]="productTle"></div>
       <div class="product-amount clearfix">
         <ng-container *ngIf="productStock != 2">
           <div class="product-price">
@@ -64,20 +64,20 @@
                 Contact Shop</button>
       </div>
       <div class="box">
-        <h5>Key Features</h5>
-        <div class="inner-box"[innerHtml]="productDs"></div>
-      </div>
-      <div class="box">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
-                  <a ng-click="tabZ = 1" class="nav-link active" id="box-tab" data-toggle="tab" href="#box" role="tab" aria-controls="box" aria-selected="true">Box Content</a>
-                </li>
+                  <a ng-click="tabZ = 3" class="nav-link active" id="keyword-tab" data-toggle="tab" href="#keyword" role="tab" aria-controls="keyword" aria-selected="true">Key Features</a>
+              </li>
+              <li class="nav-item">
+                  <a ng-click="tabZ = 1" class="nav-link" id="box-tab" data-toggle="tab" href="#box" role="tab" aria-controls="box" aria-selected="false">Box Content</a>
+              </li>
               <li class="nav-item">
                 <a ng-click="tabZ = 2" class="nav-link" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="false">Description</a>
               </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-              <div ng-show="tabZ === 1" class="tab-pane fade show active" id="box" role="tabpanel" aria-labelledby="box-tab" [innerHtml]="productBxC"></div>
+              <div ng-show="tabZ === 3" class="tab-pane fade show active" id="keyword" role="tabpanel" aria-labelledby="keyword-tab"[innerHtml]="productDs"></div>
+              <div ng-show="tabZ === 1" class="tab-pane fade" id="box" role="tabpanel" aria-labelledby="box-tab" [innerHtml]="productBxC"></div>
               <div ng-show="tabZ === 2" class="tab-pane fade" id="description" role="tabpanel" aria-labelledby="description-tab">
               <div class="main-desc" [innerHtml]="productDf"></div>
               </div>
@@ -97,7 +97,7 @@
           </tr>
         </table>
       </div>
-        <div class="related">
+        <!-- <div class="related">
           <ng-template [ngIf]="productRelated">
             <ng-template [ngIf]="productRelated.length">
               <div class="related-header">
@@ -131,20 +131,21 @@
             </ng-template>
           </ng-template>
           <div class="clearfix"></div>
-        </div>
+        </div> -->
     <div class="clearfix"></div>
     </div>
-    <div class="row" *ngIf="desktop_view">
+    <div class="row desktop_view" *ngIf="desktop_view">
       <ng-container *ngIf="showAlert">
         <div class="alert-container">
           <div class="alert-inner">
+            <app-product-cart></app-product-cart>
             <div class="alert-box">
-              Product Added To Cart!
+              Product Added To Cart! 
             </div>
           </div>
         </div>
       </ng-container>
-      <div class="col-md-5 product-img">
+      <div class="col-md-5 product-img"  data-spy="affix" data-offset-top="205">
         <div class="image-main">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -190,20 +191,8 @@
       <div class="col-md-7 product-info">
         <div class="product-title" itemprop="name" [innerHtml]="productTle"></div>
         <div class="product-review clearfix"></div>
-        <div class="product-amount clearfix">
-          <ng-container *ngIf="productStock != 2">
-          <div class="product-price">
-            <ng-container *ngIf="productSp ==0">
-                <span itemprop="priceCurrency" content="KES">Ksh. {{ productPr | number:0 }}</span>
-            </ng-container>
-            <ng-container *ngIf="productSp !=0">
-                <span itemprop="priceCurrency" content="KES">Ksh. {{ productSp | number:0 }}</span>
-              <div class="discount">
-                Ksh. {{ productPr | number:0 }}
-              </div>
-            </ng-container>
-          </div>
-          <div class="product-avail">
+        <ng-container *ngIf="productStock != 2">
+        <div class="product-avail">
             <span class="title">Availability: </span>
             <span class="avail">
               <ng-container *ngIf="productStock ==1">
@@ -218,16 +207,22 @@
               </ng-container> 
             </span>
           </div>
+        </ng-container>
+        <div class="product-amount clearfix">
+          <ng-container *ngIf="productStock != 2">
+          <div class="product-price">
+            <ng-container *ngIf="productSp ==0">
+                <span itemprop="priceCurrency" content="KES">Ksh. {{ productPr | number:0 }}</span>
+            </ng-container>
+            <ng-container *ngIf="productSp !=0">
+                <span itemprop="priceCurrency" content="KES">Ksh. {{ productSp | number:0 }}</span>
+              <div class="discount">
+                Ksh. {{ productPr | number:0 }}
+              </div>
+            </ng-container>
+          </div>
           </ng-container>
         </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="product-short">
-              <div class="head">
-                Key Features
-              </div>
-              <div class="body" [innerHtml]="productDs"></div>
-            </div>
             <div class="product-entity clearfix">
 
             </div>
@@ -258,8 +253,26 @@
                         <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                             Contact Shop</button>
             </div>
-          </div>
-        </div>
+        <!-- <div class="col-md-12">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                  <a ng-click="tabZ = 3" class="nav-link active" id="key-tab" data-toggle="tab" href="#key" role="tab" aria-controls="key" aria-selected="true">Key Features</a>
+              </li>
+              <li class="nav-item">
+                  <a ng-click="tabZ = 2" class="nav-link" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="false">Description</a>
+              </li>          
+              <li class="nav-item">
+                <a ng-click="tabZ = 1" class="nav-link " id="box-tab" data-toggle="tab" href="#box" role="tab" aria-controls="box" aria-selected="false">Box Content</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div ng-show="tabZ === 3" class="tab-pane fade show active" id="key" role="tabpanel" aria-labelledby="key-tab" [innerHtml]="productDs"></div>
+              <div ng-show="tabZ === 1" class="tab-pane fade" id="box" role="tabpanel" aria-labelledby="box-tab" [innerHtml]="productBxC"></div>
+              <div ng-show="tabZ === 2" class="tab-pane fade" id="description" role="tabpanel" aria-labelledby="description-tab">
+                <div class="main-desc" [innerHtml]="productDf"></div>
+              </div>
+            </div>
+          </div> -->
       </div>
       <div class="col-md-12">
         <div class="related">

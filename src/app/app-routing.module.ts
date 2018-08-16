@@ -51,10 +51,6 @@ const routes: Routes = [
     loadChildren: './components/pages/search/search.module#SearchModule'
   },
   {
-    path: 'tag',
-    loadChildren: './components/pages/tags/tags.module#TagsModule'
-  },
-  {
     path: '**',
     redirectTo: '/'
   }

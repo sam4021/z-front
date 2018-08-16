@@ -21,8 +21,6 @@ export class FooterComponent implements OnInit {
   prodSub: Subscription;
    shippingSub:Subscription;
    shipping: Shipping[];
-   tagSub:Subscription;
-   tags: Tag[];
 
    constructor(@Inject(PLATFORM_ID) private platformId: Object,private checkoutService: CheckoutService,private productService: ProductsService) { }
 
@@ -40,13 +38,12 @@ export class FooterComponent implements OnInit {
       this.mobile_view = false;
       this.desktop_view = true;
     } 
-      this._getTags();
       this._getProd();
     }
     private _getProd() {
       this.prodSub = this.productService
       .getAllProducts$()
-      .subscribe(
+      .subscribe( 
         res => {
           this.productService.setProductsData(res);
         },
@@ -69,23 +66,7 @@ export class FooterComponent implements OnInit {
         );
     }
 
-    private _getTags() {
-      this.tagSub = this.productService
-        .getProductTags$()
-        .subscribe(
-          res => {
-            this.tags = res;
-          },
-          err => {
-            console.error(err);
-          }
-        );
-    }
-
     ngOnDestroy() {
-      if(this.tagSub){
-        this.tagSub.unsubscribe();
-      }
       if(this.shippingSub){
         this.shippingSub.unsubscribe();
       }

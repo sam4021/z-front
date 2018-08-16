@@ -186,8 +186,8 @@ export class ProductComponent implements OnInit {
     });
 
   public addProductToCart(prodId: string,price: number): void {
-    // this.setSuccessTimer();
-    // this.cartService.addItem(prodId,price);
+     this.setSuccessTimer();
+     this.cartService.addItem(prodId,price);
   }
 
 
@@ -338,7 +338,7 @@ export class ProductComponent implements OnInit {
       // set showloader to true to show loading div on view
       this.showAlert   = true;
 
-      this.timer        = Observable.timer(5000); // 5000 millisecond means 5 seconds
+      this.timer        = Observable.timer(500000); // 5000 millisecond means 5 seconds
       this.alertSub = this.timer.subscribe(() => {
           // set showloader to false to hide loading div from view after 5 seconds
           this.showAlert = false;
