@@ -4,14 +4,21 @@
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
       </ol>
       <div class="carousel-inner">
-          <div class="carousel-item"  *ngFor="let s of slider; let i=index"  [class.active]="i == 0">
+          <!-- <div class="carousel-item"  *ngFor="let s of slider; let i=index"  [class.active]="i == 0">
             <a routerLink="{{s.link}}">
               <img class="d-block w-100" src="{{imageUrl}}/sliders/main/{{s.image}}" alt="{{s.alt}}">
+            </a>
+          </div> -->
+          <div class="carousel-item active">
+            <a >
+              <img class="d-block w-100" src="{{imageUrl}}/zuri/Main-slider-1.jpg" alt="">
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a >
+              <img class="d-block w-100" src="{{imageUrl}}/zuri/Main-slider-2.jpg" alt="">
             </a>
           </div>
       </div>
@@ -28,17 +35,17 @@
   <div class="col-md-4">
       <div class="ad">
         <a href="#">
-            <img src="https://www.static.phonestablets.co.ke/img/home-page/Small-1.jpg" alt="topad">
+            <img src="https://www.static.phonestablets.co.ke/img/zuri/side-menu-1.jpg" alt="topad">
         </a>
       </div>
       <div class="ad">
           <a href="#">
-            <img src="https://www.static.phonestablets.co.ke/img/home-page/Small-2.jpg">
+            <img src="https://www.static.phonestablets.co.ke/img/zuri/side-menu-2.jpg">
           </a>
       </div>
       <div class="ad">
         <a href="#">
-          <img src="https://www.static.phonestablets.co.ke/img/home-page/Small-2.jpg">
+          <img src="https://www.static.phonestablets.co.ke/img/zuri/side-menu-3.jpg">
         </a>
     </div>
   </div>

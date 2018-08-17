@@ -23,7 +23,7 @@
     cursor: auto;
     font-size: 18px;
     list-style-type: none;
-    border-bottom: 2px solid #424d82;
+    border-bottom: 2px solid #345d89;
 }
 
 .nav-mobile svg {
@@ -332,8 +332,8 @@
 }
 
 .header-bottom {
-    border-bottom: 1px solid #424d82;
-    background-color: #424d82;
+    border-bottom: 1px solid #345d89;
+    background-color: #345d89;
 }
 
 .extras ul {

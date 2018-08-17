@@ -28,7 +28,7 @@
 
 .mobile_view .cart-body .cart-total span {
     color: #FFF;
-    background-color: #424d82;
+    background-color: #345d89;
     padding: 1px 5px;
     border-radius: 20px
 }
@@ -36,7 +36,8 @@
 .cart-body {
     border: none;
     width: 60%;
-    margin: auto
+    margin: auto;
+    position: relative;
 }
 
 .cart-body .cart-left {
@@ -62,6 +63,9 @@
     float: left;
     width: 40%;
     padding: 8px 5px;
-    color: #424d83;
-    font-weight: 700
+    color: #ffffff;
+    font-weight: 700;
+    position: absolute;
+    left: 3px;
+    top: 7px;
 }
