@@ -11,10 +11,11 @@
 
 .dropdown button {
     border: none;
-    background-color: #424d81;
+    background-color: #355d87;
     color: #FFF;
     padding: 6px 0;
-    width: 100%
+    width: 100%;
+    text-align: right;
 }
 
 .dropdown .dropdown-menu {

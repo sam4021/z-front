@@ -129,6 +129,15 @@ export class ProductsService {
       );
   }
 
+  // GET list of brands
+  getAllBrands$(): Observable<Brands[]> {
+    return this.http
+      .get(`${ENV.BASE_API}all-brands`)
+      .pipe(
+        catchError((error) => this._handleError(error))
+      );
+  }
+
   // GET Product Offer Extra
   getProductOffersEx$(): Observable<Product[]> {
     return this.http

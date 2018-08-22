@@ -129,6 +129,9 @@
 .search-container {
     max-height: 65px
 }
+.search-container{
+    padding: 0px;
+}
 
 .nav-mobile .account {
     width: 20%;
@@ -265,12 +268,22 @@
 }
 
 .header-top {
-    border-bottom: 1px solid #ddd
+    border-bottom: 1px solid #94a6b93b;
+    background-color: #345d88;
 }
 
+.logo-container .logo-inner{
+    
+}
 .logo-container .logo-inner,
 .logo-container .logo-inner img {
     width: 80%
+}
+.top-menu{
+    padding: 0px;
+}
+.pnt-menu{
+
 }
 
 .account,
@@ -281,8 +294,8 @@
 }
 
 .dropbtn {
-    background-color: #FFF;
-    color: #424d83;
+    background-color: #355d87;
+    color: #FFF;
     padding: 8px 15px;
     font-size: 16px;
     border: none;
@@ -328,12 +341,13 @@
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41
+    
 }
 
 .header-bottom {
     border-bottom: 1px solid #345d89;
     background-color: #345d89;
+    display: none;
 }
 
 .extras ul {

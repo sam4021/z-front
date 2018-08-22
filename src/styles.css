@@ -11,7 +11,7 @@ body {
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 .desktop_view{
-    padding-top: 97px;
+    padding-top: 63px;
 }
 p {
     margin-bottom: 0
@@ -21,6 +21,9 @@ a {
     color: #424d81;
     text-decoration: underline;
     outline: 0
+}
+.bg{
+    background-color: #355d87;
 }
 
 a:hover {

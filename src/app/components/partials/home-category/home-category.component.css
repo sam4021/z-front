@@ -6,7 +6,7 @@
 }
 
 .category-section .category-header {
-    background-color: #FFF;
+    background-color: #355d87;
 }
 
 .bg-blue .category-body {
@@ -16,7 +16,7 @@
 .category-name {
     float: left;
     font-size: 1.2rem;
-    color: #424d83;
+    color: #ffffff;
     margin: 5px 10px
 }
 

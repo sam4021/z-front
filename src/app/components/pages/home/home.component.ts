@@ -96,12 +96,14 @@ menuSub: Subscription;
         this._getBlogsm();
         this._getFeaturedProducts();
         this._getLatestProducts();
+        
       } else{
         this.mobile_view = false;
         this.desktop_view = true;
         //this._getBlogs();
         this._getFeaturedProducts();
         this._getLatestProducts();
+        this._getBrands();
       }
    }
    if (isPlatformServer(this.platformId)) {
@@ -147,6 +149,22 @@ menuSub: Subscription;
         err => {
           console.error(err);
           this.loading = false;
+          this.error = true;
+        }
+      );
+  }
+
+  private _getBrands() {
+    this.loading = true;
+    // Get future, public events
+    this.brandsSub = this.productService
+      .getAllBrands$()
+      .subscribe(
+        res => {
+          this.brands = res;
+        },
+        err => {
+          console.error(err);
           this.error = true;
         }
       );

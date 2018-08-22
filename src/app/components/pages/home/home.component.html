@@ -132,19 +132,27 @@
       <app-main-slider></app-main-slider>
     </div>
   </div>
-  <!-- <section id="all-brands" class="clearfix">
-    <div class="brands-container">
-      <div class="brands-strip">
-        <ng-container *ngFor="let b of brands">
-          <div class="brand-cont">
-            <a [routerLink]="['/brand', b.url]" title="{{b.title}}">
-              <img src="{{imageUrl}}/brands-logo/{{b.logo}}" alt="{{b.title}}">
-            </a>
-          </div>
-        </ng-container>
+  <section id="all-brands" class="clearfix">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="bg"></div>
+      </div>
+      <div class="col-md-8">
+          <div class="brands-container">
+              <div class="brands-strip">
+                <ng-container *ngFor="let b of brands">
+                  <div class="brand-cont">
+                    <a [routerLink]="['/brand', b.url]" title="{{b.title}}">
+                      <img src="{{imageUrl}}/brands-logo/{{b.logo}}" alt="{{b.title}}">
+                    </a>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
       </div>
     </div>
-  </section> -->
+    
+  </section>
   <section class="top-prod">
     <div class="header">
       Daily Deals

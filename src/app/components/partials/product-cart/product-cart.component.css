@@ -15,11 +15,19 @@
 
 .cart-container .cart-cont {
     border-bottom: 1px solid #ddd;
-    margin-bottom: 5px;
+    margin: 0px 0px 5px 0px;
     padding-bottom: 5px;
     position: relative;
 }
+.cart-container .cart-cont .col-md-3{
 
+}
+.cart-container .cart-cont .col-md-9{
+
+}
+.cart-container .cart-cont .col-md-12{
+
+}
 .prod-image img {
     width: 100%
 }
@@ -71,7 +79,7 @@ float: left;
 }
 .delete-cart{
     position: absolute;
-    top: 0px;
+    bottom: 0px;
     right: 0px;
 }
 

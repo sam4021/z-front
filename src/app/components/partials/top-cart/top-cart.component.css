@@ -41,11 +41,11 @@
 }
 
 .cart-body .cart-left {
-    background-color: #FFF;
+    background-color: #355d87;
     height: inherit;
     float: left;
     padding: 8px 5px;
-    color: #f49c38;
+    color: #FFF;
     position: relative
 }
 
@@ -63,7 +63,7 @@
     float: left;
     width: 40%;
     padding: 8px 5px;
-    color: #ffffff;
+    color: #355d87;
     font-weight: 700;
     position: absolute;
     left: 3px;

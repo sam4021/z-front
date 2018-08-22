@@ -47,7 +47,12 @@
   <div class="header-top">
     <div class="container">
       <div class="row">
-        <div class="col-md-3 col-xs-12 logo-container">
+        <div class="col-md-1 top-menu">
+          <div class="pnt-menu">
+            <app-menu></app-menu>  
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-12 logo-container">
           <a routerLink="/">
             <div class="logo-inner">
               <img src="{{imageUrl}}/zuri/logo-placeholder.jpg" alt="logo ">
@@ -59,7 +64,6 @@
             <app-top-search></app-top-search>
           </div>
         </div>
-
         <div class="col-md-3 accart-container">
           <div class="account">
             <div class="acc-inner">
@@ -86,8 +90,7 @@
     <div class="row">
       <div class="col-md-2 top-menu">
         <div class="pnt-menu">
-          <app-menu></app-menu>
-          
+          <app-menu></app-menu>  
         </div>
       </div>
       <div class="col-md-10 extras">
@@ -98,12 +101,12 @@
             </a>
           </li> -->
           <li>
-              0716690990 / 0721234545
+              
           </li>
           <li>
-            <a routerLink="/offers">
+            <!-- <a routerLink="/offers">
               Offers
-            </a>
+            </a> -->
           </li>
         </ul>
       </div>
