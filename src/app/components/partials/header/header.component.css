@@ -237,7 +237,13 @@
     background-color: #05a19e;
     color: #FFF
 }
+#advert{
 
+}
+#advert img{
+    width: 100%;
+    max-height: 60px;
+}
 .account .acc-inner,
 .cart-container .cart-inner,
 .search-container .search-inner {

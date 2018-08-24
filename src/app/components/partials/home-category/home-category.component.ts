@@ -25,9 +25,7 @@ export class HomeCategoryComponent implements OnInit, OnDestroy {
       data => {
         checkData = data
         if (checkData != null) {
-          this.category = checkData.category; 
-          console.log(this.category);
-          
+          this.category = checkData.category;           
           this.loading = false;   
         }
                        

@@ -20,34 +20,72 @@
         </div>
         <div class="col-md-9 category-prods">
           <div class="row">
-            <div class="col-md-3" *ngFor="let prod of cat.products">
-              <div class="product-container">
-                <a routerLink="/product/{{prod.url}}">
-                  <div class="product-inner">
-                    <div class="product-img">
-                      <img src="{{imageUrl}}/products/{{ prod.images[0][0] }}" alt="{{ prod.title }}">
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-4" *ngFor="let prod of cat.products">
+                    <div class="product-container">
+                      <a routerLink="/product/{{prod.url}}">
+                        <div class="product-inner">
+                          <div class="product-img">
+                            <img src="{{imageUrl}}/products/{{ prod.images[0][0] }}" alt="{{ prod.title }}">
+                          </div>
+                          <div class="product-info">
+                            <div class="prod-title">
+                              {{ prod.title }}
+                            </div>
+                            <div class="prod-price">
+                                <ng-container *ngIf="prod.special_price == 0">
+                                    Ksh. {{ prod.price | number:0 }}
+                                </ng-container>
+                                <ng-container *ngIf="prod.special_price !=0">
+                                  Ksh. {{ prod.special_price | number:0 }}
+                                </ng-container>
+                            </div>
+                            <div class="prod-rate">
+      
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                        </div>
+                      </a>
                     </div>
-                    <div class="product-info">
-                      <div class="prod-title">
-                        {{ prod.title }}
-                      </div>
-                      <div class="prod-price">
-                          <ng-container *ngIf="prod.special_price == 0">
-                              Ksh. {{ prod.price | number:0 }}
-                          </ng-container>
-                          <ng-container *ngIf="prod.special_price !=0">
-                            Ksh. {{ prod.special_price | number:0 }}
-                          </ng-container>
-                      </div>
-                      <div class="prod-rate">
-
-                      </div>
-                    </div>
-                    <div class="clearfix"></div>
                   </div>
-                </a>
-              </div>
+                </div>
             </div>
+            <div class="col-md-3 hm-category-brands">
+                <div class="hm-cat">
+                  <ul>
+                    <li>
+                      <a >Samsung</a>
+                    </li>
+                    <li>
+                      <a >Tecno</a>
+                    </li>
+                    <li>
+                      <a >Apple</a>
+                    </li>
+                    <li>
+                      <a >HTC</a>
+                    </li>
+                    <li>
+                      <a >TCL</a>
+                    </li>
+                    <li>
+                      <a >Hisense</a>
+                    </li>
+                    <li>
+                      <a >Samsung</a>
+                    </li>
+                    <li>
+                      <a >Nokia</a>
+                    </li>
+                    <li>
+                      <a >Blackberry</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            
           </div>
         </div>
       </div>

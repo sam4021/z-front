@@ -135,6 +135,23 @@
     <div class="clearfix"></div>
     </div>
     <div class="row desktop_view" *ngIf="desktop_view">
+        <nav aria-label="breadcrumb" class="desktop_bread col-md-12">
+            <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemprop="itemListElement" itemscope
+              itemtype="http://schema.org/ListItem" class="breadcrumb-item">
+                <a itemscope itemtype="http://schema.org/Thing"
+                itemprop="item" routerLink="/">Home</a>
+                <meta itemprop="position" content="0" />
+              </li>
+              <li itemprop="itemListElement" itemscope
+              itemtype="http://schema.org/ListItem" class="breadcrumb-item" *ngFor="let b of breadcrumb  let i = index">
+                <a itemscope itemtype="http://schema.org/Thing"
+                itemprop="item" routerLink="/products/{{ b.link}}">{{b.title}}</a>
+                <meta itemprop="position" content="{{i + 1}}" />
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">{{productTle}}</li>
+            </ol>
+          </nav>
       <ng-container *ngIf="showAlert">
         <div class="alert-container">
           <div class="alert-inner">
