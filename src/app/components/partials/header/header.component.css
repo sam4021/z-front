@@ -272,7 +272,19 @@
     z-index: 1;
     transition: width .35s cubic-bezier(0, 0, .3, 1)
 }
-
+.header-contact{
+    background-color: #355d87;
+}
+.header-contact ul{
+    padding: 0px;
+    margin: 0PX;
+}
+.header-contact ul li{
+    color: #FFF;
+    float: right;
+    padding: 0px 10px;
+    list-style: none;
+}
 .header-top {
     border-bottom: 1px solid #94a6b93b;
     background-color: #345d88;

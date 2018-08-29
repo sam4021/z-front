@@ -278,7 +278,6 @@ export class ProductComponent implements OnInit {
           this.loading = false;
         },
         err => {
-          console.error(err);
           this.loading = false;
           this.error = true;
         }

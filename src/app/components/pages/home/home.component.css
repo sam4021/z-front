@@ -50,14 +50,15 @@ a {
     
 }
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #355d87;
-    background-color: #fff;
+    color: #ffffff;
+    background-color: #355d87;
     border-top: #355d87 2px solid;
     border-radius: 0px;
     border-color: #355d87 #355d87 #fff;
 }
 .nav-tabs {
     border-bottom: 1px solid #355d87;
+    background-color: #f49c38;
 }
 .pt-value {
     margin-bottom: 18px

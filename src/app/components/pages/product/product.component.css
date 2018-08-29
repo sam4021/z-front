@@ -423,6 +423,7 @@ float: left;
 }
 
 .modal-content {
+    margin-top: 70px;
     border-radius: 0;
     border-color: #f49a12
 }
