@@ -18,14 +18,31 @@ p {
     top: 0;
     right: 0;
     z-index: 999999;
-    width: 300px;
+    /* width: 300px; */
+    left: 0px;
+    bottom: 0px;
+    background-color: #00000096;
 }
 
 .alert-inner {
     background-color: #FFF;
-    color: #424d81
+    color: #424d81;
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    top: 0px;
+    bottom: 0px;
 }
-
+.alert-inner .close-btn{
+    position: absolute;
+    z-index: 9;
+    right: 5px;
+    top: 5px;
+    background-color: #706e6f;
+    border: none;
+    font-size: 18px;
+    color: #FFF;
+}
 .product-img {
     position: relative
 }

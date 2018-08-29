@@ -134,10 +134,10 @@
   </div>
   <section id="all-brands" class="clearfix">
     <div class="row">
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <div class="bg"></div>
-      </div>
-      <div class="col-md-8">
+      </div> -->
+      <div class="col-md-12">
           <div class="brands-container">
               <div class="brands-strip">
                 <ng-container *ngFor="let b of brands">
@@ -151,7 +151,110 @@
             </div>
       </div>
     </div>
-    
+  </section>
+  <section id="hm-sec-3">
+    <ul class="nav nav-tabs" id="hmTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="featured-tab" data-toggle="tab" href="#featured" role="tab" aria-controls="featured" aria-selected="true">Featured Products</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="latest-tab" data-toggle="tab" href="#latest" role="tab" aria-controls="latest" aria-selected="false">Latest Products</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured-tab">
+      <app-loading *ngIf="loading"></app-loading>
+      <ng-template [ngIf]="utils.isLoaded(loading)">
+        <ng-template [ngIf]="featuredProducts">
+          <ng-template [ngIf]="featuredProducts.length">
+            <div class="fProds-container">
+              <div class="fProds-item" *ngFor="let fearured of featuredProducts">
+                <div class="product-container">
+                  <a [routerLink]="['/product', fearured.product.url]" class="">
+                    <div class="product-inner">
+                      <div class="product-img">
+                        <img src="{{imageUrl}}/products/{{ fearured.product.images[0][0] }}" alt="{{ fearured.product.title }}">
+                      </div>
+                      <div class="product-info">
+                        <div class="prod-title" [innerHtml]="fearured.product.title"></div>
+                        <div class="prod-price">
+                          <ng-container *ngIf="fearured.product.special_price ==0">
+                            Ksh. {{ fearured.product.price | number:0 }}
+                          </ng-container>
+                          <ng-container *ngIf="fearured.product.special_price !=0">
+                            Ksh. {{ fearured.product.special_price | number:0 }}
+                            <div class="discount">
+                              Ksh. {{ fearured.product.price | number:0 }}
+                            </div>
+                          </ng-container>
+                        </div>
+                        <div class="prod-rate">
+
+                        </div>
+                      </div>
+                      <ng-container *ngIf="fearured.product.special_price !=0">
+                        <div class="ribbon"><span>Offer</span></div>
+                      </ng-container>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </ng-template>
+        </ng-template>
+      </ng-template>
+    </div>
+    <div class="tab-pane fade" id="latest" role="tabpanel" aria-labelledby="latest-tab">
+      <ng-template [ngIf]="utils.isLoaded(loading)">
+        <ng-template [ngIf]="latestProducts">
+          <ng-template [ngIf]="latestProducts.length">
+            <div class="fProds-container">
+              <div class="fProds-item" *ngFor="let product of latestProducts">
+                <div class="product-container">
+                  <a [routerLink]="['/product', product.url]" class="">
+                    <div class="product-inner">
+                      <div class="product-img">
+                        <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                      </div>
+                      <div class="product-info">
+                        <div class="prod-title" [innerHtml]="product.title"></div>
+                        <div class="prod-price">
+                          <ng-container *ngIf="product.stock != 2">
+                            <ng-container *ngIf="product.special_price == 0">
+                              Ksh. {{ product.price | number:0 }}
+                            </ng-container>
+                            <ng-container *ngIf="product.special_price !=0">
+                              Ksh. {{ product.special_price | number:0 }}
+                              <div class="discount">
+                                Ksh. {{ product.price | number:0 }}
+                              </div>
+                            </ng-container>
+                          </ng-container>
+                          <ng-container *ngIf="product.stock == 2">
+                            <div class="upcoming">
+                              Upcoming
+                            </div>
+                          </ng-container>
+                        </div>
+                        <div class="prod-rate">
+
+                        </div>
+                      </div>
+                      <ng-container *ngIf="product.special_price !=0">
+                        <div class="ribbon"><span>Offer</span></div>
+                      </ng-container>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </ng-template>
+        </ng-template>
+      </ng-template>
+    </div>
+  </div>
   </section>
   <section class="top-prod">
     <div class="header">

@@ -89,7 +89,9 @@ nav .breadcrumb .breadcrumb-item.active {
 .product-container .product-inner .product-info .prod-price {
     font-size: 14px;
     text-align: center;
-    font-weight: 700
+    font-weight: 700;
+    color: #355d87;
+    border-bottom: 1px solid;
 }
 
 .product-container .product-inner .product-info .prod-price .discount {
@@ -111,7 +113,8 @@ nav .breadcrumb .breadcrumb-item.active {
     color: #666;
     text-decoration: none
 }
-
+.product-container:hover .product-inner{border-color:#355d87!important}
+.product-container:hover .product-inner .prod-price{ border:none;}
 .ribbon {
     position: absolute;
     right: -5px;

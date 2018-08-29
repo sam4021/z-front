@@ -20,9 +20,9 @@
         </div>
         <div class="col-md-9 category-prods">
           <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
               <div class="row">
-                <div class="col-md-4" *ngFor="let prod of cat.products">
+                <div class="col-md-3" *ngFor="let prod of cat.products">
                     <div class="product-container">
                       <a routerLink="/product/{{prod.url}}">
                         <div class="product-inner">
@@ -52,39 +52,7 @@
                   </div>
                 </div>
             </div>
-            <div class="col-md-3 hm-category-brands">
-                <div class="hm-cat">
-                  <ul>
-                    <li>
-                      <a >Samsung</a>
-                    </li>
-                    <li>
-                      <a >Tecno</a>
-                    </li>
-                    <li>
-                      <a >Apple</a>
-                    </li>
-                    <li>
-                      <a >HTC</a>
-                    </li>
-                    <li>
-                      <a >TCL</a>
-                    </li>
-                    <li>
-                      <a >Hisense</a>
-                    </li>
-                    <li>
-                      <a >Samsung</a>
-                    </li>
-                    <li>
-                      <a >Nokia</a>
-                    </li>
-                    <li>
-                      <a >Blackberry</a>
-                    </li>
-                  </ul>
-                </div>
-            </div>
+            
             
           </div>
         </div>

@@ -155,9 +155,10 @@
       <ng-container *ngIf="showAlert">
         <div class="alert-container">
           <div class="alert-inner">
+            <button class="close-btn" (click)="hideAlert()">X</button>
             <app-product-cart></app-product-cart>
             <div class="alert-box">
-              Product Added To Cart! 
+              
             </div>
           </div>
         </div>
@@ -210,45 +211,75 @@
       <div class="col-md-7 product-info">
         <div class="product-title" itemprop="name" [innerHtml]="productTle"></div>
         <div class="product-review clearfix"></div>
-        <ng-container *ngIf="productStock != 2">
-        <div class="product-avail">
-            <span class="title">Availability: </span>
-            <span class="avail">
-              <ng-container *ngIf="productStock ==1">
-                  <div class="instock">
-                      In Stock
-                  </div>
-              </ng-container>
-              <ng-container *ngIf="productStock ==0">
-                <div class="outstock">
-                    Out of Stock
-                </div>
-              </ng-container> 
-            </span>
-          </div>
-        </ng-container>
-        <div class="product-amount clearfix">
-          <ng-container *ngIf="productStock != 2">
-          <div class="product-price">
-            <ng-container *ngIf="productSp ==0">
-                <span itemprop="priceCurrency" content="KES">Ksh. {{ productPr | number:0 }}</span>
-            </ng-container>
-            <ng-container *ngIf="productSp !=0">
-                <span itemprop="priceCurrency" content="KES">Ksh. {{ productSp | number:0 }}</span>
-              <div class="discount">
-                Ksh. {{ productPr | number:0 }}
-              </div>
-            </ng-container>
-          </div>
-          </ng-container>
-        </div>
         <div class="row">
-          <div class="col-md-6">
-            <div>
-              <dir [innerHtml]="productDs"></dir>
-            </div>
+          <div class="col-md-8">
+            <ng-container *ngIf="productStock != 2">
+              <div class="product-avail">
+                  <span class="title">Availability: </span>
+                  <span class="avail">
+                    <ng-container *ngIf="productStock ==1">
+                        <div class="instock">
+                            In Stock
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="productStock ==0">
+                      <div class="outstock">
+                          Out of Stock
+                      </div>
+                    </ng-container> 
+                  </span>
+                </div>
+              </ng-container>
+              <div class="product-amount clearfix">
+                <ng-container *ngIf="productStock != 2">
+                <div class="product-price">
+                  <ng-container *ngIf="productSp ==0">
+                      <span itemprop="priceCurrency" content="KES">Ksh. {{ productPr | number:0 }}</span>
+                  </ng-container>
+                  <ng-container *ngIf="productSp !=0">
+                      <span itemprop="priceCurrency" content="KES">Ksh. {{ productSp | number:0 }}</span>
+                    <div class="discount">
+                      Ksh. {{ productPr | number:0 }}
+                    </div>
+                  </ng-container>
+                </div>
+                </ng-container>
+              </div>
+              <div>
+                <dir [innerHtml]="productDs"></dir>
+              </div>
+              <div class="product-entity clearfix">
+
+              </div>
+              <div class="product-qty clearfix">
+  
+              </div>
+              <div class="product-action clearfix">
+                  <ng-container *ngIf="productSp ==0">
+                    <ng-container *ngIf="productStock ==1">
+                      <button type="button"
+                            class="btn btn-primary success large js-btn-add add-btn"
+                          (click)="addProductToCart(productInfo._id,productPr)">
+                       <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                        Buy Now</button>
+                    </ng-container>
+                  </ng-container>
+                  <ng-container *ngIf="productSp !=0">
+                      <button type="button"
+                      class="btn btn-primary success large js-btn-add add-btn"
+                      (click)="addProductToCart(productInfo._id,productSp)">
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                      Buy Now</button>
+                  </ng-container>
+                        <button type="button"
+                                class="btn btn-primary success large js-btn-add call-btn"
+  
+                                data-toggle="modal" data-target="#exampleModalLong">
+                          <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                              Contact Shop</button>
+              </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="prod-card">
               <div class="card">
                 <div class="card-body">
@@ -280,37 +311,7 @@
               </div>
             </div>
           </div>
-        </div>
-            <div class="product-entity clearfix">
-
-            </div>
-            <div class="product-qty clearfix">
-
-            </div>
-            <div class="product-action clearfix">
-                <ng-container *ngIf="productSp ==0">
-                  <ng-container *ngIf="productStock ==1">
-                    <button type="button"
-                          class="btn btn-primary success large js-btn-add add-btn"
-                        (click)="addProductToCart(productInfo._id,productPr)">
-                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                      Buy Now</button>
-                  </ng-container>
-                </ng-container>
-                <ng-container *ngIf="productSp !=0">
-                    <button type="button"
-                    class="btn btn-primary success large js-btn-add add-btn"
-                    (click)="addProductToCart(productInfo._id,productSp)">
-              <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                    Buy Now</button>
-                </ng-container>
-                      <button type="button"
-                              class="btn btn-primary success large js-btn-add call-btn"
-
-                              data-toggle="modal" data-target="#exampleModalLong">
-                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                            Contact Shop</button>
-            </div>
+        </div>            
         <!-- <div class="col-md-12">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">

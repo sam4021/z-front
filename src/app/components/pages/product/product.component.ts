@@ -345,6 +345,10 @@ export class ProductComponent implements OnInit {
       });
     }
 
+    public hideAlert(){
+          this.showAlert = false;
+    }
+
   ngOnDestroy(){
     if(this.sub){
       this.sub.unsubscribe();
