@@ -28,6 +28,8 @@ export class ProductsService {
   public latestProductsData$ = this.latestProductsData.asObservable();
   private homeData = new BehaviorSubject<Product>(null);
   public homeData$ = this.homeData.asObservable();
+  private brandData = new BehaviorSubject<Brands>(null);
+  public brandData$ = this.brandData.asObservable();
   public externalCategory: Category;
 
   constructor(
@@ -40,6 +42,11 @@ export class ProductsService {
   //Set All Home
   setHomeData(data){
     this.homeData.next(data)
+  }
+
+  //Set All Brand
+  setBrandData(data){
+    this.brandData.next(data)
   }
 
   //Set All Products

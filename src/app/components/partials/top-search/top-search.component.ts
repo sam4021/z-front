@@ -1,6 +1,10 @@
 import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { Router } from "@angular/router";
+import { ProductsService } from '../../../services/products/products.service';
+import { Subscription } from 'rxjs/Subscription';
+import { Product } from '../../../core/models/product.model';
+
 import {
     ReactiveFormsModule,
     FormsModule,
@@ -18,9 +22,29 @@ import {
 export class TopSearchComponent implements OnInit {
   mobile_view:boolean = false;
   desktop_view:boolean = false;
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,private router: Router) { }
+  productsSub: Subscription;
+  products: Product[];
+  searchProd: any;
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,private router: Router,
+  private productService: ProductsService) { 
+    let checkProds;
+    let prodArr=[];
+    this.productService.productsData$
+      .subscribe(
+        data => {
+          checkProds = data
+          
+          if (checkProds != null){                                 
+            checkProds.forEach(prod=>{
+                  prodArr.push(prod);
+            })
+          }
+          this.products = prodArr;
+        })
+  }
   myform: FormGroup;
   search: FormControl;
+  canSee: boolean = false;
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       if (window.screen.width >= 320 && window.screen.width <= 480) { // 768px portrait
@@ -47,6 +71,48 @@ export class TopSearchComponent implements OnInit {
     if(search !=''){
       this.router.navigate(['/search',search]);
     }    
+  }
+
+  onFilter(event: any) {
+    let prodArr=[];
+    if (event.target.value =='') {
+      this.searchProd = [];
+      
+    } else {
+      const searchString = event.target.value.split(" ");
+        if(searchString.length ==3){
+          this.products.forEach(prod => {
+            if (prod.title.toLowerCase().indexOf(searchString[1].toLowerCase()) !=-1 && prod.title.toLowerCase().indexOf(searchString[2].toLowerCase()) !=-1) {
+                prodArr.push(prod);
+            }
+          });
+        } else if(searchString.length==2){
+          this.products.forEach(prod => {
+            if (prod.title.toLowerCase().indexOf(searchString[1].toLowerCase()) !=-1) {
+                prodArr.push(prod);
+            }
+          });
+        } else{
+          this.products.forEach(prod => {
+            if (prod.title.toLowerCase().indexOf(event.target.value) !=-1) {
+                prodArr.push(prod);
+            }
+          });
+        }
+      this.searchProd = prodArr;
+      
+    }
+  }
+
+  onEnter() {
+    this.canSee = false;
+  }
+
+  show(e: any) {
+    this.canSee = true;
+  }
+  hide(e: any) {
+    this.canSee = false;
   }
 
 }

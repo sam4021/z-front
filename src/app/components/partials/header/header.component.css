@@ -249,7 +249,13 @@
 .search-container .search-inner {
     padding: 10px
 }
+.account .acc-inner ul{
 
+}
+.account .acc-inner ul li{
+    list-style: none;
+    color: #FFF;
+}
 .nav-mobile .menu-container .menu-sidebar li .menu-sub .menu-sub-title .arrow {
     color: #FFF
 }
@@ -273,6 +279,7 @@
     transition: width .35s cubic-bezier(0, 0, .3, 1)
 }
 .header-contact{
+    display: none;
     background-color: #355d87;
 }
 .header-contact ul{

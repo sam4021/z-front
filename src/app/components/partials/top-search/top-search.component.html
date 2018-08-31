@@ -9,7 +9,33 @@
   <form [formGroup]="form" (ngSubmit)="onSearch(id)" class="search-form clearfix" autocomplete="off"  *ngIf="desktop_view" itemscope itemtype="http://schema.org/SearchAction">
     <meta itemprop="target" content="https://www.phonestablets.co.ke/search/{search_term_string}"/>
     <div class="form-group search-input">
-      <input type="text" formControlName="search" class="form-control" placeholder="Search" ngModel name="search_term_string">
+      <input type="text" formControlName="search" class="form-control" placeholder="Search" ngModel name="search_term_string" (focus)="show($event)" (blur)="hide($event)" (keyup)="onFilter($event)" (keyup.enter)="onEnter()">
+      <div class="suggestion" *ngIf="canSee">
+          <ng-container *ngIf="searchProd != null">
+            <div class="sugg-container">
+                <div class="sugg-inner">
+                    <div class="sugg-products">
+                      <div *ngFor="let product of searchProd" class="prod-list">
+                        <a routerLink="/product/{{ product.url }}" (click)="onEnter()">
+                          <div class="prod-title">
+                            {{ product.title }}
+                          </div>
+                          <div class="prod-price">
+                              <ng-container *ngIf="product.special_price ==0">
+                                  Ksh. {{ product.price | number:0 }}
+                                </ng-container>
+                                <ng-container *ngIf="product.special_price !=0">
+                                  Ksh. {{ product.special_price | number:0 }}
+                                </ng-container>
+                          </div>
+                        </a>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </ng-container>
+        </div>
     </div>
     <div class="search-btn">
       <button type="submit" class="btn btn-link">

@@ -156,18 +156,28 @@ menuSub: Subscription;
 
   private _getBrands() {
     this.loading = true;
+    let checkBrand :any;
+    let BrandArr= [];
     // Get future, public events
-    this.brandsSub = this.productService
-      .getAllBrands$()
-      .subscribe(
-        res => {
-          this.brands = res;
-        },
-        err => {
-          console.error(err);
-          this.error = true;
-        }
-      );
+    this.brandsSub = this.productService.brandData$
+          .subscribe(
+            data => {
+              //this.brands = data,
+              checkBrand = data
+              //console.log(this.brands);
+              if (checkBrand !== null) {
+                checkBrand.forEach(e => {
+                  if(e.logo){
+                    BrandArr.push(e)
+                  }                  
+                });
+              }
+              this.brands = BrandArr              
+            }, err =>{
+              console.error(err);
+              this.error = true;
+            }
+          )
   }
 
   private _getLatestProducts() {

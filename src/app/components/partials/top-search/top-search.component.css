@@ -61,3 +61,45 @@
     height: 25px;
     font-size: 12px
 }
+.suggestion{
+    position: absolute;
+    z-index: 9999;
+    }
+    .sugg-container{
+    padding-bottom: 10px;
+    background-color: #FFF;
+    }
+    .sugg-inner{
+    background-color: #FFF;
+    overflow: auto;
+    max-height: 220px;
+    }
+    .prod-list{
+    border-bottom: 1px solid #ddd;
+    }
+    .prod-list:hover {
+    background-color: #355d87;
+    }
+    .prod-list:hover .prod-title{
+    color: #FFF;
+    background-color: #355d87;
+    }
+    .prod-list:hover .prod-price{
+    color: #FFF;
+    }
+    .prod-title{
+    width: 75%;
+    float: left;
+    color: #616060;
+    padding-left: 5px;
+    max-height: 21px;
+    background-color: #FFF;
+    font-size: 14px;
+    }
+    .prod-price{
+    width: 20%;
+    float: left;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 600;
+    }

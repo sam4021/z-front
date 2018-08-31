@@ -39,6 +39,7 @@ export class FooterComponent implements OnInit {
       this.desktop_view = true;
     } 
       this._getProd();
+      this._getBrand();
     }
     private _getProd() {
       this.prodSub = this.productService
@@ -53,6 +54,21 @@ export class FooterComponent implements OnInit {
       );
   
     }
+
+    private _getBrand() {
+      this.prodSub = this.productService
+      .getAllBrands$()
+      .subscribe(
+        res => {
+          this.productService.setBrandData(res)
+        },
+        err => {
+          console.error(err);
+        }
+      );
+  
+    }
+    
     private _getShipping() {
       this.shippingSub = this.checkoutService
         .getShippingLocation$()
