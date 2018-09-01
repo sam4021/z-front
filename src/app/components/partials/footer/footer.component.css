@@ -178,3 +178,42 @@ footer {
     text-align: center;
     font-size: 12px
 }
+.serv{
+    border-top: 1px solid #ececec;
+}
+.serv .row{
+    margin: 0px;
+}
+.serv .col-md-3{
+    border-left: 1px solid #ececec;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.serv-cont{
+
+}
+.serv-inner{
+    padding: 10px;
+}
+.serv-icon{
+    width: 30%;
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+}
+.serv-icon svg{
+    font-size: 25px;
+    color: #355d87;
+}
+.serv-txt{
+    width: 70%;
+    float: left;
+}
+.serv-head{
+    font-size: 19px;
+    font-weight: 600;
+    color: #355d87;
+}
+.serv-msg{
+
+}

@@ -130,7 +130,7 @@
     max-height: 65px
 }
 .search-container{
-    padding: 0px;
+    padding: 5px 0px;
 }
 
 .nav-mobile .account {
@@ -247,10 +247,10 @@
 .account .acc-inner,
 .cart-container .cart-inner,
 .search-container .search-inner {
-    padding: 10px
+    padding: 4px
 }
 .account .acc-inner ul{
-
+    margin: 0px;
 }
 .account .acc-inner ul li{
     list-style: none;
