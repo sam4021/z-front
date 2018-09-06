@@ -175,7 +175,38 @@ a {
     overflow: hidden;
     height: 50px
 }
+#daily-deals{
 
+}
+.daily-container{
+
+}
+.daily-inner{
+
+}
+.daily-info{
+    width: 20%;
+    float: left;
+    height: 243px;
+    background-color: #355d87;
+    color: #FFF;
+    text-align: center;
+    font-size: 30px;
+    padding: 64px 0px;
+    line-height: 32px;
+}
+.daily-info .top{
+    display: block;
+    font-weight: 700;
+    font-size: 47px;
+}
+.daily-info .bottom{
+    font-family: cursive;
+}
+.daily-products{
+    width: 80%;
+    float: left;
+}
 .mobile_view .category {
     overflow-x: scroll;
     width: 100%;
