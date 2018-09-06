@@ -547,10 +547,10 @@ p {
     margin-bottom: 0rem;
 }
 .desktop_bread .breadcrumb .breadcrumb-item{
-    color: #999;
+    color: #2b2a2a;
 }
 .desktop_bread .breadcrumb .breadcrumb-item a{
-    color: #999;
+    color: #2b2a2a;
     text-decoration: none;
 }
 .desktop_bread .breadcrumb .breadcrumb-item a.active{
@@ -560,7 +560,9 @@ p {
     padding-right: .2rem;
     padding-left: .2rem;
 }
-
+.prod-ad{
+    border-left: 1px solid #DDD;
+}
 @media (min-width:320px) and (max-width:480px) {
     .modal-header {
         padding: .5rem;

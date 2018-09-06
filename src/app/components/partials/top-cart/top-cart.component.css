@@ -49,6 +49,7 @@
     color: #fff;
     position: relative;
     border-radius: 20px;
+    z-index: 6666;
 }
 .cart-body .cart-left svg{
     font-size: 25px;
@@ -66,11 +67,15 @@
 
 .cart-body .cart-total {
     float: left;
-    width: 40%;
-    padding: 8px 5px;
-    color: #355d87;
+    width: 26px;
+    height: 25px;
+    padding: 5px;
+    color: #ffffff;
     font-weight: 700;
     position: absolute;
-    left: 5px;
-    top: 7px;
+    right: 14px;
+    top: 1px;
+    background-color: #f49c38;
+    border-radius: 25px;
+    z-index: 555;
 }
