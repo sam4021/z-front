@@ -9,28 +9,30 @@
     height: inherit;
     float: none;
     padding: 0;
-    color: #f49c38;
+    color: #FFF;
     font-size: inherit;
-    position: relative
+    position: relative;
+    background-color: #305d8d;
 }
 
 .mobile_view .cart-body .cart-total {
+    background-color: #fff0;
     float: none;
     width: auto;
     padding: 0;
     color: inherit;
     font-weight: inherit;
     position: absolute;
-    top: -10px;
-    left: 41px;
-    font-size: 11px
+    top: -7px;
+    left: 14px;
+    font-size: 11px;
 }
 
 .mobile_view .cart-body .cart-total span {
-    color: #FFF;
-    background-color: #345d89;
+    color: #305d8d;
+    background-color: #ffffffa1;
     padding: 1px 5px;
-    border-radius: 20px
+    border-radius: 20px;
 }
 
 .cart-body {

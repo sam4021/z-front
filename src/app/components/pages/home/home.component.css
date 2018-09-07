@@ -214,29 +214,32 @@ a {
 }
 
 .mobile_view .category ul {
-    width: 430px
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
 }
 
 .mobile_view .category ul li {
     list-style: none;
-    float: left;
-    max-width: 68px;
-    margin: 4px
+    width: 100%;
+    clear: both;
+    border-bottom: 1px solid #305d8d;
 }
 
 .mobile_view .category ul li .icon {
-    width: 100%
+    width: 30%;
+    float: left;
 }
 
 .mobile_view .category ul li .icon img {
-    width: 100%;
-    border-radius: 50%;
-    border: 1px solid #00a19b
+    width: 50%;
 }
 
 .mobile_view .category ul li .text {
-    height: 30px;
-    text-align: center
+    font-size: 18px;
+    height: 25px;
+    float: left;
+    padding-top: 9px;
 }
 
 .mobile_view .featured .fProds-container .fProds-item {
