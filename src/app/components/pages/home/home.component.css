@@ -187,25 +187,48 @@ a {
 .daily-info{
     width: 20%;
     float: left;
-    height: 243px;
     background-color: #355d87;
     color: #FFF;
     text-align: center;
     font-size: 30px;
-    padding: 64px 0px;
+    padding: 10px 0px 0px;
     line-height: 32px;
 }
 .daily-info .top{
-    display: block;
     font-weight: 700;
     font-size: 47px;
 }
 .daily-info .bottom{
     font-family: cursive;
 }
+.daily-info .link{
+    background-color: #3b6a9c;
+    padding: 5px 0px;
+    
+}
+.daily-info .link a{
+    color: #FFF;
+    font-size: 22px;
+}
 .daily-products{
     width: 80%;
     float: left;
+}
+.daily-products .fProds-item{
+    width: 25%;
+}
+.daily-products .product-img{
+    width: 36%;
+    float: left;
+}
+.daily-products .product-info{
+
+}
+.daily-products .product-info .prod-title{
+
+}
+.daily-products .product-info .prod-price{
+
 }
 .mobile_view .category {
     overflow-x: scroll;
@@ -339,7 +362,7 @@ a {
 }
 
 @media (min-width:320px) and (max-width:480px) {
-    .category-prods,
+    .category-prods,#daily-deals,
     .hmenu {
         display: none
     }
