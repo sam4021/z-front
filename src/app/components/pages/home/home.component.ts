@@ -56,6 +56,8 @@ menuSub: Subscription;
   private alertSub: Subscription;
   private timer: any;
   deviceInfo = null;
+  offerProdSub: Subscription;
+  offerProd: any;
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private title: Title,
@@ -82,6 +84,7 @@ menuSub: Subscription;
 
    ngOnInit() {
      this._home();
+     this._getOffer();
     if (isPlatformBrowser(this.platformId)) {
       if(this.storage.getItem(Order_Message)=='True'){
         this.setSuccessTimer();
@@ -133,6 +136,21 @@ menuSub: Subscription;
         }
       }
     )
+  }
+
+  private _getOffer(){
+    this.offerProdSub = this.productService
+      .getProductOffersEx$()
+      .subscribe(
+        res => {
+          this.offerProd = res;
+          console.log(res);
+          
+        },
+        err => {
+          console.error(err);
+        }
+      );
   }
 
   private _getFeaturedProducts() {
