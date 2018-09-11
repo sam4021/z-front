@@ -280,7 +280,7 @@ a {
 
 }
 .daily-products .product-info .prod-price{
-border: none;
+    margin-top: 40px;
 }
 .daily-products .product-container {
     padding-top: 37px;
@@ -288,7 +288,7 @@ border: none;
     margin: 0px;
 }
 .daily-products .product-container:hover .product-inner {
-    border-color: #FFF!important;
+    border-color: #fff!important;
 }
 .mobile_view .category {
     overflow-x: scroll;
