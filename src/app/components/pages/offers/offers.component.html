@@ -1,43 +1,46 @@
 <div class="offers_page">
   <div class="container">
+      <div class="offer-banner" >
+        <img alt="" src="https://www-konga-com-res.cloudinary.com/image/upload/v1535703448/landingPages/dailyDeals/dailyDeals2_itemsFoundOnKonga2.jpg">
+      </div>
     <div class="header">
 
     </div>
     <div class="offer_products">
       <div class="row">
-        <div class="col-md-3 col-xs-6" *ngFor="let product of products">
+        <div class="col-md-4 col-xs-6" *ngFor="let product of products">
           <!-- <a [routerLink]="['/product', product.url]">
               <h5 class="mb-1" [innerHTML]="product.title"></h5>
           </a> -->
           <div class="product-container">
             <a routerLink="/product/{{product.url}}">
               <div class="product-inner">
-                <div class="product-img">
-                  <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                <div class="offer-icon">
+                  12% Off
                 </div>
                 <div class="product-info">
                   <div class="prod-title">
                     {{ product.title }}
                   </div>
-                  <div class="discount">
-                    Ksh. {{ product.price | number:0 }}
-                  </div>
                   <div class="prod-price">
                       Ksh. {{ product.special_price | number:0 }}
                   </div>
+                  <div class="discount">
+                      Ksh. {{ product.price | number:0 }}
+                    </div>
                   <div class="prod-rate">
 
                   </div>
                   <div class="clearfix"></div>
                 </div>
-                <ng-container *ngIf="product.special_price !=0">
-                  <!-- <div class="offer">
-                    <span class="offer-inner">
-                      offer
-                    </span>
-                  </div> -->
+                <div class="product-img">
+                    <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                  </div>
+                <!-- <ng-container *ngIf="product.special_price !=0">
+                    
                   <div class="ribbon"><span>Offer</span></div>
-                </ng-container>
+                </ng-container> -->
+                <div class="clearfix"></div>
               </div>
             </a>
           </div>
