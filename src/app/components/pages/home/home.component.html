@@ -136,11 +136,14 @@
     <div class="daily-container">
       <div class="daily-inner">
         <div class="daily-info">
-          <span class="top">Daily</span>
+          <a routerLink="/offers">
+            <img src="assets/images/daily-deals.png" alt="">
+          </a>
+          <!-- <span class="top">Daily</span>
           <span class="bottom">Deals</span>
           <div class="link">
             <a routerLink="/offers">View All Deals -></a>
-          </div>
+          </div> -->
         </div>
         <div class="daily-products">
             <div  class="fProds-item" *ngFor="let offer of offerProd">

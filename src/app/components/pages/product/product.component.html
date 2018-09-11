@@ -372,15 +372,30 @@
       <div class="col-md-12">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
-              <a ng-click="tabZ = 2" class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="false">Description</a>
+              <a ng-click="tabZ = 3" class="nav-link active" id="specs-tab" data-toggle="tab" href="#specs" role="tab" aria-controls="specs" aria-selected="false">Specifications</a>
+          </li>
+          <li class="nav-item">
+              <a ng-click="tabZ = 2" class="nav-link" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="false">Description</a>
           </li>          
           <li class="nav-item">
             <a ng-click="tabZ = 1" class="nav-link " id="box-tab" data-toggle="tab" href="#box" role="tab" aria-controls="box" aria-selected="false">Box Content</a>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
+            <div ng-show="tabZ === 3" class="tab-pane fade show active" id="specs" role="tabpanel" aria-labelledby="specs-tab">
+                <div class="ent-desc">
+                    <table class="table">
+                      <tr *ngFor="let prodE of productDe">
+                        <th>{{prodE.entity.title }}</th>
+                        <td>
+                            {{prodE.value }}
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+            </div>
           <div ng-show="tabZ === 1" class="tab-pane fade" id="box" role="tabpanel" aria-labelledby="box-tab" [innerHtml]="productBxC"></div>
-              <div ng-show="tabZ === 2" class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+              <div ng-show="tabZ === 2" class="tab-pane fade" id="description" role="tabpanel" aria-labelledby="description-tab">
                 <div class="main-desc" [innerHtml]="productDf"></div>
               </div>
         </div>

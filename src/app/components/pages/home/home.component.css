@@ -185,13 +185,12 @@ a {
 
 }
 .daily-info{
-    width: 20%;
+    /* width: 20%; */
     float: left;
-    background-color: #355d87;
     color: #FFF;
     text-align: center;
     font-size: 30px;
-    padding: 10px 0px 0px;
+    padding: 0px;
     line-height: 32px;
 }
 .daily-info .top{
@@ -213,10 +212,13 @@ a {
 .daily-products{
     width: 80%;
     float: left;
+    height: 143px;
 }
 .daily-products .fProds-item{
     width: 25%;
     position: relative;
+    height: 100%;
+    border-left: 1px solid #DDD;
 }
 .daily-products .fProds-item .badge {
     left: 1px;
@@ -230,6 +232,7 @@ a {
     display: block;
     position: absolute;
     z-index: 99;
+    border-radius: 0px;
 }
 .daily-products .fProds-item .badge:before {
     content: "";
@@ -277,7 +280,15 @@ a {
 
 }
 .daily-products .product-info .prod-price{
-
+border: none;
+}
+.daily-products .product-container {
+    padding-top: 37px;
+    height: 100%;
+    margin: 0px;
+}
+.daily-products .product-container:hover .product-inner {
+    border-color: #FFF!important;
 }
 .mobile_view .category {
     overflow-x: scroll;
