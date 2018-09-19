@@ -42,6 +42,8 @@ blogSub: Subscription;
 category : Category[];
 brandsSub: Subscription;
 menuSub: Subscription;
+middleAdSub: Subscription;
+middleAd: any;
   featuredProducts: any;
   mainProducts: any;
   latestProducts: any;
@@ -246,6 +248,19 @@ menuSub: Subscription;
         err => {
           console.error(err);
           this.loading = false;
+          this.error = true;
+        }
+      );
+  }
+
+  private _getMiddleAd() {
+    this.middleAdSub = this.productService
+    .getMainMiddleAd$()
+      .subscribe(
+        res => {
+          this.middleAd = res;
+        },
+        err => {
           this.error = true;
         }
       );

@@ -344,14 +344,14 @@
   </section>
   <section id="hm-sec-5">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" *ngFor="let ad of middleAd">
           <div class="pt-ad-img">
-            <a routerLink="/product/macbook-pro-mpxt2b-a-price-in-kenya">
-              <img src="{{imageUrl}}/home-page/Small-1.jpg" alt="3d curved fit ">
+            <a routerLink="{{ ad.link }}">
+              <img src="{{ad.image}}" alt="{{ad.alt}}">
             </a>
           </div>
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
           <div class="pt-ad-img">
             <a routerLink="/product/samsung-galaxy-s9-plus-64gb-price-in-kenya">
               <img src="{{imageUrl}}/home-page/Small-2.jpg" alt="sony dav dz350 home-theater">
@@ -364,7 +364,7 @@
               <img src="{{imageUrl}}/home-page/Small-3.jpg" alt="infinix hot 6 pro">
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
   <section class="top-prod">

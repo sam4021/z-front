@@ -91,6 +91,15 @@ export class ProductsService {
       );
   }
 
+  // GET Middle Ad
+  getMainMiddleAd$(): Observable<Slider[]> {
+    return this.http
+      .get(`${ENV.BASE_API}middle-ad`)
+      .pipe(
+        catchError((error) => this._handleError(error))
+      );
+  }
+
   // GET Product info Using URL
   getProductInfo$(id: string): Observable<any> {
     return this.http
