@@ -109,6 +109,7 @@ middleAd: any;
         this._getFeaturedProducts();
         this._getLatestProducts();
         this._getBrands();
+        this._getMiddleAd();
       }
    }
    if (isPlatformServer(this.platformId)) {
