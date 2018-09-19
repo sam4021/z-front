@@ -12,7 +12,9 @@ const IMG_URL = ENV.BASE_IMAGE;
 })
 export class MainSliderComponent implements OnInit, OnDestroy {
   sliderSub: Subscription;
+  sideSub: Subscription;
   slider: Slider[];
+  side: any;
   imageUrl= '';
 
   constructor(private productService: ProductsService) { }
@@ -20,6 +22,7 @@ export class MainSliderComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.imageUrl = IMG_URL;
     this._getSlider();
+    this._getSide();
   }
   private _getSlider() {
     this.sliderSub = this.productService
@@ -34,9 +37,25 @@ export class MainSliderComponent implements OnInit, OnDestroy {
       );
   }
 
+  private _getSide() {
+    this.sideSub = this.productService
+    .getMainSideAd$()
+      .subscribe(
+        res => {
+          this.side = res;
+        },
+        err => {
+          console.error(err);
+        }
+      );
+  }
+
   ngOnDestroy(){
     if(this.sliderSub){
       this.sliderSub.unsubscribe();
+    }
+    if(this.sideSub){
+      this.sideSub.unsubscribe();
     }
   }
 

@@ -73,10 +73,19 @@ export class ProductsService {
       );
   }
 
-  // GET list of products
+  // GET Sliders
   getMainSlider$(): Observable<Slider[]> {
     return this.http
       .get(`${ENV.BASE_API}main-slider`)
+      .pipe(
+        catchError((error) => this._handleError(error))
+      );
+  }
+
+  // GET Side Ad
+  getMainSideAd$(): Observable<Slider[]> {
+    return this.http
+      .get(`${ENV.BASE_API}side-ad`)
       .pipe(
         catchError((error) => this._handleError(error))
       );

@@ -4716,16 +4716,23 @@ exports.styles = styles;
 Object.defineProperty(exports, "__esModule", { value: true });
 var i0 = __webpack_require__(/*! ./main-slider.component.css.shim.ngstyle */ "./src/app/components/partials/main-slider/main-slider.component.css.shim.ngstyle.js");
 var i1 = __webpack_require__(/*! @angular/core */ "@angular/core");
-var i2 = __webpack_require__(/*! ./main-slider.component */ "./src/app/components/partials/main-slider/main-slider.component.ts");
-var i3 = __webpack_require__(/*! ../../../services/products/products.service */ "./src/app/services/products/products.service.ts");
+var i2 = __webpack_require__(/*! @angular/router */ "@angular/router");
+var i3 = __webpack_require__(/*! @angular/common */ "@angular/common");
+var i4 = __webpack_require__(/*! ./main-slider.component */ "./src/app/components/partials/main-slider/main-slider.component.ts");
+var i5 = __webpack_require__(/*! ../../../services/products/products.service */ "./src/app/services/products/products.service.ts");
 var styles_MainSliderComponent = [i0.styles];
 var RenderType_MainSliderComponent = i1.ɵcrt({ encapsulation: 0, styles: styles_MainSliderComponent, data: {} });
 exports.RenderType_MainSliderComponent = RenderType_MainSliderComponent;
-function View_MainSliderComponent_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 30, "div", [["class", "row"]], null, null, null, null, null)), (_l()(), i1.ɵeld(1, 0, null, null, 19, "div", [["class", "col-md-8"]], null, null, null, null, null)), (_l()(), i1.ɵeld(2, 0, null, null, 18, "div", [["class", "carousel slide"], ["data-ride", "carousel"], ["id", "carouselExampleIndicators"]], null, null, null, null, null)), (_l()(), i1.ɵeld(3, 0, null, null, 2, "ol", [["class", "carousel-indicators"]], null, null, null, null, null)), (_l()(), i1.ɵeld(4, 0, null, null, 0, "li", [["class", "active"], ["data-slide-to", "0"], ["data-target", "#carouselExampleIndicators"]], null, null, null, null, null)), (_l()(), i1.ɵeld(5, 0, null, null, 0, "li", [["data-slide-to", "1"], ["data-target", "#carouselExampleIndicators"]], null, null, null, null, null)), (_l()(), i1.ɵeld(6, 0, null, null, 6, "div", [["class", "carousel-inner"]], null, null, null, null, null)), (_l()(), i1.ɵeld(7, 0, null, null, 2, "div", [["class", "carousel-item active"]], null, null, null, null, null)), (_l()(), i1.ɵeld(8, 0, null, null, 1, "a", [], null, null, null, null, null)), (_l()(), i1.ɵeld(9, 0, null, null, 0, "img", [["alt", ""], ["class", "d-block w-100"]], [[8, "src", 4]], null, null, null, null)), (_l()(), i1.ɵeld(10, 0, null, null, 2, "div", [["class", "carousel-item"]], null, null, null, null, null)), (_l()(), i1.ɵeld(11, 0, null, null, 1, "a", [], null, null, null, null, null)), (_l()(), i1.ɵeld(12, 0, null, null, 0, "img", [["alt", ""], ["class", "d-block w-100"]], [[8, "src", 4]], null, null, null, null)), (_l()(), i1.ɵeld(13, 0, null, null, 3, "a", [["class", "carousel-control-prev"], ["data-slide", "prev"], ["href", "#carouselExampleIndicators"], ["role", "button"]], null, null, null, null, null)), (_l()(), i1.ɵeld(14, 0, null, null, 0, "span", [["aria-hidden", "true"], ["class", "carousel-control-prev-icon"]], null, null, null, null, null)), (_l()(), i1.ɵeld(15, 0, null, null, 1, "span", [["class", "sr-only"]], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["Previous"])), (_l()(), i1.ɵeld(17, 0, null, null, 3, "a", [["class", "carousel-control-next"], ["data-slide", "next"], ["href", "#carouselExampleIndicators"], ["role", "button"]], null, null, null, null, null)), (_l()(), i1.ɵeld(18, 0, null, null, 0, "span", [["aria-hidden", "true"], ["class", "carousel-control-next-icon"]], null, null, null, null, null)), (_l()(), i1.ɵeld(19, 0, null, null, 1, "span", [["class", "sr-only"]], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["Next"])), (_l()(), i1.ɵeld(21, 0, null, null, 9, "div", [["class", "col-md-4"]], null, null, null, null, null)), (_l()(), i1.ɵeld(22, 0, null, null, 2, "div", [["class", "ad"]], null, null, null, null, null)), (_l()(), i1.ɵeld(23, 0, null, null, 1, "a", [["href", "#"]], null, null, null, null, null)), (_l()(), i1.ɵeld(24, 0, null, null, 0, "img", [["alt", "topad"], ["src", "https://www.static.phonestablets.co.ke/img/zuri/side-menu-1.jpg"]], null, null, null, null, null)), (_l()(), i1.ɵeld(25, 0, null, null, 2, "div", [["class", "ad"]], null, null, null, null, null)), (_l()(), i1.ɵeld(26, 0, null, null, 1, "a", [["href", "#"]], null, null, null, null, null)), (_l()(), i1.ɵeld(27, 0, null, null, 0, "img", [["src", "https://www.static.phonestablets.co.ke/img/zuri/side-menu-2.jpg"]], null, null, null, null, null)), (_l()(), i1.ɵeld(28, 0, null, null, 2, "div", [["class", "ad"]], null, null, null, null, null)), (_l()(), i1.ɵeld(29, 0, null, null, 1, "a", [["href", "#"]], null, null, null, null, null)), (_l()(), i1.ɵeld(30, 0, null, null, 0, "img", [["src", "https://www.static.phonestablets.co.ke/img/zuri/side-menu-3.jpg"]], null, null, null, null, null))], null, function (_ck, _v) { var _co = _v.component; var currVal_0 = i1.ɵinlineInterpolate(1, "", _co.imageUrl, "/zuri/Main-slider-1.jpg"); _ck(_v, 9, 0, currVal_0); var currVal_1 = i1.ɵinlineInterpolate(1, "", _co.imageUrl, "/zuri/Main-slider-2.jpg"); _ck(_v, 12, 0, currVal_1); }); }
+function View_MainSliderComponent_1(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 3, "div", [["class", "carousel-item"]], [[2, "active", null]], null, null, null, null)), (_l()(), i1.ɵeld(1, 0, null, null, 2, "a", [], [[1, "target", 0], [8, "href", 4]], [[null, "click"]], function (_v, en, $event) { var ad = true; if (("click" === en)) {
+        var pd_0 = (i1.ɵnov(_v, 2).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
+        ad = (pd_0 && ad);
+    } return ad; }, null, null)), i1.ɵdid(2, 671744, null, 0, i2.RouterLinkWithHref, [i2.Router, i2.ActivatedRoute, i3.LocationStrategy], { routerLink: [0, "routerLink"] }, null), (_l()(), i1.ɵeld(3, 0, null, null, 0, "img", [["class", "d-block w-100"]], [[8, "src", 4], [8, "alt", 0]], null, null, null, null))], function (_ck, _v) { var currVal_3 = i1.ɵinlineInterpolate(1, "", _v.context.$implicit.link, ""); _ck(_v, 2, 0, currVal_3); }, function (_ck, _v) { var currVal_0 = (_v.context.index == 0); _ck(_v, 0, 0, currVal_0); var currVal_1 = i1.ɵnov(_v, 2).target; var currVal_2 = i1.ɵnov(_v, 2).href; _ck(_v, 1, 0, currVal_1, currVal_2); var currVal_4 = i1.ɵinlineInterpolate(1, "", _v.context.$implicit.image, ""); var currVal_5 = i1.ɵinlineInterpolate(1, "", _v.context.$implicit.alt, ""); _ck(_v, 3, 0, currVal_4, currVal_5); }); }
+function View_MainSliderComponent_2(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 2, "div", [["class", "ad"]], null, null, null, null, null)), (_l()(), i1.ɵeld(1, 0, null, null, 1, "a", [], [[8, "href", 4]], null, null, null, null)), (_l()(), i1.ɵeld(2, 0, null, null, 0, "img", [], [[8, "src", 4], [8, "alt", 0]], null, null, null, null))], null, function (_ck, _v) { var currVal_0 = i1.ɵinlineInterpolate(1, "", _v.context.$implicit.link, ""); _ck(_v, 1, 0, currVal_0); var currVal_1 = i1.ɵinlineInterpolate(1, "", _v.context.$implicit.image, ""); var currVal_2 = i1.ɵinlineInterpolate(1, "", _v.context.$implicit.alt, ""); _ck(_v, 2, 0, currVal_1, currVal_2); }); }
+function View_MainSliderComponent_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 25, "div", [["class", "row"]], null, null, null, null, null)), (_l()(), i1.ɵeld(1, 0, null, null, 15, "div", [["class", "col-md-8"]], null, null, null, null, null)), (_l()(), i1.ɵeld(2, 0, null, null, 14, "div", [["class", "carousel slide"], ["data-ride", "carousel"], ["id", "carouselExampleIndicators"]], null, null, null, null, null)), (_l()(), i1.ɵeld(3, 0, null, null, 2, "ol", [["class", "carousel-indicators"]], null, null, null, null, null)), (_l()(), i1.ɵeld(4, 0, null, null, 0, "li", [["class", "active"], ["data-slide-to", "0"], ["data-target", "#carouselExampleIndicators"]], null, null, null, null, null)), (_l()(), i1.ɵeld(5, 0, null, null, 0, "li", [["data-slide-to", "1"], ["data-target", "#carouselExampleIndicators"]], null, null, null, null, null)), (_l()(), i1.ɵeld(6, 0, null, null, 2, "div", [["class", "carousel-inner"]], null, null, null, null, null)), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_MainSliderComponent_1)), i1.ɵdid(8, 802816, null, 0, i3.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, "ngForOf"] }, null), (_l()(), i1.ɵeld(9, 0, null, null, 3, "a", [["class", "carousel-control-prev"], ["data-slide", "prev"], ["href", "#carouselExampleIndicators"], ["role", "button"]], null, null, null, null, null)), (_l()(), i1.ɵeld(10, 0, null, null, 0, "span", [["aria-hidden", "true"], ["class", "carousel-control-prev-icon"]], null, null, null, null, null)), (_l()(), i1.ɵeld(11, 0, null, null, 1, "span", [["class", "sr-only"]], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["Previous"])), (_l()(), i1.ɵeld(13, 0, null, null, 3, "a", [["class", "carousel-control-next"], ["data-slide", "next"], ["href", "#carouselExampleIndicators"], ["role", "button"]], null, null, null, null, null)), (_l()(), i1.ɵeld(14, 0, null, null, 0, "span", [["aria-hidden", "true"], ["class", "carousel-control-next-icon"]], null, null, null, null, null)), (_l()(), i1.ɵeld(15, 0, null, null, 1, "span", [["class", "sr-only"]], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["Next"])), (_l()(), i1.ɵeld(17, 0, null, null, 8, "div", [["class", "col-md-4"]], null, null, null, null, null)), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_MainSliderComponent_2)), i1.ɵdid(19, 802816, null, 0, i3.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, "ngForOf"] }, null), (_l()(), i1.ɵeld(20, 0, null, null, 2, "div", [["class", "ad"]], null, null, null, null, null)), (_l()(), i1.ɵeld(21, 0, null, null, 1, "a", [["href", "#"]], null, null, null, null, null)), (_l()(), i1.ɵeld(22, 0, null, null, 0, "img", [["src", "https://www.static.phonestablets.co.ke/img/zuri/side-menu-2.jpg"]], null, null, null, null, null)), (_l()(), i1.ɵeld(23, 0, null, null, 2, "div", [["class", "ad"]], null, null, null, null, null)), (_l()(), i1.ɵeld(24, 0, null, null, 1, "a", [["href", "#"]], null, null, null, null, null)), (_l()(), i1.ɵeld(25, 0, null, null, 0, "img", [["src", "https://www.static.phonestablets.co.ke/img/zuri/side-menu-3.jpg"]], null, null, null, null, null))], function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.slider; _ck(_v, 8, 0, currVal_0); var currVal_1 = _co.side; _ck(_v, 19, 0, currVal_1); }, null); }
 exports.View_MainSliderComponent_0 = View_MainSliderComponent_0;
-function View_MainSliderComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-main-slider", [], null, null, null, View_MainSliderComponent_0, RenderType_MainSliderComponent)), i1.ɵdid(1, 245760, null, 0, i2.MainSliderComponent, [i3.ProductsService], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+function View_MainSliderComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-main-slider", [], null, null, null, View_MainSliderComponent_0, RenderType_MainSliderComponent)), i1.ɵdid(1, 245760, null, 0, i4.MainSliderComponent, [i5.ProductsService], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
 exports.View_MainSliderComponent_Host_0 = View_MainSliderComponent_Host_0;
-var MainSliderComponentNgFactory = i1.ɵccf("app-main-slider", i2.MainSliderComponent, View_MainSliderComponent_Host_0, {}, {}, []);
+var MainSliderComponentNgFactory = i1.ɵccf("app-main-slider", i4.MainSliderComponent, View_MainSliderComponent_Host_0, {}, {}, []);
 exports.MainSliderComponentNgFactory = MainSliderComponentNgFactory;
 
 
@@ -4753,6 +4760,7 @@ var MainSliderComponent = /** @class */ (function () {
     MainSliderComponent.prototype.ngOnInit = function () {
         this.imageUrl = IMG_URL;
         this._getSlider();
+        this._getSide();
     };
     MainSliderComponent.prototype._getSlider = function () {
         var _this = this;
@@ -4764,9 +4772,22 @@ var MainSliderComponent = /** @class */ (function () {
             console.error(err);
         });
     };
+    MainSliderComponent.prototype._getSide = function () {
+        var _this = this;
+        this.sideSub = this.productService
+            .getMainSideAd$()
+            .subscribe(function (res) {
+            _this.side = res;
+        }, function (err) {
+            console.error(err);
+        });
+    };
     MainSliderComponent.prototype.ngOnDestroy = function () {
         if (this.sliderSub) {
             this.sliderSub.unsubscribe();
+        }
+        if (this.sideSub) {
+            this.sideSub.unsubscribe();
         }
     };
     return MainSliderComponent;
@@ -6280,11 +6301,18 @@ var ProductsService = /** @class */ (function () {
             .get(env_config_1.ENV.BASE_API + "products")
             .pipe(operators_1.catchError(function (error) { return _this._handleError(error); }));
     };
-    // GET list of products
+    // GET Sliders
     ProductsService.prototype.getMainSlider$ = function () {
         var _this = this;
         return this.http
             .get(env_config_1.ENV.BASE_API + "main-slider")
+            .pipe(operators_1.catchError(function (error) { return _this._handleError(error); }));
+    };
+    // GET Side Ad
+    ProductsService.prototype.getMainSideAd$ = function () {
+        var _this = this;
+        return this.http
+            .get(env_config_1.ENV.BASE_API + "side-ad")
             .pipe(operators_1.catchError(function (error) { return _this._handleError(error); }));
     };
     // GET Product info Using URL
