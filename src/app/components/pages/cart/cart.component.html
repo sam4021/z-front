@@ -11,7 +11,7 @@
               <div class="prod-image">
                   <ng-container *ngFor="let prod of products">
                       <ng-container *ngIf="prod._id == item.productId">
-                          <img src="{{imageUrl}}/products/{{ prod.images[0][0] }}" alt="{{ prod.title }}">
+                          <img src="{{ prod.images[0][0] }}" alt="{{ prod.title }}">
                       </ng-container>
                     </ng-container>
               </div>

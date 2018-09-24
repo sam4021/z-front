@@ -49,7 +49,7 @@
                 <a [routerLink]="['/product', fearured.product.url]" class="">
                   <div class="product-inner">
                     <div class="product-img">
-                      <img src="{{imageUrl}}/products/{{ fearured.product.images[0][0] }}" alt="{{ fearured.product.title }}">
+                      <img src="{{ fearured.product.images[0][0] }}" alt="{{ fearured.product.title }}">
                     </div>
                     <div class="product-info">
                       <div class="prod-title" [innerHtml]="fearured.product.title"></div>
@@ -85,7 +85,7 @@
     <div class="strip">
       <ng-container *ngFor="let cat of category">
       <a href="{{cat.bottom_image.link}}">
-        <img src="{{imageUrl}}{{cat.bottom_image.img}}" alt="{{cat.bottom_image.alt}}">
+        <img src="{{cat.bottom_image.img}}" alt="{{cat.bottom_image.alt}}">
       </a>
       </ng-container>
     </div>
@@ -104,7 +104,7 @@
             <div class="blog-container">
               <div class="card">
                   <ng-container *ngIf="blog.thumb_image != ''">
-                      <img class="card-img-top" src="{{imageUrl}}/blogs/{{blog.thumb_image}}" alt="{{blog.title}}">
+                      <img class="card-img-top" src="{{blog.thumb_image}}" alt="{{blog.title}}">
                   </ng-container>
                   <ng-container *ngIf="blog.thumb_image == ''">
                       <img class="card-img-top" src="https://placeimg.com/286/180/tech" alt="{{blog.title}}">
@@ -156,7 +156,7 @@
                         </div>
                     <div  class="product-inner">
                       <div  class="product-img">
-                          <img src="{{imageUrl}}/products/{{ offer.images[0][0] }}" alt="{{ offer.title }}">
+                          <img src="{{ offer.images[0][0] }}" alt="{{ offer.title }}">
                       </div>
                       <div  class="product-info">
                         <div  class="prod-title" [innerHtml]="offer.title"></div>
@@ -183,7 +183,7 @@
                 <ng-container *ngFor="let b of brands">
                   <div class="brand-cont">
                     <a [routerLink]="['/brand', b.url]" title="{{b.title}}">
-                      <img src="{{imageUrl}}/brands-logo/{{b.logo}}" alt="{{b.title}}">
+                      <img src="{{b.logo}}" alt="{{b.title}}">
                     </a>
                   </div>
                 </ng-container>
@@ -213,7 +213,7 @@
                   <a [routerLink]="['/product', fearured.product.url]" class="">
                     <div class="product-inner">
                       <div class="product-img">
-                        <img src="{{imageUrl}}/products/{{ fearured.product.images[0][0] }}" alt="{{ fearured.product.title }}">
+                        <img src="{{ fearured.product.images[0][0] }}" alt="{{ fearured.product.title }}">
                       </div>
                       <div class="product-info">
                         <div class="prod-title" [innerHtml]="fearured.product.title"></div>
@@ -255,7 +255,7 @@
                   <a [routerLink]="['/product', product.url]" class="">
                     <div class="product-inner">
                       <div class="product-img">
-                        <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                        <img src="{{ product.images[0][0] }}" alt="{{ product.title }}">
                       </div>
                       <div class="product-info">
                         <div class="prod-title" [innerHtml]="product.title"></div>
@@ -310,7 +310,7 @@
                   <a [routerLink]="['/product', fearured.product.url]" class="">
                     <div class="product-inner">
                       <div class="product-img">
-                        <img src="{{imageUrl}}/products/{{ fearured.product.images[0][0] }}" alt="{{ fearured.product.title }}">
+                        <img src="{{ fearured.product.images[0][0] }}" alt="{{ fearured.product.title }}">
                       </div>
                       <div class="product-info">
                         <div class="prod-title" [innerHtml]="fearured.product.title"></div>
@@ -351,20 +351,6 @@
             </a>
           </div>
         </div>
-        <!-- <div class="col-md-4">
-          <div class="pt-ad-img">
-            <a routerLink="/product/samsung-galaxy-s9-plus-64gb-price-in-kenya">
-              <img src="{{imageUrl}}/home-page/Small-2.jpg" alt="sony dav dz350 home-theater">
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="pt-ad-img">
-            <a routerLink="/product/tesla-31-price-specs-in-kenya">
-              <img src="{{imageUrl}}/home-page/Small-3.jpg" alt="infinix hot 6 pro">
-            </a>
-          </div>
-        </div> -->
       </div>
     </section>
   <section class="top-prod">
@@ -380,7 +366,7 @@
                     <a [routerLink]="['/product', product.url]" class="">
                       <div class="product-inner">
                         <div class="product-img">
-                          <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                          <img src="{{ product.images[0][0] }}" alt="{{ product.title }}">
                         </div>
                         <div class="product-info">
                           <div class="prod-title" [innerHtml]="product.title"></div>
@@ -413,9 +399,6 @@
         </ng-template>
   </section>
   <app-home-category></app-home-category>
-  <!-- <div class="delivery">
-    <img src="{{imageUrl}}/home-page/Delivery -strip.jpg" alt="delivery">
-  </div> -->
   <section class="blog-section">
     <div class="">
       <div class="header">
@@ -431,7 +414,7 @@
               <div class="card">
                   <a routerLink="/blog/{{blog.url}}">
                   <ng-container *ngIf="blog.thumb_image != ''">
-                      <img class="card-img-top" src="{{imageUrl}}/blogs/{{blog.thumb_image}}" alt="{{blog.title}}">
+                      <img class="card-img-top" src="{{blog.thumb_image}}" alt="{{blog.title}}">
                   </ng-container>
                   <ng-container *ngIf="blog.thumb_image == ''">
                       <img class="card-img-top" src="https://placeimg.com/286/180/tech" alt="{{blog.title}}">

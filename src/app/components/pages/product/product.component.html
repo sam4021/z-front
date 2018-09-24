@@ -4,7 +4,7 @@
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item"  *ngFor="let image of productImages; let i=index"  [class.active]="i == 0">
-                <img class="d-block w-100" src="{{imageUrl}}/products/{{ image[0]}}" alt="">
+                <img class="d-block w-100" src="{{ image[0]}}" alt="">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -110,7 +110,7 @@
                       <a routerLink="/product/{{product.url}}" class="">
                       <div class="product-inner">
                         <div class="product-img">
-                          <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                          <img src="{{ product.images[0][0] }}" alt="{{ product.title }}">
                         </div>
                         <div class="product-info">
                           <div class="prod-title" [innerHtml]="product.title"></div>
@@ -170,29 +170,29 @@
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item"  *ngFor="let image of productImages; let i=index"  [class.active]="i == 0">
-                    <img class="d-block w-100" src="{{imageUrl}}/products/{{ image[0]}}" alt="">
+                    <img class="d-block w-100" src="{{ image[0]}}" alt="">
                 </div>
             </div>
             <ol class="carousel-indicators">
               <ng-container  *ngFor="let image of productImages; let i=index">
                 <ng-container *ngIf="i==0">
                   <li data-target="#carouselExampleIndicators"  class="active"  data-slide-to="0">
-                    <img src="{{imageUrl}}/products/{{ image[0]}}">
+                    <img src="{{ image[0]}}">
                   </li>
                 </ng-container>
                 <ng-container *ngIf="i==1">
                   <li data-target="#carouselExampleIndicators" data-slide-to="1">
-                    <img src="{{imageUrl}}/products/{{ image[0]}}">
+                    <img src="{{ image[0]}}">
                   </li>
                 </ng-container>
                 <ng-container *ngIf="i==2">
                   <li data-target="#carouselExampleIndicators" data-slide-to="2">
-                    <img src="{{imageUrl}}/products/{{ image[0]}}">
+                    <img src="{{ image[0]}}">
                   </li>
                 </ng-container>
                 <ng-container *ngIf="i==3">
                   <li data-target="#carouselExampleIndicators" data-slide-to="3">
-                    <img src="{{imageUrl}}/products/{{ image[0]}}">
+                    <img src="{{ image[0]}}">
                   </li>
                 </ng-container>
               </ng-container>
@@ -348,7 +348,7 @@
                       <a routerLink="/product/{{product.url}}" class="">
                       <div class="product-inner">
                         <div class="product-img">
-                          <img src="{{imageUrl}}/products/{{ product.images[0][0] }}" alt="{{ product.title }}">
+                          <img src="{{ product.images[0][0] }}" alt="{{ product.title }}">
                         </div>
                         <div class="product-info">
                           <div class="prod-title" [innerHtml]="product.title"></div>

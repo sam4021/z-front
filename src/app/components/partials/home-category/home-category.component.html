@@ -11,7 +11,7 @@
         <div class="col-md-3 category-img">
           <div class="main-image">
             <a routerLink="{{ cat.image.link }}">
-              <img src="{{imageUrl}}{{ cat.image.img }}" alt="{{ cat.image.alt }}">
+              <img src="{{ cat.image.img }}" alt="{{ cat.image.alt }}">
             </a>
           </div>
           <div class="main-links">
@@ -27,7 +27,7 @@
                       <a routerLink="/product/{{prod.url}}">
                         <div class="product-inner">
                           <div class="product-img">
-                            <img src="{{imageUrl}}/products/{{ prod.images[0][0] }}" alt="{{ prod.title }}">
+                            <img src="{{ prod.images[0][0] }}" alt="{{ prod.title }}">
                           </div>
                           <div class="product-info">
                             <div class="prod-title">
@@ -59,8 +59,8 @@
   </section>
   <section class="category-strip">
     <div class="strip">
-      <a href="#">
-        <img src="assets/images/ES-STB-live.jpg" alt="">
+      <a href="{{ cat.bottom_image.link}}">
+        <img src="{{ cat.bottom_image.img}}" alt="{{ cat.bottom_image.alt}}">
       </a>
     </div>
   </section>

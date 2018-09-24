@@ -193,7 +193,7 @@ middleAd: any;
                   }                  
                 });
               }
-              this.brands = BrandArr              
+              this.brands = BrandArr                
             }, err =>{
               console.error(err);
               this.error = true;
@@ -220,7 +220,6 @@ middleAd: any;
       );
   }
 
-  
   private _getBlogsm() {
     this.loading = true;
     this.blogSub = this.productService

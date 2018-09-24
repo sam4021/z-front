@@ -2,7 +2,7 @@
   <div class="main-cont">
     <div class="main-img">
         <ng-container *ngIf="blog.main_image != ''">
-            <img src="{{imageUrl}}/blogs/{{blog.main_image}}" alt="{{blog.title}}">
+            <img src="{{blog.main_image}}" alt="{{blog.title}}">
           </ng-container>
     </div>
     <div class="info">
@@ -18,7 +18,7 @@
               <a routerLink="/blog/{{blog.url}}">
                 <div class="blog-img">
                     <ng-container *ngIf="blog.thumb_image != ''">
-                        <img src="{{imageUrl}}/blogs/{{blog.thumb_image}}" alt="{{blog.title}}">
+                        <img src="{{blog.thumb_image}}" alt="{{blog.title}}">
                       </ng-container>
                       <ng-container *ngIf="blog.thumb_image == ''">
                         <img src="https://placeimg.com/286/180/tech" alt="{{blog.title}}">
@@ -44,7 +44,7 @@
               </div>
           <div class="main-img">
               <ng-container *ngIf="blog.main_image != ''">
-                  <img src="{{imageUrl}}/blogs/{{blog.main_image}}" alt="{{blog.title}}">
+                  <img src="{{blog.main_image}}" alt="{{blog.title}}">
                 </ng-container>
           </div>
           <div class="main-info">
@@ -60,7 +60,7 @@
               <a routerLink="/blog/{{blog.url}}"><div class="blog-title" [innerHtml]="blog.title"></div></a>
               <div class="blog-img">
                   <ng-container *ngIf="blog.thumb_image != ''">
-                      <img src="{{imageUrl}}/blogs/{{blog.thumb_image}}" alt="{{blog.title}}">
+                      <img src="{{blog.thumb_image}}" alt="{{blog.title}}">
                     </ng-container>
                     <ng-container *ngIf="blog.thumb_image == ''">
                       <img src="https://placeimg.com/286/180/tech" alt="{{blog.title}}">
