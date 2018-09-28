@@ -31,10 +31,23 @@
 ul li {
     border: none
 }
-
+ul li .hmenu-icon{
+    float: left;
+    width: 15%;
+    text-align: center;
+}
 ul li .hmenu-text {
     font-size: 12px;
-    border: 1px solid #FFF
+    border: 1px solid #FFF;
+    float: left;
+    width: 70%;
+}
+ul li .hmenu-carrot{
+    float: left;
+    width: 15%;
+    text-align: right;
+    padding-right: 3px;
+    color: #355d87;
 }
 
 #main_menu .main_list h1,
@@ -60,7 +73,6 @@ ul li .hmenu-text {
 #main_menu .main_list {
     color: #292727;
     list-style-type: none;
-    padding-left: 15px
 }
 
 #main_menu .main_list a {

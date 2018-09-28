@@ -2,10 +2,13 @@
   <li class="main_list" *ngFor="let c of mainMenu">
     <a routerLink="/products/{{ c.url }}">
       <div class="hmenu-icon">
-
+        <i class="{{ c.icon }}"></i>
       </div>
       <div class="hmenu-text">
         {{ c.title }}
+      </div>
+      <div class="hmenu-carrot">
+        <i class="fas fa-sort-up  fa-rotate-90"></i>
       </div>
     </a>
     <div class="list-content">
@@ -18,5 +21,6 @@
         </div>
       </ng-container>
     </div>
+    <div class="clearfix"></div>
   </li>
 </ul>
