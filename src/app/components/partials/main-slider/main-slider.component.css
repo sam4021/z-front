@@ -3,7 +3,10 @@ bottom: 3px;
 margin-bottom: 0px;
 }
 .ad{
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 .ad img{
     width: 100%;
