@@ -6,38 +6,62 @@
   <div class="category">
     <ul>
       <ng-container  *ngFor="let c of mainMenu">
-        <ng-container *ngIf=" c._id == '5a1fa8dd5d54cc0004e77464' || c._id == '5a1faae25d54cc0004e7746c'||c._id == '5a1fab895d54cc0004e77471'||c._id == '5a1fa9735d54cc0004e77468' || c._id == '5a819ab0b5e6a90004a1be90'">
         <li>
         <a routerLink="/products/{{ c.url }}">
           <div class="cat-container">
             <div class="icon">
-              <ng-container *ngIf=" c._id == '5a1fa8dd5d54cc0004e77464' ">
-                <img src="{{imageUrl}}/icons/mobile_Mobile.png" alt="{{c.title}}">
-              </ng-container>
-              <ng-container *ngIf=" c._id == '5a1faae25d54cc0004e7746c' ">
-                <img src="{{imageUrl}}/icons/mobile_Tablets.png" alt="{{c.title}}">
-              </ng-container>
-              <ng-container *ngIf=" c._id == '5a1fab895d54cc0004e77471' ">
-                <img src="{{imageUrl}}/icons/mobile_Electronics.png" alt="{{c.title}}">
-              </ng-container>
-              <ng-container *ngIf=" c._id == '5a1fa9735d54cc0004e77468' ">
-                <img src="{{imageUrl}}/icons/mobile_computer.png" alt="{{c.title}}">
-              </ng-container>
-              <ng-container *ngIf=" c._id == '5a819ab0b5e6a90004a1be90' ">
-                <img src="{{imageUrl}}/icons/mobile_accessories.png" alt="{{c.title}}">
-              </ng-container>
+              <i class="{{ c.icon }}"></i>
             </div>
             <div class="text">
               {{ c.title }}
             </div>
           </div>
-        </a>
+        </a><div class="clearfix"></div>
         </li>
-        </ng-container>
       </ng-container>
       <div class="clearfix"></div>
     </ul>
   </div>
+  <section id="daily-deals">
+    <div class="daily-container">
+      <div class="daily-inner">
+        <div class="daily-info">
+          <a routerLink="/offers">
+            <img src="assets/images/daily-deals.png" alt="">
+          </a>
+          <!-- <span class="top">Daily</span>
+          <span class="bottom">Deals</span>
+          <div class="link">
+            <a routerLink="/offers">View All Deals -></a>
+          </div> -->
+        </div>
+        <div class="daily-products">
+            <div  class="fProds-item" *ngFor="let offer of offerProd">
+                <div  class="product-container">
+                  <a  class="" routerLink="/product/{{offer.url}}">
+                    <div class="badge">
+                        <div class="percent">
+                          {{(offer.price-offer.special_price)/100 | number :'1.0-0'}}% <span>off</span>
+                        </div>
+                        </div>
+                    <div  class="product-inner">
+                      <div  class="product-img">
+                          <img src="{{ offer.images[0][0] }}" alt="{{ offer.title }}">
+                      </div>
+                      <div  class="product-info">
+                        <div  class="prod-title" [innerHtml]="offer.title"></div>
+                        <div  class="prod-price"> Ksh. {{ offer.special_price | number:0 }}</div>
+              <div  class="prod-rate"></div></div>
+            </div>
+            </a>
+            </div>
+            </div>
+         <div  class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </section>
   <div class="featured">
     <app-loading *ngIf="loading"></app-loading>
     <ng-template [ngIf]="utils.isLoaded(loading)">

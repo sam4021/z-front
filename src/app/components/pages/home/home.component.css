@@ -304,14 +304,17 @@ a {
 
 .mobile_view .category ul li {
     list-style: none;
-    width: 100%;
-    clear: both;
-    border-bottom: 1px solid #305d8d;
+    width: 31%;
+    float: left;
+    border: 1px solid #305d8d70;
+    margin: 5px 1%;
+    text-align: center;
+    height: 75px;
 }
 
 .mobile_view .category ul li .icon {
-    width: 30%;
-    float: left;
+    width: 100%;
+    font-size: 20px;
 }
 
 .mobile_view .category ul li .icon img {
@@ -319,10 +322,8 @@ a {
 }
 
 .mobile_view .category ul li .text {
-    font-size: 18px;
+    font-size: 15px;
     height: 25px;
-    float: left;
-    padding-top: 9px;
 }
 
 .mobile_view .featured .fProds-container .fProds-item {
@@ -422,7 +423,7 @@ a {
 }
 
 @media (min-width:320px) and (max-width:480px) {
-    .category-prods,#daily-deals,
+    .category-prods,#daily-deals .daily-info,
     .hmenu {
         display: none
     }
@@ -431,5 +432,17 @@ a {
     }
     .carousel-indicators {
         bottom: -10px
+    }
+    .daily-products{
+        width: 100%;
+        height: auto;
+    }
+    .daily-products .fProds-item {
+        width: 49%;
+        border: 1px solid #f49c38;
+        margin: 5px 0.5%;
+    }
+    .daily-products .product-info .prod-price {
+        margin-top: 20px;
     }
 }
