@@ -256,6 +256,10 @@
     list-style: none;
     color: #FFF;
 }
+.account .acc-inner svg{
+    width: 40px;
+    height: 28px;
+}
 .nav-mobile .menu-container .menu-sidebar li .menu-sub .menu-sub-title .arrow {
     color: #FFF
 }
