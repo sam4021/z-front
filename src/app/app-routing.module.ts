@@ -50,6 +50,22 @@ const routes: Routes = [
     path: 'search',
     loadChildren: './components/pages/search/search.module#SearchModule'
   },
+  // {
+  //   path: 'about-us',
+  //   loadChildren: './components/pages/static/about/about.module#AboutModule'
+  // },
+  {
+    path: 'privacy-policy',
+    loadChildren: './components/pages/static/privacy-policy/privacy-policy.module#PrivacyPolicyModule'
+  },
+  {
+    path: 'customer-service',
+    loadChildren: './components/pages/static/customer-service/customer-service.module#CustomerServiceModule'
+  },
+  {
+    path: 'delivery',
+    loadChildren: './components/pages/static/delivery/delivery.module#DeliveryModule'
+  },
   {
     path: '**',
     redirectTo: '/'
