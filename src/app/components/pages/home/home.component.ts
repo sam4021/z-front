@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   order_message: boolean = false;
   order_message1:any;
   private storage: Storage;
-pageTitle = 'Online Shopping Site in Kenya - Shop for Electronics, Mobile, Tablets & Computers, Television - Phones And Tablets';
+pageTitle = 'Zuri Cart Kenya';
 home: any;
 homeSub: Subscription;
 productsFeaturedSub: Subscription;
