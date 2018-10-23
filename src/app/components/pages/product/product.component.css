@@ -12,7 +12,6 @@ p {
 #product-page .product-info{
     padding-left: 20px;
 }
-
 .alert-container {
     position: absolute;
     top: 0;
@@ -182,7 +181,16 @@ float: left;
     color: red;
     font-size: 14px
 }
+.key_features{
 
+}
+.key_features b{
+    width: 90%;
+    margin-left: 5%
+}
+.key_features dir{
+    padding: 0px;
+}
 .product-services {
     float: left;
     width: 40%;
