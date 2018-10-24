@@ -32,7 +32,7 @@
           </div>
         </ng-container>
       </div>
-      <ng-container *ngIf="showAlert">
+      <!-- <ng-container *ngIf="showAlert">
         <div class="alert-container">
           <div class="alert-inner">
             <div class="alert-box">
@@ -40,7 +40,18 @@
             </div>
           </div>
         </div>
-      </ng-container>
+      </ng-container> -->
+      <ng-container *ngIf="showAlert">
+          <div class="alert-container">
+            <div class="alert-inner">
+              <button class="close-btn" (click)="hideAlert()">X</button>
+              <app-product-cart></app-product-cart>
+              <div class="alert-box">
+                
+              </div>
+            </div>
+          </div>
+        </ng-container>
       <div class="product-action clearfix">
           <ng-container *ngIf="productSp ==0">
               <ng-container *ngIf="productStock ==1">

@@ -481,14 +481,11 @@ p {
 }
 
 .mobile_view .alert-container {
-    position: relative
+    
 }
 
 .mobile_view .alert-inner {
-    padding: 10px 20px;
-    background-color: #008000b3;
-    color: #FFF;
-    text-align: center
+    
 }
 
 .mobile_view .product-title {

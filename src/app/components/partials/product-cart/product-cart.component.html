@@ -1,3 +1,4 @@
+<div class="mobile_view" *ngIf="mobile_view">
 <div id="cart-page" class="">
       <div class="row">
         <div class="col-md-12">
@@ -73,4 +74,81 @@
         </div>
       </div>
   </div>
-  
+</div>
+<div class="desktop_view" *ngIf="desktop_view">
+    <div id="cart-page" class="">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="cart-container">
+                <div class="cart-header">
+                  {{ itemCount }}  Products In Your Cart
+                </div>
+                <div class="row cart-cont" *ngFor="let item of cartV">
+                  <div class="col-md-3">
+                    <div class="prod-image">
+                        <ng-container *ngFor="let prod of products">
+                            <ng-container *ngIf="prod._id == item.productId">
+                                <img src="{{ prod.images[0][0] }}" alt="{{ prod.title }}">
+                            </ng-container>
+                          </ng-container>
+                    </div>
+                  </div>
+                  <div class="col-md-9">
+                    <div class="prod-title">
+                      <ng-container *ngFor="let prod of products">
+                        <ng-container *ngIf="prod._id == item.productId">
+                        {{ prod.title }}
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                    <div class="prod-qty">
+                      <strong>Qty: </strong>{{ item.quantity }}
+                      <div class="qty">
+                        <button class="down" (click)="qtyDown(item.productId)" [attr.disabled]="item.quantity === 1 ? true : null">
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <button class="up" (click)="qtyUp(item.productId)">
+                          <i class="fa fa-caret-up"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="prod-price">
+                        Ksh.{{ item.price  | number:0}}
+                      </div>
+                      <div class="prod-subtotal">
+                          Ksh. {{ item.price * item.quantity  | number:0}}
+                        </div>
+                  </div>
+                    <div class="delete-cart">
+                      <button type="button" (click)="remove(item.productId)" >delete</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="cart-totals">
+                <div class="total">
+                  <div class="text">
+                    Total
+                  </div>
+                  <div class="amount">
+                    Ksh. {{ itemTotal }}
+                  </div>
+                </div>
+                <ng-container *ngIf="itemCount != 0">
+                  <a routerLink="/checkout"
+                  class="btn btn-primary checkout-btn"
+                  >Checkout</a>
+                </ng-container>
+                <ng-container *ngIf="itemCount === 0">
+                  <button disabled="true"
+                  class="btn btn-primary checkout-btn"
+                  >Checkout</button>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>

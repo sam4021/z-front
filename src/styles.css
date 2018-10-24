@@ -237,7 +237,8 @@ footer .mobile_view {
 .foot-pay {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-    padding: 20px 0
+    padding: 20px 0;
+    display: none;
 }
 
 .foot-pay .head {
@@ -354,7 +355,7 @@ footer .mobile_view {
 }
 
 .about-footer .body {
-    font-size: 12px;
+    font-size: 13px;
     color: #777;
     margin-top: 15px
 }

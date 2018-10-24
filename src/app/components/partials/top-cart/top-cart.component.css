@@ -23,14 +23,13 @@
     color: inherit;
     font-weight: inherit;
     position: absolute;
-    top: -7px;
+    top: -5px;
     left: 14px;
     font-size: 11px;
 }
 
 .mobile_view .cart-body .cart-total span {
     color: #305d8d;
-    background-color: #ffffffa1;
     padding: 1px 5px;
     border-radius: 20px;
 }
@@ -53,7 +52,8 @@
     border-radius: 20px;
 }
 .cart-body .cart-left svg{
-    font-size: 25px;
+    font-size: 23px;
+    margin-top: 10px
 }
 
 .cart-body .cart-count {

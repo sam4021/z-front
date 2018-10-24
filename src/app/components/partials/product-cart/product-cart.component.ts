@@ -8,6 +8,7 @@ import { Observable } from "rxjs/Observable";
 import { Subscription } from "rxjs/Subscription";
 import { StorageService } from "../../../services/storage/storage.service";
 import { CheckoutService } from "../../../services/checkout/checkout.service";
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 import { ENV } from '../../../core/env.config';
 const IMG_URL = ENV.BASE_IMAGE;
@@ -24,6 +25,9 @@ interface ICartItemWithProduct extends CartItem {
   styleUrls: ['./product-cart.component.css']
 })
 export class ProductCartComponent implements OnInit {
+  mobile_view:boolean = false;
+  desktop_view:boolean = false;
+  deviceInfo = null;
   private storage: Storage;
   public cart: Observable<ShoppingCart>;
   public cartV: any;
@@ -41,15 +45,23 @@ export class ProductCartComponent implements OnInit {
   constructor(private storageService: StorageService,
     private productsService: ProductsService,
     private shoppingCartService: CartService,
-    private checkoutService: CheckoutService) {
+    private checkoutService: CheckoutService,
+    private deviceService: DeviceDetectorService) {
     this.storage = this.storageService.get();
-
+    this.epicFunction();
   }
 
   ngOnInit() {
     this.Cart();
     this._getShipping();
     this.imageUrl = IMG_URL;
+    if (this.deviceInfo.device == 'android' || this.deviceInfo.device == 'iphone') {
+      this.mobile_view = true;
+      this.desktop_view = false;
+    } else{
+      this.mobile_view = false;
+      this.desktop_view = true;
+    }
   }
   public Cart(): void {
     this.cart = this.shoppingCartService.get();
@@ -107,6 +119,11 @@ export class ProductCartComponent implements OnInit {
             console.error(err);
           }
         );
+  }
+
+  epicFunction() {
+    this.deviceInfo = this.deviceService.getDeviceInfo();
+    //console.log(this.deviceInfo);
   }
   
   ngOnDestroy(){

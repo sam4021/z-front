@@ -74,13 +74,6 @@ footer {
 .mobile_view .copyright {
     padding: 8px 0
 }
-
-.foot-pay {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    padding: 20px 0
-}
-
 .foot-pay .head {
     text-transform: uppercase
 }
@@ -92,26 +85,27 @@ footer {
 
 .top-footer {
     padding: 30px 0;
-    background-color: #355d87;
+    background-color: #ffffff;
+    border-top: 1px solid #ececec;
 }
 
 .foot-pay .body ul li .fa-facebook-f,
-.mobile_view .social .body ul li a .fa-facebook-f {
+.mobile_view .social .body ul li a .fa-facebook-f,.fa-facebook-f {
     color: #3B5998
 }
 
 .foot-pay .body ul li .fa-twitter,
-.mobile_view .social .body ul li a .fa-twitter {
+.mobile_view .social .body ul li a .fa-twitter,.fa-twitter {
     color: #1DA1F2
 }
 
 .foot-pay .body ul li .fa-instagram,
-.mobile_view .social .body ul li a .fa-instagram {
+.mobile_view .social .body ul li a .fa-instagram ,.fa-instagram {
     color: #262626
 }
 
 .foot-pay .body ul li .fa-google-plus,
-.mobile_view .social .body ul li a .fa-google-plus {
+.mobile_view .social .body ul li a .fa-google-plus ,.fa-google-plus {
     color: #DB4437
 }
 
@@ -156,13 +150,14 @@ footer {
 
 .foot-head {
     font-size: 13px;
-    font-weight: 500;
-    color: #FFF;
-    text-transform: uppercase
+    font-weight: 700;
+    color: #355d87;
+    text-transform: uppercase;
+    text-shadow: none;
 }
 
 .foot-body ul li a {
-    color: #FFF;
+    color: #737171;
     text-decoration: none;
     display: block;
     font-weight: 400;
@@ -173,8 +168,8 @@ footer {
 
 .copyright {
     padding: 20px 0;
-    color: #706e6f;
-    background-color: #FFF;
+    color: #FFF;
+    background-color: #355d87;
     text-align: center;
     font-size: 12px
 }
@@ -216,4 +211,44 @@ footer {
 }
 .serv-msg{
 
+}
+.bSocial{
+
+}
+.bSocial li{
+    
+}
+.bSocial li a{
+    
+}
+.bSocial li a svg{
+    margin-right: 0px;
+    width: 30px;
+}
+.bSocial li a span{
+    padding-left:10px;
+}
+.newsletter{
+
+}
+.newsletter small{
+    font-size: 12px;
+}
+.newsletter .form-group{
+    float: left;
+    width: 70%;
+}
+.newsletter .form-group input{
+    border-radius: 0px;
+    width: 100%;
+    font-size: 13px;
+    border-color: #355d87;
+}
+button{
+    border-radius: 0px;
+    float: left;
+    width: 30%;
+    font-size: 13px;
+    background-color: #355d87;
+    border-color: #355d87;
 }
