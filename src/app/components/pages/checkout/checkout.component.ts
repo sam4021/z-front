@@ -116,7 +116,7 @@ export class CheckoutComponent implements OnInit {
       let phone = this.rForm.value.phone;
       let email = this.rForm.value.email;
       let delivery_location = this.rForm.value.delivery_location;
-      let shipping = '5ab8a2795ac33b4bd89b19f9';
+      let shipping = '';
       let cart = this.cartV;
   
       this.http.post<Message>(`${ENV.BASE_API}order`,
