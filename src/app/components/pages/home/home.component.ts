@@ -60,6 +60,7 @@ middleAd: any;
   deviceInfo = null;
   offerProdSub: Subscription;
   offerProd: any;
+ 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private title: Title,
@@ -81,6 +82,7 @@ middleAd: any;
     // this.meta.addTag({ property: 'og:description' ,content: "Online Shopping : Buy Mobile Phones, Tablets, Televisions, Laptops , Cameras &  More | Best Prices In Kenya | Responsive Customer Support | Fast Shipping" });
     // this.meta.addTag({ property: 'og:image' , content:"https://www.static.phonestablets.co.ke/img/logo.png" });
     categoryService.categoryData$.subscribe(data => this.mainMenu = data);
+    
     this.epicFunction()
    }
 

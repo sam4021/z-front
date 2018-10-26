@@ -18,19 +18,38 @@ export class HomeCategoryComponent implements OnInit, OnDestroy {
   loading: boolean;
   error: boolean;
   imageUrl= '';
-
+  allProducts: any;
+  allBrand: any;
   constructor(private productService: ProductsService) {    
-    let checkData;
+    let checkData,br,pr;
+    this.productService.productsData$.subscribe(data => {
+        this.allProducts = data
+    });
+    this.productService.brandData$.subscribe(data => {this.allBrand = data});
     this.categorySub = this.productService.homeData$.subscribe(
       data => {
         checkData = data
         if (checkData != null) {
-          this.category = checkData.category;           
+          this.category = checkData.category;      
+          if (Array.isArray(this.allProducts)) {
+            // this.category.forEach(c => {
+            //   this.allProducts.forEach(p => {
+            //     if(c.category.id == p.category){
+            //       console.log(c.category);
+            //     }
+            //   console.log(p);
+            //   });  
+            // });
+            console.log("true");
+          } else{
+            console.log("false");
+          }
           this.loading = false;           
         }
                        
       }
-    )
+    );
+    
    }
 
   ngOnInit() {

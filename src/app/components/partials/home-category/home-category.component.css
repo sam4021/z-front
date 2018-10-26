@@ -16,8 +16,12 @@
 .category-name {
     float: left;
     font-size: 1.2rem;
-    color: #ffffff;
     margin: 5px 10px
+}
+
+.category-name a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .category-link {
@@ -137,4 +141,12 @@
 
 .hm-category-brands .hm-cat ul li a:hover {
     color: #2fa09b
+}
+.pb-brand{
+    float: right;
+    padding: 0px 5px;
+}
+.pb-brand a{
+    text-decoration: none;
+    text-transform: capitalize;
 }

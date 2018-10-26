@@ -1,9 +1,15 @@
 <ng-container *ngFor="let cat of category">
   <section class="category-section {{cat.category.url}}">
     <div class="category-header clearfix">
-          <h3 class="category-name">{{cat.category.title}}</h3>
+          <h3 class="category-name"><a routerLink="products/{{cat.category.url}}">{{cat.category.title}}</a></h3>
           <div class="category-link">
-            <a routerLink="products/{{cat.category.url}}">View All</a>
+            <ng-container *ngFor="let brand of cat.brands">
+              <div class="pb-brand">
+                <a routerLink="products/{{cat.category.url}}/{{brand.url}}">{{brand.title}}</a>
+              </div>
+            </ng-container>
+              
+            <!-- <a routerLink="products/{{cat.category.url}}">View All</a> -->
           </div>
     </div>
     <div class="category-body">
