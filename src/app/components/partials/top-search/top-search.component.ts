@@ -73,6 +73,10 @@ export class TopSearchComponent implements OnInit {
     }    
   }
 
+  onProduct(id): void {
+    this.router.navigate(['/product/'+id]);
+  }
+
   onFilter(event: any) {
     let prodArr=[];
     if (event.target.value =='') {
@@ -112,7 +116,7 @@ export class TopSearchComponent implements OnInit {
     this.canSee = true;
   }
   hide(e: any) {
-    this.canSee = false;
+    this.canSee = true;
   }
 
 }
