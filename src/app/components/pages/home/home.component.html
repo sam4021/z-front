@@ -136,7 +136,7 @@
   <section class="category-strip">
     <div class="strip">
       <ng-container *ngFor="let cat of category">
-      <a href="{{cat.bottom_image.link}}">
+      <a routerLink="{{cat.bottom_image.link}}">
         <img src="{{cat.bottom_image.img}}" alt="{{cat.bottom_image.alt}}">
       </a>
       </ng-container>
