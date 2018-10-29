@@ -190,7 +190,7 @@ middleAd: any;
               //console.log(this.brands);
               if (checkBrand !== null) {
                 checkBrand.forEach(e => {
-                  if(e.logo){
+                  if(e.front==1){
                     BrandArr.push(e)
                   }                  
                 });

@@ -53,6 +53,9 @@
 }
 .cart-body .cart-left svg{
     font-size: 23px;
+    margin-top: 3px
+}
+.mobile_view .cart-body .cart-left svg{
     margin-top: 10px
 }
 

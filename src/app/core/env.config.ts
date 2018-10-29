@@ -6,7 +6,7 @@
 // };
 //const apiURI = _isDev ? 'http://localhost:3000/api2/' : `https://phonestablets-crm.herokuapp.com/api2/`;
 // const apiURI = 'https://phonestablets-crm.herokuapp.com/api2/';
-const apiURI = 'https://zuri-back.herokuapp.com/api/';
+const apiURI = 'https://zuriback.herokuapp.com/api/';
 //const apiURI = 'http://localhost:3000/api/';
 
 export const ENV = {
