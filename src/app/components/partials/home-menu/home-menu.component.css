@@ -9,14 +9,15 @@ ul li {
 }
 ul li .hmenu-icon{
     float: left;
-    width: 15%;
+    width: 9%;
     text-align: center;
 }
 ul li .hmenu-text {
-    font-size: 12px;
+    font-size: 14px;
     border: 1px solid #FFF;
     float: left;
-    width: 70%;
+    width: 75%;
+    font-weight: bold;
 }
 ul li .hmenu-carrot{
     float: left;
@@ -101,6 +102,7 @@ ul li .hmenu-carrot{
     border: 1px solid #DDD;
     height: 100%;
     max-height: 290px;
+    overflow: hidden;
 }
 
 .list-content .dk-col {

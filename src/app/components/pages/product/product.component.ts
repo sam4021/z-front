@@ -219,8 +219,14 @@ export class ProductComponent implements OnInit {
     //    .subscribe((data) => {
     //       this.router.navigate(['/product/'+this.id]);
     //    });
-       document.getElementById("exampleModalLong").classList.remove('show');
-       document.getElementById(".icon-rollover-color").style.display="none"
+       //document.getElementById("exampleModalLong").classList.remove('show');
+       let shadesEl = document.querySelector('.class_modal');
+
+       console.log(shadesEl.classList);
+       shadesEl.classList.remove('show');
+       
+       //document.getElementById("exampleModalLong").style.display="none"
+       //document.getElementById(".icon-rollover-color").style.display="none"
   }
 
   private _getProduct() {

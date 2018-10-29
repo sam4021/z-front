@@ -4,7 +4,7 @@
         <li class="main_list" *ngFor="let c of mainMenu">
           <a routerLink="/products/{{ c.url }}">
             <div class="hmenu-icon">
-  
+              <i class="{{ c.icon }}"></i>
             </div>
             <div class="hmenu-text">
               {{ c.title }}
@@ -23,6 +23,7 @@
               </div>
             </ng-container>
           </div>
+          <div class="clearfix"></div>
         </li>
       </ul>
     </div>

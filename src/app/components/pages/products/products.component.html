@@ -83,15 +83,22 @@
                                       {{ product.title }}
                                     </div>
                                     <div class="prod-price">
-                                      <ng-container *ngIf="product.special_price ==0">
-                                        Ksh. {{ product.price | number:0 }}
-                                      </ng-container>
-                                      <ng-container *ngIf="product.special_price !=0">
-                                        Ksh. {{ product.special_price | number:0 }}
-                                        <div class="discount">
-                                          Ksh. {{ product.price | number:0 }}
-                                        </div>
-                                      </ng-container>
+                                        <ng-container *ngIf="product.stock != 2">
+                                            <ng-container *ngIf="product.special_price == 0">
+                                              Ksh. {{ product.price | number:0 }}
+                                            </ng-container>
+                                            <ng-container *ngIf="product.special_price !=0">
+                                              Ksh. {{ product.special_price | number:0 }}
+                                              <div class="discount">
+                                                Ksh. {{ product.price | number:0 }}
+                                              </div>
+                                            </ng-container>
+                                          </ng-container>
+                                          <ng-container *ngIf="product.stock == 2">
+                                            <div class="upcoming">
+                                              Upcoming
+                                            </div>
+                                          </ng-container>
                                     </div>
                                     <div class="prod-rate">
         
