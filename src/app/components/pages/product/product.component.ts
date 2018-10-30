@@ -214,11 +214,11 @@ export class ProductComponent implements OnInit {
     let email = this.form.value.email;
     let product_id = this.productId;
     let message = this.form.value.message;
-    // this.http.post(`${ENV.BASE_API}contact-seller`,
-    //    {name: name, phone: phone, email: email,product_id:product_id,message:message})
-    //    .subscribe((data) => {
-    //       this.router.navigate(['/product/'+this.id]);
-    //    });
+    this.http.post(`${ENV.BASE_API}contact-seller`,
+       {name: name, phone: phone, email: email,product_id:product_id,message:message})
+       .subscribe((data) => {
+          this.router.navigate(['/product/'+this.id]);
+       });
        //document.getElementById("exampleModalLong").classList.remove('show');
        let shadesEl = document.querySelector('.class_modal');
        

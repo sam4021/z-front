@@ -8,7 +8,8 @@ body {
     background: #FFF;
     font-size: 12px;
     min-height: 200px;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    /* font-family: 'M PLUS Rounded 1c', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
 }
 .desktop_view{
     padding-top: 57px;
@@ -42,7 +43,12 @@ nav .breadcrumb .breadcrumb-item a {
 nav .breadcrumb .breadcrumb-item.active {
     color: #03a197
 }
-
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    border-color: #355d87; 
+    background-color: #355d87;
+    border-radius: 0px;
+    color: #FFF;
+}
 .product-container {
     margin-top: 10px
 }
@@ -90,7 +96,7 @@ nav .breadcrumb .breadcrumb-item.active {
     font-size: 14px;
     text-align: center;
     font-weight: 700;
-    color: #355d87;
+    color: #000000;
     border-bottom: 1px solid;
 }
 
