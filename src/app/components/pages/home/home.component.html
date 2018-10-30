@@ -252,6 +252,9 @@
     <li class="nav-item">
       <a class="nav-link" id="latest-tab" data-toggle="tab" href="#latest" role="tab" aria-controls="latest" aria-selected="false">Latest Products</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" id="upcoming-tab" data-toggle="tab" href="#upcoming" role="tab" aria-controls="upcoming" aria-selected="false">Upcoming Products</a>
+    </li>
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured-tab">
@@ -345,6 +348,53 @@
           </ng-template>
         </ng-template>
       </ng-template>
+    </div>
+    <div class="tab-pane fade" id="upcoming" role="tabpanel" aria-labelledby="upcoming-tab">
+      <ng-template [ngIf]="upcomingProducts">
+          <ng-template [ngIf]="upcomingProducts.length">
+            <div class="fProds-container">
+              <div class="fProds-item" *ngFor="let product of upcomingProducts">
+                <div class="product-container">
+                  <a [routerLink]="['/product', product.url]" class="">
+                    <div class="product-inner">
+                      <div class="product-img">
+                        <img src="{{ product.images[0][0] }}" alt="{{ product.title }}">
+                      </div>
+                      <div class="product-info">
+                        <div class="prod-title" [innerHtml]="product.title"></div>
+                        <div class="prod-price">
+                          <ng-container *ngIf="product.stock != 2">
+                            <ng-container *ngIf="product.special_price == 0">
+                              Ksh. {{ product.price | number:0 }}
+                            </ng-container>
+                            <ng-container *ngIf="product.special_price !=0">
+                              Ksh. {{ product.special_price | number:0 }}
+                              <div class="discount">
+                                Ksh. {{ product.price | number:0 }}
+                              </div>
+                            </ng-container>
+                          </ng-container>
+                          <ng-container *ngIf="product.stock == 2">
+                            <div class="upcoming">
+                              Upcoming
+                            </div>
+                          </ng-container>
+                        </div>
+                        <div class="prod-rate">
+
+                        </div>
+                      </div>
+                      <ng-container *ngIf="product.special_price !=0">
+                        <div class="ribbon"><span>Offer</span></div>
+                      </ng-container>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </ng-template>
+        </ng-template>
     </div>
   </div>
   </section>

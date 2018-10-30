@@ -221,12 +221,11 @@ export class ProductComponent implements OnInit {
     //    });
        //document.getElementById("exampleModalLong").classList.remove('show');
        let shadesEl = document.querySelector('.class_modal');
-
-       console.log(shadesEl.classList);
+       
+       let closeM: HTMLElement = document.getElementsByClassName('close')[0] as HTMLElement;
+       closeM.click();
        shadesEl.classList.remove('show');
        
-       //document.getElementById("exampleModalLong").style.display="none"
-       //document.getElementById(".icon-rollover-color").style.display="none"
   }
 
   private _getProduct() {

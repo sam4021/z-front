@@ -36,6 +36,7 @@ pageTitle = 'Zuri Cart Kenya';
 home: any;
 homeSub: Subscription;
 productsFeaturedSub: Subscription;
+productsUpcomingSub: Subscription;
 productsLatestSub: Subscription;
 categorySub: Subscription;
 blogSub: Subscription;
@@ -45,6 +46,7 @@ menuSub: Subscription;
 middleAdSub: Subscription;
 middleAd: any;
   featuredProducts: any;
+  upcomingProducts: any;
   mainProducts: any;
   latestProducts: any;
   brands: Brands[];
@@ -109,6 +111,7 @@ middleAd: any;
         this.desktop_view = true;
         //this._getBlogs();
         this._getFeaturedProducts();
+        this._getUpcomingProducts();
         this._getLatestProducts();
         this._getBrands();
         this._getMiddleAd();
@@ -175,6 +178,24 @@ middleAd: any;
           this.error = true;
         }
       );
+  }
+
+  private _getUpcomingProducts() {
+    // Get future, public events
+    let checkData;
+    let prodArr= [];
+    this.productsUpcomingSub = this.productService.productsData$.subscribe(
+      data => {
+        checkData = data
+        if(checkData != null){          
+          checkData.forEach(element => {
+            if (element.stock==2 && prodArr.length <=4) {
+              prodArr.push(element);
+            }
+          });
+        this.upcomingProducts = prodArr;
+        }
+      })
   }
 
   private _getBrands() {
