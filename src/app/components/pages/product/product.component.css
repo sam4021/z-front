@@ -126,7 +126,7 @@ float: left;
 .prod-card .card .card-body .cart-item .txt{
 float: left;
 }
-.product-title[_ngcontent-c5] {
+.product-title {
     padding: 20px 5px;
     font-size: 1.6em;
     text-transform: capitalize;
