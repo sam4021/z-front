@@ -13,7 +13,7 @@ ul li .hmenu-icon{
     text-align: center;
 }
 ul li .hmenu-text {
-    font-size: 14px;
+    font-size: 13px;
     border: 1px solid #FFF;
     float: left;
     width: 75%;
@@ -111,7 +111,6 @@ ul li .hmenu-carrot{
     max-height: 385px;
     background: #fff;
     width: 24%;
-    border-right: 1px solid #DDD
 }
 
 .list-content .dk-col-2 {
