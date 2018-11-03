@@ -2689,14 +2689,18 @@ var ProductComponent = /** @class */ (function () {
                     }
                     _this.productStock = _this.productInfo.stock;
                     _this.productId = prodArr_1._id;
-                    // this.title.setTitle(prodArr.title +' :: Zuri Cart Kenya');
-                    // this.meta.addTag({ name: 'description', content: prodArr.seo.description });
-                    // this.meta.addTag({ name: 'keywords', content: prodArr.seo.keywords });
-                    // this.meta.addTag({ name: 'og:url' , content:"https://www.zuricart.co.ke/product/"+prodArr.url  });
-                    // this.meta.addTag({ name: 'og:type' , content:"website" });
-                    // this.meta.addTag({ name: 'og:title' , content: prodArr.title });
-                    // this.meta.addTag({ name: 'og:description' ,content: prodArr.seo.description });
-                    // this.meta.addTag({ name: 'og:image' , content:"https://www.static.phonestablets.co.ke/img/products/"+prodArr.images[0][0] });
+                    _this.productService
+                        .getProductSeo$(_this.id)
+                        .subscribe(function (res) {
+                        _this.title.setTitle(res.title + ' :: Zuri Cart Kenya');
+                        _this.meta.addTag({ name: 'description', content: res.seo.description });
+                        _this.meta.addTag({ name: 'keywords', content: res.seo.keywords });
+                        _this.meta.addTag({ property: 'og:url', content: "https://www.zuricart.co.ke/product/" + res.url });
+                        _this.meta.addTag({ property: 'og:type', content: "website" });
+                        _this.meta.addTag({ property: 'og:title', content: res.title });
+                        _this.meta.addTag({ property: 'og:description', content: res.seo.description });
+                        _this.meta.addTag({ property: 'og:image', content: "https://www.static.phonestablets.co.ke/img/products/" + res.images[0][0] });
+                    });
                 });
             }
         });

@@ -161,14 +161,19 @@ export class ProductComponent implements OnInit {
             this.productStock = this.productInfo.stock;
             
             this.productId = prodArr._id
-            // this.title.setTitle(prodArr.title +' :: Zuri Cart Kenya');
-            // this.meta.addTag({ name: 'description', content: prodArr.seo.description });
-            // this.meta.addTag({ name: 'keywords', content: prodArr.seo.keywords });
-            // this.meta.addTag({ name: 'og:url' , content:"https://www.zuricart.co.ke/product/"+prodArr.url  });
-            // this.meta.addTag({ name: 'og:type' , content:"website" });
-            // this.meta.addTag({ name: 'og:title' , content: prodArr.title });
-            // this.meta.addTag({ name: 'og:description' ,content: prodArr.seo.description });
-            // this.meta.addTag({ name: 'og:image' , content:"https://www.static.phonestablets.co.ke/img/products/"+prodArr.images[0][0] });
+            this.productService
+                .getProductSeo$(this.id)
+                .subscribe(
+                  res => {
+                    this.title.setTitle(res.title +' :: Zuri Cart Kenya');
+                    this.meta.addTag({ name: 'description', content: res.seo.description });
+                    this.meta.addTag({ name: 'keywords', content: res.seo.keywords });
+                    this.meta.addTag({ property: 'og:url' , content:"https://www.zuricart.co.ke/product/"+res.url  });
+                    this.meta.addTag({ property: 'og:type' , content:"website" });
+                    this.meta.addTag({ property: 'og:title' , content: res.title });
+                    this.meta.addTag({ property: 'og:description' ,content: res.seo.description });
+                    this.meta.addTag({ property: 'og:image' , content:"https://www.static.phonestablets.co.ke/img/products/"+res.images[0][0] });
+                  });
           });
           }
         }
