@@ -1,7 +1,8 @@
 <a (click)="onSubmit()" *ngIf="mobile_view" class="mobile_view">
   <div class="cart-body clearfix">
     <div class="cart-left">
-      <i class="fas fa-shopping-cart"></i>
+      <!-- <i class="fas fa-shopping-cart"></i> -->
+      <img src="https://res.cloudinary.com/zuricart/image/upload/v1541237862/icons/NEW-ZURI-F.png" alt="cart-icon">
       <div class="cart-total">
         <span>{{itemCount}}</span>
       </div>
@@ -11,7 +12,8 @@
   <a (click)="onSubmit()" *ngIf="desktop_view">
   <div class="cart-body clearfix">
     <div class="cart-left">
-      <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+      <!-- <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> -->
+      <img src="https://res.cloudinary.com/zuricart/image/upload/v1541237862/icons/NEW-ZURI-F.png" alt="cart-icon">
     </div>
     <div class="cart-total">
       {{itemCount}}

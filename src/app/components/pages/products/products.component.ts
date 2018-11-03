@@ -54,8 +54,6 @@ export class ProductsComponent implements OnInit {
   childMenu: any;
   childMenu2: any;
   categoryId: any;
-  topAdImg: any;
-  topAdLink: any;
   topAdTitle: any;
   topAdFooter: any;
 
@@ -77,13 +75,13 @@ export class ProductsComponent implements OnInit {
                 .subscribe(
                   res => {
                     if (res.seo.title == '') {
-                      // this.title.setTitle(res.title +' :: Phones Tablets Kenya');
+                       this.title.setTitle(res.title +' :: Zuricart Kenya');
                     } else {
-                      // this.title.setTitle(res.seo.title);
+                       this.title.setTitle(res.seo.title);
                     }
                     
-                    // this.meta.addTag({ name: 'description', content: res.seo.description });
-                    // this.meta.addTag({ name: 'keywords', content: res.seo.keywords });
+                     this.meta.addTag({ name: 'description', content: res.seo.description });
+                     this.meta.addTag({ name: 'keywords', content: res.seo.keywords });
                   },
                   err => {
                     console.error(err);
@@ -268,11 +266,12 @@ export class ProductsComponent implements OnInit {
         res => {
           this.category1 = res;
           this.category = res;
-          this.topAdImg = this.category1.top_ad.img; 
-          this.topAdLink = this.category1.top_ad.link; 
+    
           this.topAdTitle = this.category1.title;
           this.topAdFooter = this.category1.footer_seo;
-          this.loading = false;                  
+          this.loading = false;    
+          console.log(this.category1);
+                        
         },
         err => {
           console.error(err);

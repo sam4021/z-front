@@ -2,7 +2,10 @@
     border: none;
     width: 100%;
     margin: auto;
-    position: relative
+    position: relative;
+    background-color: #f9a13a;
+    height: 40px;
+    margin-top: 5px;
 }
 
 .mobile_view .cart-body .cart-left {
@@ -12,24 +15,25 @@
     color: #FFF;
     font-size: inherit;
     position: relative;
-    background-color: #305d8d;
 }
-
+.mobile_view .cart-body .cart-left img{
+    width: 32px;
+}
 .mobile_view .cart-body .cart-total {
     background-color: #fff0;
     float: none;
     width: auto;
     padding: 0;
-    color: inherit;
-    font-weight: inherit;
+    color: #FFF !important;
+    font-weight: 700;
     position: absolute;
-    top: -5px;
-    left: 14px;
-    font-size: 11px;
+    top: 2px;
+    left: 35px;
+    font-size: 15px;
 }
 
 .mobile_view .cart-body .cart-total span {
-    color: #305d8d;
+    color: #FFF;
     padding: 1px 5px;
     border-radius: 20px;
 }
@@ -42,7 +46,6 @@
 }
 
 .cart-body .cart-left {
-    background-color: #f4a339;
     height: 40px;
     width: 40px;
     float: left;
@@ -50,6 +53,10 @@
     color: #fff;
     position: relative;
     border-radius: 20px;
+}
+.cart-body .cart-left img{
+    width: 35px;
+
 }
 .cart-body .cart-left svg{
     font-size: 23px;
@@ -74,10 +81,11 @@
     width: 26px;
     height: 25px;
     padding: 5px;
-    color: #355d87;
+    color: #FFF;
     font-weight: 700;
     position: absolute;
-    left: 8px;
-    top: 5px;
+    left: 26px;
+    top: 1px;
     border-radius: 25px;
+    background-color: #f49c38f2;
 }
