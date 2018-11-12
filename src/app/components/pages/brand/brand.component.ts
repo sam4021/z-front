@@ -54,7 +54,7 @@ export class BrandComponent implements OnInit {
         data => {
            checkProds = data
            if(checkProds === null){
-            this.products =['Null Prods'];
+            //this.products =['Null Prods'];
             console.log('no prd');
             
            }

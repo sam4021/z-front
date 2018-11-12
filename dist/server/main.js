@@ -880,7 +880,7 @@ var BrandComponent = /** @class */ (function () {
             .subscribe(function (data) {
             checkProds = data;
             if (checkProds === null) {
-                _this.products = ['Null Prods'];
+                //this.products =['Null Prods'];
                 console.log('no prd');
             }
             else {
