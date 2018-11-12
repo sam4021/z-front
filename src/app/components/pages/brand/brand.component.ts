@@ -54,9 +54,12 @@ export class BrandComponent implements OnInit {
         data => {
            checkProds = data
            if(checkProds === null){
-            this.products =['Null Prods']
+            this.products =['Null Prods'];
+            console.log('no prd');
+            
            }
            else{
+            console.log('yes prd');
        this.route.params.subscribe(params => {
          var bb=  params['brand'];
          this.brand =  params['brand'],
