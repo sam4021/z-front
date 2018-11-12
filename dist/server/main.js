@@ -886,8 +886,9 @@ var BrandComponent = /** @class */ (function () {
             }
             else {
                 _this.route.params.subscribe(function (params) {
+                    var bb = params['brand'];
                     _this.brand = params['brand'],
-                        _this._getBrand(_this.brand),
+                        _this._getBrand(bb),
                         // this.products = this.brand
                         checkProds.forEach(function (prod) {
                             if (prod.brand.url == _this.brand) {
@@ -929,7 +930,8 @@ var BrandComponent = /** @class */ (function () {
         this.brandSub = this.productService
             .getBrand$(brand)
             .subscribe(function (res) {
-            return _this.brand = res;
+            _this.brand = res,
+                _this.title.setTitle(res.title + ' :: Zuri Cart Kenya');
         });
     };
     BrandComponent.prototype.setPage = function (page) {

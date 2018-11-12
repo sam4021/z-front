@@ -58,8 +58,10 @@ export class BrandComponent implements OnInit {
            }
            else{
        this.route.params.subscribe(params => {
+         var bb=  params['brand'];
          this.brand =  params['brand'],
-         this._getBrand(this.brand),
+         this._getBrand(bb),         
+         
         // this.products = this.brand
          checkProds.forEach(prod=>{
           if(prod.brand.url==this.brand){
@@ -104,8 +106,10 @@ const result = arrayToCount.filter(i => i === 2).length;
   _getBrand(brand){
     this.brandSub = this.productService
     .getBrand$(brand)
-    .subscribe(res=>
-      this.brand = res
+    .subscribe(res=>{
+      this.brand = res,
+      this.title.setTitle(res.title +' :: Zuri Cart Kenya')
+    }
     )
   }
 
