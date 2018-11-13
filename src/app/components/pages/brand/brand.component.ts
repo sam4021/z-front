@@ -53,13 +53,13 @@ export class BrandComponent implements OnInit {
       .subscribe(
         data => {
            checkProds = data
-           if(checkProds === null){
+           //if(checkProds === null){
             //this.products =['Null Prods'];
-            console.log('no prd');
+            //console.log('no prd');
             
-           }
-           else{
-            console.log('yes prd');
+          //  }
+          //  else{
+          //   console.log('yes prd');
        this.route.params.subscribe(params => {
          var bb=  params['brand'];
          this.brand =  params['brand'],
@@ -93,7 +93,7 @@ const result = arrayToCount.filter(i => i === 2).length;
       this.loading = false;
       this.setPage(1);
      })
-    }
+    //}
      });
      
      categoryService.categoryIData$.subscribe(

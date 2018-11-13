@@ -879,44 +879,44 @@ var BrandComponent = /** @class */ (function () {
         this.productService.productsData$
             .subscribe(function (data) {
             checkProds = data;
-            if (checkProds === null) {
-                //this.products =['Null Prods'];
-                console.log('no prd');
-            }
-            else {
-                console.log('yes prd');
-                _this.route.params.subscribe(function (params) {
-                    var bb = params['brand'];
-                    _this.brand = params['brand'],
-                        _this._getBrand(bb),
-                        // this.products = this.brand
-                        checkProds.forEach(function (prod) {
-                            if (prod.brand.url == _this.brand) {
-                                prodArr.push(prod);
-                                catArr.push(prod.category);
-                                if (catArr2.indexOf(prod.category) === -1) {
-                                    catArr2.push(prod.category);
-                                }
+            //if(checkProds === null){
+            //this.products =['Null Prods'];
+            //console.log('no prd');
+            //  }
+            //  else{
+            //   console.log('yes prd');
+            _this.route.params.subscribe(function (params) {
+                var bb = params['brand'];
+                _this.brand = params['brand'],
+                    _this._getBrand(bb),
+                    // this.products = this.brand
+                    checkProds.forEach(function (prod) {
+                        if (prod.brand.url == _this.brand) {
+                            prodArr.push(prod);
+                            catArr.push(prod.category);
+                            if (catArr2.indexOf(prod.category) === -1) {
+                                catArr2.push(prod.category);
                             }
-                        });
-                    //   if (prodArr.length === 0) {
-                    //     let sliced = this.brand.slice(0, 10).replace(/-/g, ' ');
-                    //     var withNoDigits = sliced.replace(/[0-9]/g, '');
-                    //       this.router.navigate(['/search/'+withNoDigits]);
-                    //   }
-                    var arrayToCount = [1, 2, 3, 5, 2, 8, 9, 2];
-                    var result = arrayToCount.filter(function (i) { return i === 2; }).length;
-                    catArr2.forEach(function (cat) {
-                        arrtest.push({ "category": cat, "count": catArr.filter(function (i) { return i === cat; }).length });
+                        }
                     });
-                    _this.products = prodArr;
-                    _this.allCat3 = arrtest;
-                    _this.allCat1 = catArr2;
-                    _this.count = prodArr.length;
-                    _this.loading = false;
-                    _this.setPage(1);
+                //   if (prodArr.length === 0) {
+                //     let sliced = this.brand.slice(0, 10).replace(/-/g, ' ');
+                //     var withNoDigits = sliced.replace(/[0-9]/g, '');
+                //       this.router.navigate(['/search/'+withNoDigits]);
+                //   }
+                var arrayToCount = [1, 2, 3, 5, 2, 8, 9, 2];
+                var result = arrayToCount.filter(function (i) { return i === 2; }).length;
+                catArr2.forEach(function (cat) {
+                    arrtest.push({ "category": cat, "count": catArr.filter(function (i) { return i === cat; }).length });
                 });
-            }
+                _this.products = prodArr;
+                _this.allCat3 = arrtest;
+                _this.allCat1 = catArr2;
+                _this.count = prodArr.length;
+                _this.loading = false;
+                _this.setPage(1);
+            });
+            //}
         });
         categoryService.categoryIData$.subscribe(function (data) {
             _this.mainCat = data;
