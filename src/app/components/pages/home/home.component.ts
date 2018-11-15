@@ -151,9 +151,7 @@ middleAd: any;
       .getProductOffersEx$()
       .subscribe(
         res => {
-          this.offerProd = res;
-          console.log(res);
-          
+          this.offerProd = res;          
         },
         err => {
           console.error(err);

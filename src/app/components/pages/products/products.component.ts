@@ -56,6 +56,8 @@ export class ProductsComponent implements OnInit {
   categoryId: any;
   topAdTitle: any;
   topAdFooter: any;
+  topAdParent: any;
+  menuArrU : any;
 
   constructor(
           private route: ActivatedRoute,
@@ -143,31 +145,35 @@ export class ProductsComponent implements OnInit {
                    let menuArr1
                    let menuArr2=[]
                    let menuArr3=[]
-                   let menuArrU;
                    
                    menu.forEach(prod=>{
                     if(prod.url==this.id){
-                      menuArrU = prod;
+                      this.menuArrU = prod;
                     }
                   })
                   
-                  if (menuArrU.parent == 0) {
-                    menuArr1=menuArrU;
+                  if (this.menuArrU.parent == 0) {
+                    menuArr1=this.menuArrU;
                     menu.forEach(p => {
-                      if(p.parent==menuArrU._id){
+                      if(p.parent==this.menuArrU._id){
                         menuArr2.push(p)
+                      }
+                    });
+                    menu.forEach(p => {
+                      if(p.parent==menuArr2[0]._id){
+                        menuArr3.push(p)
                       }
                     });
                   } else {
                     menu.forEach(p => {
-                      if(p._id==menuArrU.parent){
+                      if(p._id==this.menuArrU.parent){
                         menuArr1=p
                       }
                     });
                     
                     if (menuArr1.parent == 0) {
                       menu.forEach(p => {
-                        if(p.parent==menuArrU._id){
+                        if(p.parent==this.menuArrU._id){
                           menuArr2.push(p)
                         }
                       });
@@ -177,9 +183,8 @@ export class ProductsComponent implements OnInit {
                         }
                       });
                     } else {
-                      
                       menu.forEach(p => {
-                        if(p.parent==menuArrU._id){
+                        if(p.parent==this.menuArrU._id){
                           menuArr2.push(p)
                         }
                       });
@@ -207,9 +212,7 @@ export class ProductsComponent implements OnInit {
            //this.filterArr = [];
          }
 
-  public filterBrands(id: string){
-    console.log(id);
-    
+  public filterBrands(id: string){    
     let brand = this.brandFilter.push(id);
     //this.filterArr.push(brand);
      this._getFilterBrands(this.brandFilter);
@@ -268,9 +271,9 @@ export class ProductsComponent implements OnInit {
           this.category = res;
     
           this.topAdTitle = this.category1.title;
+          this.topAdParent = this.category1.parent;
           this.topAdFooter = this.category1.footer_seo;
           this.loading = false;    
-          console.log(this.category1);
                         
         },
         err => {

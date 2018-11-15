@@ -16,11 +16,12 @@ a {
 }
 
 .hmenu {
-    padding-right: 0
+    padding-right: 0;
+    display: none;
 }
 
 .hslider {
-    padding-left: 0
+    padding-left: 0;padding-top: 12px;
 }
 
 .hslider img {

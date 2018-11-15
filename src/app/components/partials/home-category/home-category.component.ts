@@ -40,9 +40,8 @@ export class HomeCategoryComponent implements OnInit, OnDestroy {
             //   console.log(p);
             //   });  
             // });
-            console.log("true");
           } else{
-            console.log("false");
+            
           }
           this.loading = false;           
         }
@@ -68,7 +67,6 @@ export class HomeCategoryComponent implements OnInit, OnDestroy {
         res => {
           this.home = res;
           this.loading = false;
-          console.log(res);
           
         },
         err => {

@@ -111,9 +111,8 @@ const result = arrayToCount.filter(i => i === 2).length;
     .getBrand$(brand)
     .subscribe(res=>{
       this.brand = res,
-      this.title.setTitle(res.title +' :: Zuri Cart Kenya')
-    }
-    )
+      this.title.setTitle(this.brand.seo.title +' :: Zuri Cart Kenya')
+    })
   }
 
   setPage(page: number) {

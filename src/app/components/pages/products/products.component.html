@@ -1,5 +1,6 @@
 <div id="catgory-page">
   <div class="container">
+    <!-- <ng-container *ngIf="topAdParent !=0"> -->
     <div class="row">
       <div class="col-md-3 category-filter">
         <div class="filter-container">
@@ -194,5 +195,75 @@
     <div class="seo">
       <div [innerHTML]="topAdFooter"></div>
   </div>
+<!-- </ng-container> -->
+<!-- <ng-container *ngIf="topAdParent ==0">
+  <h2 class="category-name" itemprop="name" category="">
+    {{ topAdTitle }}<span class="category-count">( {{count}} Items)</span>
+  </h2>
+  <hr>
+  <div class="catSec" *ngFor="let c of childMenu">
+    <div class="catSec-head">
+      <div class="head-t">
+        {{ c.title }}
+      </div>
+      <div class="head-v">
+        <a routerLink="/products/{{c.url}}" >View All</a>
+      </div>
+      <div class="catSec-body"> 
+        <div class="row">
+        <ng-container  *ngFor="let c2 of childMenu2">
+            <ng-container *ngIf="c2.parent == c._id">
+                <ng-container *ngFor="let product of products; let i=index">
+                    <ng-container *ngIf="product.category == c2._id">
+                        <div class="catSec-prod">
+                            <div class="product-container">
+                              <a routerLink="/product/{{product.url}}">
+                                <div class="product-inner">
+                                  <div class="product-img">
+                                    <img src="{{ product.images[0][0] }}" alt="{{ product.title }}">
+                                  </div>
+                                  <div class="product-info">
+                                    <div class="prod-title">
+                                      {{ product.title }}
+                                    </div>
+                                    <div class="prod-price">
+                                        <ng-container *ngIf="product.stock != 2">
+                                            <ng-container *ngIf="product.special_price == 0">
+                                              Ksh. {{ product.price | number:0 }}
+                                            </ng-container>
+                                            <ng-container *ngIf="product.special_price !=0">
+                                              Ksh. {{ product.special_price | number:0 }}
+                                              <div class="discount">
+                                                Ksh. {{ product.price | number:0 }}
+                                              </div>
+                                            </ng-container>
+                                          </ng-container>
+                                          <ng-container *ngIf="product.stock == 2">
+                                            <div class="upcoming">
+                                              Upcoming
+                                            </div>
+                                          </ng-container>
+                                    </div>
+                                    <div class="prod-rate">
+        
+                                    </div>
+                                  </div>
+                                  <ng-container *ngIf="product.special_price !=0">
+                                    <div class="ribbon"><span>Offer</span></div>
+                                  </ng-container>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                    </ng-container> 
+                </ng-container>
+            </ng-container>
+      </ng-container>
+    </div>
+    <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</ng-container> -->
   </div>
 </div>

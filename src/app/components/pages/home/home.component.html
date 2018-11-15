@@ -176,12 +176,17 @@
   </section>
 </div>
 <div id="home-page" class="container desktop_view" *ngIf="desktop_view">
-  <div id="home-top" class="row">
+  <!-- <div id="home-top" class="row">
     <div class="col-md-2 hmenu">
       <app-home-menu></app-home-menu>
     </div>
-    <div class="col-md-10 hslider">
+    <div class="col-md-12 hslider">
       <app-main-slider></app-main-slider>
+    </div>
+  </div> -->
+  <div id="home-top">
+    <div class="hslider">
+        <app-main-slider></app-main-slider>
     </div>
   </div>
   <section id="daily-deals">

@@ -107,7 +107,28 @@ ul li {
 .category-products{
     background-color: #FFF;
 }
+.catSec{
 
+}
+.catSec-head{
+
+}
+.head-t{
+
+}
+.head-v{
+
+}
+.head-v a{
+
+}
+.catSec-body{
+    max-height: 270px;width: 10000%;
+}
+.catSec-prod{
+    width: 182px;
+    float: left;
+}
 @media (min-width:320px) and (max-width:480px) {
     #catgory-page{
         padding-top: 0px;
