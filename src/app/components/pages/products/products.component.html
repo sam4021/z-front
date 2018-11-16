@@ -70,9 +70,6 @@
                 <div class="row">
                     <ng-template [ngIf]="pagedItems==''">
                         <div class="col-md-3 col-xs-6" *ngFor="let product of products">
-                            <!-- <a [routerLink]="['/product', product.url]">
-                                <h5 class="mb-1" [innerHTML]="product.title"></h5>
-                            </a> -->
                             <div class="product-container">
                               <a routerLink="/product/{{product.url}}">
                                 <div class="product-inner">
@@ -80,9 +77,7 @@
                                     <img src="{{ product.images[0][0] }}" alt="{{ product.title }}">
                                   </div>
                                   <div class="product-info">
-                                    <div class="prod-title">
-                                      {{ product.title }}
-                                    </div>
+                                    <div class="prod-title">{{ product.title }}</div>
                                     <div class="prod-price">
                                         <ng-container *ngIf="product.stock != 2">
                                             <ng-container *ngIf="product.special_price == 0">
@@ -90,27 +85,16 @@
                                             </ng-container>
                                             <ng-container *ngIf="product.special_price !=0">
                                               Ksh. {{ product.special_price | number:0 }}
-                                              <div class="discount">
-                                                Ksh. {{ product.price | number:0 }}
-                                              </div>
+                                              <div class="discount">Ksh. {{ product.price | number:0 }}</div>
                                             </ng-container>
                                           </ng-container>
                                           <ng-container *ngIf="product.stock == 2">
-                                            <div class="upcoming">
-                                              Upcoming
-                                            </div>
+                                            <div class="upcoming">Upcoming</div>
                                           </ng-container>
                                     </div>
-                                    <div class="prod-rate">
-        
-                                    </div>
+                                    <div class="prod-rate"></div>
                                   </div>
                                   <ng-container *ngIf="product.special_price !=0">
-                                    <!-- <div class="offer">
-                                      <span class="offer-inner">
-                                        offer
-                                      </span>
-                                    </div> -->
                                     <div class="ribbon"><span>Offer</span></div>
                                   </ng-container>
                                 </div>
@@ -120,9 +104,6 @@
                     </ng-template>
                     <ng-template [ngIf]="pagedItems!=''">
                         <div class="col-md-3 col-xs-6" *ngFor="let product of pagedItems">
-                            <!-- <a [routerLink]="['/product', product.url]">
-                                <h5 class="mb-1" [innerHTML]="product.title"></h5>
-                            </a> -->
                             <div class="product-container">
                               <a routerLink="/product/{{product.url}}">
                                 <div class="product-inner">
@@ -144,16 +125,9 @@
                                         </div>
                                       </ng-container>
                                     </div>
-                                    <div class="prod-rate">
-        
-                                    </div>
+                                    <div class="prod-rate"></div>
                                   </div>
                                   <ng-container *ngIf="product.special_price !=0">
-                                    <!-- <div class="offer">
-                                      <span class="offer-inner">
-                                        offer
-                                      </span>
-                                    </div> -->
                                     <div class="ribbon"><span>Offer</span></div>
                                   </ng-container>
                                 </div>
