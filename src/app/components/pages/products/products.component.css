@@ -195,4 +195,7 @@ ul li {
         margin-top: 25px;
         border-radius: 4px
     }
+    .seo{
+        display: none;
+    }
 }

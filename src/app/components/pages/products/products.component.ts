@@ -77,7 +77,7 @@ export class ProductsComponent implements OnInit {
                 .subscribe(
                   res => {
                     if (res.seo.title == '') {
-                       this.title.setTitle(res.title +' :: Zuricart Kenya');
+                       this.title.setTitle(res.title);
                     } else {
                        this.title.setTitle(res.seo.title);
                     }

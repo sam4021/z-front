@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   order_message: boolean = false;
   order_message1:any;
   private storage: Storage;
-pageTitle = "Kenya's Premier Online Shopping site for Mobile Phones, Television, Home theatres, Computers & More | Zuricart Kenya";
+pageTitle = "Kenya's Premier Online Shopping site for Mobile Phones, Television, Home theatres, Computers & More | zuricart.co.ke";
 home: any;
 homeSub: Subscription;
 productsFeaturedSub: Subscription;

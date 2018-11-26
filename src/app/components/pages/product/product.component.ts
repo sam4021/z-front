@@ -94,7 +94,7 @@ export class ProductComponent implements OnInit {
                 .getProductSeo$(this.id)
                 .subscribe(
                   res => {
-                    this.title.setTitle(res.title +' :: Zuri Cart Kenya');
+                    this.title.setTitle(res.title);
                     this.meta.addTag({ name: 'description', content: res.seo.description });
                     this.meta.addTag({ name: 'keywords', content: res.seo.keywords });
                     this.meta.addTag({ property: 'og:url' , content:"https://www.zuricart.co.ke/product/"+res.url  });
@@ -165,7 +165,7 @@ export class ProductComponent implements OnInit {
                 .getProductSeo$(this.id)
                 .subscribe(
                   res => {
-                    this.title.setTitle(res.title +' :: Zuri Cart Kenya');
+                    this.title.setTitle(res.title );
                     this.meta.addTag({ name: 'description', content: res.seo.description });
                     this.meta.addTag({ name: 'keywords', content: res.seo.keywords });
                     this.meta.addTag({ property: 'og:url' , content:"https://www.zuricart.co.ke/product/"+res.url  });
