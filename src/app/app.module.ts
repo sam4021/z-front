@@ -29,6 +29,7 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider,
 } from "angular5-social-login";
+import { UpcomingComponent } from './components/pages/upcoming/upcoming.component';
 
 // Configs 
 export function getAuthServiceConfigs() {

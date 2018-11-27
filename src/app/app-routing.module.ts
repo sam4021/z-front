@@ -67,6 +67,10 @@ const routes: Routes = [
     loadChildren: './components/pages/static/delivery/delivery.module#DeliveryModule'
   },
   {
+    path: 'upcoming-products',
+    loadChildren: './components/pages/upcoming/upcoming.module#UpcomingModule'
+  },
+  {
     path: '**',
     redirectTo: '/'
   }
